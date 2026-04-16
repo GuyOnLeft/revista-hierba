@@ -1,0 +1,82 @@
+---
+---
+<section class="hero">
+  <div class="hero-logo">
+    <img src="/hierba-logo.png" alt="Revista Hierba" />
+  </div>
+  <p class="hero-tagline" data-i18n="hero.tagline">Cannabis · Ciencia · Derechos Humanos</p>
+  <div class="hero-rule"></div>
+  <p class="hero-quote">
+    <span data-i18n="hero.quote">Hablar de cannabis es hablar de derechos humanos: del derecho a la salud, a decidir sobre el propio cuerpo y a no ser criminalizados por buscar alivio y dignidad.</span>
+  </p>
+  <div class="hero-ctas">
+    <button class="btn-filled" data-i18n="hero.cta1">Leer Editorial</button>
+    <button class="btn-outline" data-i18n="hero.cta2">Explorar Secciones</button>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--white);
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 2px solid var(--black);
+  }
+  .hero-logo img {
+    height: 575px;
+    width: auto;
+    margin: -172px auto;
+    display: block;
+  }
+  .hero-tagline {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 24px;
+  }
+  .hero-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--black);
+    margin: 0 auto 24px;
+  }
+  .hero-quote {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #333;
+    max-width: 560px;
+    margin: 0 auto 36px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .btn-filled {
+    padding: 11px 28px;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--black);
+  }
+  .btn-outline {
+    padding: 11px 28px;
+    background: transparent;
+    color: var(--black);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--black);
+  }
+  .btn-filled:hover { background: #333; }
+  .btn-outline:hover { background: var(--gray-bg); }
+</style>
