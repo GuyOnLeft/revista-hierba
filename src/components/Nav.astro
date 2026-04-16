@@ -1,0 +1,60 @@
+---
+---
+<nav>
+  <div class="nav-links">
+    <a href="#" data-i18n="nav.editorial">Editorial</a>
+    <a href="#" data-i18n="nav.sections">Secciones</a>
+    <a href="#" data-i18n="nav.about">Nosotros</a>
+    <a href="#" data-i18n="nav.contact">Contacto</a>
+  </div>
+  <div class="nav-logo">
+    <img src="/hierba-logo.png" alt="Revista Hierba" />
+  </div>
+  <div class="lang-toggle">
+    <span data-lang="es" class="active">ES</span>
+    <span class="sep">/</span>
+    <span data-lang="en">EN</span>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 2px solid var(--black);
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 64px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { border-bottom: 1px solid var(--black); }
+  .nav-logo img {
+    height: 175px;
+    width: auto;
+    margin: -52px 0;
+    display: block;
+  }
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .lang-toggle [data-lang] { cursor: pointer; padding: 2px 8px; }
+  .lang-toggle [data-lang].active { background: var(--black); color: var(--white); }
+  .lang-toggle .sep { color: #ccc; }
+</style>
