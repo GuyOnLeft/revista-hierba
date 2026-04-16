@@ -1,0 +1,106 @@
+---
+---
+<div class="section-label" data-i18n="featured.label">Artículos Destacados</div>
+<div class="article-grid">
+  <div class="article-featured">
+    <div class="img-wrapper">
+      <img src="https://picsum.photos/seed/herb42/800/450" alt="Cannabis medicinal" />
+    </div>
+    <span class="tag">Derechos Humanos</span>
+    <h2 class="article-title">El cannabis medicinal y la reforma pendiente en América Latina</h2>
+    <p class="article-excerpt">Una mirada a los avances legislativos en Argentina, Colombia y Uruguay, y los obstáculos que enfrentan los pacientes en el acceso a tratamientos.</p>
+    <p class="article-byline">Por la Redacción · 15 Abr 2026</p>
+  </div>
+  <div class="article-stack">
+    <div class="article-small">
+      <div class="img-wrapper">
+        <img src="https://picsum.photos/seed/lab77/400/267" alt="Ciencia" />
+      </div>
+      <span class="tag">Ciencia</span>
+      <h3 class="article-title-sm">Nuevos estudios sobre cannabinoides y dolor crónico</h3>
+      <p class="article-byline">14 Abr 2026</p>
+    </div>
+    <div class="article-small">
+      <div class="img-wrapper">
+        <img src="https://picsum.photos/seed/plant99/400/267" alt="Plantas medicinales" />
+      </div>
+      <span class="tag">Plantas Medicinales</span>
+      <h3 class="article-title-sm">La valeriana y el sueño: lo que dice la evidencia</h3>
+      <p class="article-byline">12 Abr 2026</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    padding: 20px 40px 14px;
+    border-bottom: 1px solid #eee;
+    background: var(--white);
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: var(--white);
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .article-featured {
+    padding: 32px;
+    border-right: 1px solid var(--gray-light);
+  }
+  .img-wrapper {
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+    margin-bottom: 18px;
+  }
+  .article-featured .img-wrapper { aspect-ratio: 16 / 9; }
+  .article-small .img-wrapper { aspect-ratio: 3 / 2; margin-bottom: 12px; }
+  .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+  .article-stack { display: flex; flex-direction: column; }
+  .article-small {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--gray-light);
+    flex: 1;
+  }
+  .article-small:last-child { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 2px 8px;
+    margin-bottom: 9px;
+  }
+  .article-title {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .article-title-sm {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .article-excerpt {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #444;
+    margin: 8px 0 12px;
+  }
+  .article-byline {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+</style>
