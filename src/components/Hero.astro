@@ -10,8 +10,8 @@
     <span data-i18n="hero.quote">Hablar de cannabis es hablar de derechos humanos: del derecho a la salud, a decidir sobre el propio cuerpo y a no ser criminalizados por buscar alivio y dignidad.</span>
   </p>
   <div class="hero-ctas">
-    <button class="btn-filled" data-i18n="hero.cta1">Leer Editorial</button>
-    <button class="btn-outline" data-i18n="hero.cta2">Explorar Secciones</button>
+    <a class="btn-filled" href="/editorial" data-i18n="hero.cta1">Leer Editorial</a>
+    <a class="btn-outline" href="/secciones" data-i18n="hero.cta2">Explorar Secciones</a>
   </div>
 </section>
 
@@ -27,6 +27,13 @@
     width: auto;
     margin: -172px auto;
     display: block;
+  }
+  @media (max-width: 600px) {
+    .hero-logo img {
+      height: auto;
+      width: 85vw;
+      margin: -25vw auto;
+    }
   }
   .hero-tagline {
     font-family: var(--font-sans);
@@ -63,8 +70,9 @@
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    cursor: pointer;
     border: 1px solid var(--black);
+    display: inline-block;
+    text-decoration: none;
   }
   .btn-outline {
     padding: 11px 28px;
@@ -74,8 +82,9 @@
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    cursor: pointer;
     border: 1px solid var(--black);
+    display: inline-block;
+    text-decoration: none;
   }
   .btn-filled:hover { background: #333; }
   .btn-outline:hover { background: var(--gray-bg); }
