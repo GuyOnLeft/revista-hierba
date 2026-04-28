@@ -76,7 +76,7 @@ const strings = {
 function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (strings[lang][key]) el.textContent = strings[lang][key];
+    if (strings[lang]?.[key]) el.textContent = strings[lang][key];
   });
   document.querySelectorAll('.lang-toggle [data-lang]').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
