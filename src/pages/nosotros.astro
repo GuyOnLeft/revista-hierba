@@ -1,0 +1,105 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Nosotros" description="Quiénes somos y en qué creemos en Revista Hierba.">
+  <div class="section-label" data-i18n="nosotros.label">Nosotros</div>
+  <div class="nosotros-body">
+    <div class="nos-left">
+      <div class="nos-kicker" data-i18n="nosotros.quienes">Quiénes somos</div>
+      <h1 class="nos-headline">Periodismo<br>independiente<br>desde 2026</h1>
+      <p>Revista Hierba es una publicación bilingüe dedicada al periodismo independiente sobre cannabis, plantas medicinales, ciencia y derechos humanos.</p>
+      <p>Nacemos convencidos de que el acceso a la información es un derecho, no un privilegio. Trabajamos desde América Latina con una perspectiva global, priorizando las voces de comunidades históricamente ignoradas por los medios tradicionales.</p>
+      <p>No tenemos financiamiento de la industria. No tenemos línea editorial impuesta por anunciantes. Tenemos una convicción.</p>
+    </div>
+    <div class="nos-right">
+      <div class="nos-kicker" data-i18n="nosotros.principios">Nuestros principios</div>
+      <div class="nos-pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-name" data-i18n="nosotros.p01.name">Independencia editorial</div>
+          <div class="pillar-desc">Sin financiamiento de la industria, sin línea editorial impuesta por anunciantes. Nuestra única obligación es con la verdad y con nuestros lectores.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-name" data-i18n="nosotros.p02.name">Rigor científico</div>
+          <div class="pillar-desc">Citamos fuentes. Distinguimos evidencia de opinión. No publicamos desinformación, aunque incomode a la industria o a los prohibicionistas.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-name" data-i18n="nosotros.p03.name">Derechos humanos</div>
+          <div class="pillar-desc">El eje de toda nuestra cobertura es la dignidad de las personas, no el mercado. El acceso a la salud es un derecho, no un privilegio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .nosotros-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .nos-left {
+    padding: 40px;
+    border-right: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .nos-right { padding: 40px; }
+  .nos-kicker {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 16px;
+  }
+  .nos-headline {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .nos-left p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #333;
+    font-family: var(--font-serif);
+  }
+  .nos-pillars { display: flex; flex-direction: column; }
+  .pillar {
+    border-top: 1px solid var(--gray-light);
+    padding: 20px 0;
+  }
+  .pillar:first-child { border-top: none; padding-top: 0; }
+  .pillar-num {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 4px;
+  }
+  .pillar-name {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .pillar-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.65;
+    font-family: var(--font-serif);
+  }
+  @media (max-width: 700px) {
+    .nosotros-body { grid-template-columns: 1fr; }
+    .nos-left { border-right: none; border-bottom: 1px solid var(--gray-light); }
+  }
+</style>
