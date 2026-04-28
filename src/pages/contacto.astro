@@ -1,0 +1,109 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Contacto" description="Escribinos a Revista Hierba.">
+  <div class="section-label" data-i18n="contacto.label">Contacto</div>
+  <div class="contacto-body">
+    <div class="contact-intro">
+      <div class="intro-kicker" data-i18n="contacto.escribinos">Escribinos</div>
+      <h1 class="intro-headline">¿Tenés una historia,<br>una pregunta o<br>una colaboración?</h1>
+      <p>Estamos abiertos a escuchar a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label class="form-label" data-i18n="contacto.nombre">Nombre</label>
+        <input class="form-input" type="text" name="nombre" placeholder="Tu nombre" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="contacto.email">Email</label>
+        <input class="form-input" type="email" name="email" placeholder="tu@email.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="contacto.asunto">Asunto</label>
+        <input class="form-input" type="text" name="asunto" placeholder="¿De qué se trata?" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="contacto.mensaje">Mensaje</label>
+        <textarea class="form-input" name="mensaje" rows="5" placeholder="Tu mensaje..." required></textarea>
+      </div>
+      <button class="btn-filled" type="submit" data-i18n="contacto.enviar">Enviar →</button>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .contacto-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .contact-intro {
+    padding: 40px;
+    border-right: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .intro-kicker {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+  .intro-headline {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .contact-intro p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+    font-family: var(--font-serif);
+  }
+  .contact-form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+  .form-input {
+    border: 1px solid var(--gray-light);
+    padding: 10px 12px;
+    font-size: 13px;
+    font-family: var(--font-serif);
+    outline: none;
+    transition: border-color 0.15s;
+    background: var(--white);
+  }
+  .form-input:focus { border-color: var(--black); }
+  textarea.form-input { resize: vertical; }
+  .btn-filled {
+    padding: 11px 28px;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--black);
+    align-self: flex-start;
+  }
+  .btn-filled:hover { background: #333; }
+  @media (max-width: 700px) {
+    .contacto-body { grid-template-columns: 1fr; }
+    .contact-intro { border-right: none; border-bottom: 1px solid var(--gray-light); }
+  }
+</style>
