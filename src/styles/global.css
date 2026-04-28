@@ -27,5 +27,6 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--gray-mid);
   padding: 20px 40px 14px;
-  border-bottom: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--gray-rule);
+  background: var(--white);
 }

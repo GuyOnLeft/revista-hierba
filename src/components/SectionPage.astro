@@ -13,6 +13,7 @@ interface Props {
 }
 const { section, description, articles } = Astro.props;
 const [featured, ...rest] = articles;
+if (!featured) throw new Error(`SectionPage: "${section}" received an empty articles array`);
 import Layout from './Layout.astro';
 ---
 <Layout title={section} description={description}>
