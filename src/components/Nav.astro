@@ -1,14 +1,23 @@
 ---
+const pathname = Astro.url.pathname;
 ---
 <nav>
-  <div class="nav-links">
-    <a href="#" data-i18n="nav.editorial">Editorial</a>
-    <a href="#" data-i18n="nav.sections">Secciones</a>
-    <a href="#" data-i18n="nav.about">Nosotros</a>
-    <a href="#" data-i18n="nav.contact">Contacto</a>
-  </div>
   <div class="nav-logo">
-    <img src="/hierba-logo.png" alt="Revista Hierba" />
+    <a href="/"><img src="/hierba-mark.png" alt="Revista Hierba" /></a>
+  </div>
+  <div class="nav-links">
+    <a href="/editorial"
+       class:list={[{ active: pathname.startsWith('/editorial') }]}
+       data-i18n="nav.editorial">Editorial</a>
+    <a href="/secciones"
+       class:list={[{ active: pathname.startsWith('/secciones') }]}
+       data-i18n="nav.sections">Secciones</a>
+    <a href="/nosotros"
+       class:list={[{ active: pathname.startsWith('/nosotros') }]}
+       data-i18n="nav.about">Nosotros</a>
+    <a href="/contacto"
+       class:list={[{ active: pathname.startsWith('/contacto') }]}
+       data-i18n="nav.contact">Contacto</a>
   </div>
   <div class="lang-toggle">
     <span data-lang="es" class="active">ES</span>
@@ -20,15 +29,18 @@
 <style>
   nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 32px;
+    padding: 0 40px 0 0;
     border-bottom: 2px solid var(--black);
     background: var(--white);
     position: sticky;
     top: 0;
     z-index: 100;
-    min-height: 64px;
+    min-height: 56px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .nav-links {
     display: flex;
@@ -39,16 +51,22 @@
     text-transform: uppercase;
   }
   .nav-links a:hover { border-bottom: 1px solid var(--black); }
+  .nav-links a.active { border-bottom: 1px solid var(--black); }
+  .nav-logo { margin-left: 0; }
+  .nav-logo a { display: block; }
   .nav-logo img {
-    height: 175px;
+    height: 74px;
     width: auto;
-    margin: -52px 0;
+    margin: -16px 0;
     display: block;
+    border: none;
+    outline: none;
   }
   .lang-toggle {
     display: flex;
     align-items: center;
     gap: 4px;
+    margin-left: auto;
     font-family: var(--font-sans);
     font-size: 11px;
     letter-spacing: 2px;
@@ -57,4 +75,9 @@
   .lang-toggle [data-lang] { cursor: pointer; padding: 2px 8px; }
   .lang-toggle [data-lang].active { background: var(--black); color: var(--white); }
   .lang-toggle .sep { color: #ccc; }
+  @media (max-width: 600px) {
+    nav { gap: 12px; padding: 8px 16px; }
+    .nav-links { display: none; }
+    .nav-logo img { height: 52px; margin: -8px 0; }
+  }
 </style>
