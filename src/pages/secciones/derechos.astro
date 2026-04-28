@@ -1,0 +1,31 @@
+---
+import SectionPage from '../../components/SectionPage.astro';
+const articles = [
+  {
+    tag: 'Derechos Humanos',
+    title: 'Criminalización y acceso: el doble estándar del sistema de salud',
+    excerpt: 'Cómo el marco legal penaliza el consumo mientras el sistema médico lo ignora como opción terapéutica.',
+    byline: 'Por la Redacción · 13 Abr 2026',
+    img: 'https://picsum.photos/seed/rights42/800/450',
+  },
+  {
+    tag: 'Derechos Humanos',
+    title: 'Mujeres y cannabis: invisibilizadas por la investigación',
+    excerpt: 'La mayoría de los ensayos clínicos excluyen a mujeres. Las consecuencias son concretas y urgentes.',
+    byline: 'Por la Redacción · 7 Abr 2026',
+    img: 'https://picsum.photos/seed/rights77/400/267',
+  },
+  {
+    tag: 'Derechos Humanos',
+    title: 'Pueblos originarios y conocimiento botánico: una deuda pendiente',
+    excerpt: 'La apropiación de saberes tradicionales sin reconocimiento ni compensación para las comunidades de origen.',
+    byline: 'Por la Redacción · 2 Abr 2026',
+    img: 'https://picsum.photos/seed/rights11/400/267',
+  },
+];
+---
+<SectionPage
+  section="Derechos Humanos"
+  description="El acceso a la salud, la criminalización de usuarios, y la lucha por los derechos del paciente."
+  articles={articles}
+/>

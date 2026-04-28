@@ -1,0 +1,31 @@
+---
+import SectionPage from '../../components/SectionPage.astro';
+const articles = [
+  {
+    tag: 'Ciencia',
+    title: 'Nuevos estudios sobre cannabinoides y dolor crónico',
+    excerpt: 'Un análisis de los ensayos clínicos más recientes y sus implicancias para el tratamiento del dolor.',
+    byline: 'Por la Redacción · 14 Abr 2026',
+    img: 'https://picsum.photos/seed/lab77/800/450',
+  },
+  {
+    tag: 'Ciencia',
+    title: 'El sistema endocannabinoide: 30 años de investigación',
+    excerpt: 'Desde su descubrimiento en 1992 hasta hoy: lo que sabemos y lo que queda por entender.',
+    byline: 'Por la Redacción · 9 Abr 2026',
+    img: 'https://picsum.photos/seed/lab33/400/267',
+  },
+  {
+    tag: 'Ciencia',
+    title: 'CBD vs THC: guía para no perderse',
+    excerpt: 'Las diferencias farmacológicas, los usos clínicos y el estado de la evidencia para cada compuesto.',
+    byline: 'Por la Redacción · 4 Abr 2026',
+    img: 'https://picsum.photos/seed/lab11/400/267',
+  },
+];
+---
+<SectionPage
+  section="Ciencia"
+  description="Investigaciones, ensayos clínicos, y los últimos hallazgos en fitoterapia y farmacología."
+  articles={articles}
+/>
