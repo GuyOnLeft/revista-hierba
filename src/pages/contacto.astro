@@ -5,9 +5,9 @@ import Layout from '../components/Layout.astro';
   <div class="section-label" data-i18n="contacto.label">Contacto</div>
   <div class="contacto-body">
     <div class="contact-intro">
-      <div class="intro-kicker" data-i18n="contacto.escribinos">Escribinos</div>
-      <h1 class="intro-headline">¿Tenés una historia,<br>una pregunta o<br>una colaboración?</h1>
-      <p>Estamos abiertos a escuchar a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
+      <div class="intro-cta" data-i18n="contacto.escribinos">Escribinos</div>
+      <p class="intro-invite" data-i18n="contacto.invite">Contanos tu historia.</p>
+      <p class="intro-body">Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
     </div>
     <div class="contact-form">
       <div class="form-group">
@@ -43,26 +43,33 @@ import Layout from '../components/Layout.astro';
     border-right: 1px solid var(--gray-light);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    gap: 20px;
   }
-  .intro-kicker {
+  .intro-cta {
     font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gray-mid);
-  }
-  .intro-headline {
-    font-size: 28px;
+    font-size: clamp(52px, 10vw, 88px);
     font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: var(--black);
   }
-  .contact-intro p {
+  .intro-invite {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0;
+    border-left: 3px solid var(--black);
+    padding-left: 14px;
+  }
+  .intro-body {
     font-size: 13px;
     line-height: 1.8;
     color: #555;
     font-family: var(--font-serif);
+    margin: 0;
   }
   .contact-form {
     padding: 40px;
