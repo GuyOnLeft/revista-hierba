@@ -1,0 +1,143 @@
+---
+interface Article {
+  tag: string;
+  title: string;
+  excerpt: string;
+  byline: string;
+  img: string;
+}
+interface Props {
+  section: string;
+  description: string;
+  articles: Article[];
+}
+const { section, description, articles } = Astro.props;
+const [featured, ...rest] = articles;
+import Layout from './Layout.astro';
+---
+<Layout title={section} description={description}>
+  <div class="section-hero">
+    <div class="section-hero-kicker" data-i18n="nav.sections">Secciones</div>
+    <h1 class="section-hero-title">{section}</h1>
+    <p class="section-hero-desc">{description}</p>
+  </div>
+  <div class="section-label" data-i18n="secciones.articulos">Artículos</div>
+  <div class="article-grid">
+    <div class="article-featured">
+      <div class="img-wrapper">
+        <img src={featured.img} alt={featured.title} />
+      </div>
+      <span class="tag">{featured.tag}</span>
+      <h2 class="article-title">{featured.title}</h2>
+      <p class="article-excerpt">{featured.excerpt}</p>
+      <p class="article-byline">{featured.byline}</p>
+    </div>
+    <div class="article-stack">
+      {rest.map(article => (
+        <div class="article-small">
+          <div class="img-wrapper">
+            <img src={article.img} alt={article.title} />
+          </div>
+          <span class="tag">{article.tag}</span>
+          <h3 class="article-title-sm">{article.title}</h3>
+          <p class="article-byline">{article.byline}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .section-hero {
+    padding: 40px 40px 36px;
+    border-bottom: 2px solid var(--black);
+  }
+  .section-hero-kicker {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 10px;
+  }
+  .section-hero-title {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .section-hero-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.65;
+    max-width: 540px;
+    font-family: var(--font-serif);
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: var(--white);
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .article-featured {
+    padding: 32px;
+    border-right: 1px solid var(--gray-light);
+  }
+  .img-wrapper {
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+    margin-bottom: 18px;
+  }
+  .article-featured .img-wrapper { aspect-ratio: 16 / 9; }
+  .article-small .img-wrapper { aspect-ratio: 3 / 2; margin-bottom: 12px; }
+  .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+  .article-stack { display: flex; flex-direction: column; }
+  .article-small {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--gray-light);
+    flex: 1;
+  }
+  .article-small:last-child { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 2px 8px;
+    margin-bottom: 9px;
+  }
+  .article-title {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .article-title-sm {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .article-excerpt {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #444;
+    margin: 8px 0 12px;
+    font-family: var(--font-serif);
+  }
+  .article-byline {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 700px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-featured { border-right: none; border-bottom: 1px solid var(--gray-light); }
+  }
+</style>
