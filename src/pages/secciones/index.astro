@@ -1,0 +1,87 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+<Layout title="Secciones" description="Las secciones de Revista Hierba: Cannabis, Plantas Medicinales, Ciencia y Derechos Humanos.">
+  <div class="section-label" data-i18n="secciones.label">Nuestras Secciones</div>
+  <div class="sections-grid">
+    <div class="section-card">
+      <h3>Cannabis</h3>
+      <p>Políticas, cultura, legislación y el debate sobre regulación en América Latina y el mundo.</p>
+      <a href="/secciones/cannabis" class="section-link">Explorar →</a>
+    </div>
+    <div class="section-card">
+      <h3>Plantas Medicinales</h3>
+      <p>Etnobotánica, medicina tradicional, y la ciencia detrás de las plantas que curan.</p>
+      <a href="/secciones/plantas" class="section-link">Explorar →</a>
+    </div>
+    <div class="section-card">
+      <h3>Ciencia</h3>
+      <p>Investigaciones, ensayos clínicos, y los últimos hallazgos en fitoterapia y farmacología.</p>
+      <a href="/secciones/ciencia" class="section-link">Explorar →</a>
+    </div>
+    <div class="section-card">
+      <h3>Derechos Humanos</h3>
+      <p>El acceso a la salud, la criminalización de usuarios, y la lucha por los derechos del paciente.</p>
+      <a href="/secciones/derechos" class="section-link">Explorar →</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    padding: 20px 40px 14px;
+    border-bottom: 1px solid #eee;
+  }
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--white);
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .section-card {
+    padding: 28px 24px;
+    border-right: 1px solid var(--gray-light);
+  }
+  .section-card:last-child { border-right: none; }
+  .section-card h3 {
+    font-size: 15px;
+    font-weight: 900;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 8px;
+  }
+  .section-card p {
+    font-size: 12px;
+    line-height: 1.65;
+    color: #555;
+    margin-bottom: 14px;
+    font-family: var(--font-serif);
+  }
+  .section-link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1px;
+    display: inline-block;
+  }
+  @media (max-width: 700px) {
+    .sections-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-card:nth-child(2) { border-right: none; }
+    .section-card:nth-child(3) { border-right: 1px solid var(--gray-light); }
+  }
+  @media (max-width: 400px) {
+    .sections-grid { grid-template-columns: 1fr; }
+    .section-card { border-right: none; border-bottom: 1px solid var(--gray-light); }
+  }
+</style>
