@@ -1,0 +1,120 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Editorial" description="Carta a los lectores de Revista Hierba.">
+  <div class="section-label" data-i18n="editorial.label">Editorial</div>
+  <div class="editorial-layout">
+    <div class="editorial-meta">
+      <div class="meta-item">
+        <div class="meta-label" data-i18n="editorial.numero">Número</div>
+        <div class="meta-value meta-value--big">001</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label" data-i18n="editorial.fecha">Fecha</div>
+        <div class="meta-value">Abril 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label" data-i18n="editorial.edicion">Edición</div>
+        <div class="meta-value">Fundación</div>
+      </div>
+    </div>
+    <div class="editorial-body">
+      <h1 class="editorial-title" data-i18n="editorial.title">Carta a los Lectores</h1>
+      <div class="editorial-rule"></div>
+      <p class="lead drop-cap">Revista Hierba nace de una convicción simple: hablar de cannabis es hablar de derechos humanos.</p>
+      <p>No existe otra planta que concentre tantas batallas simultáneas — la batalla por el acceso a la salud, por el derecho a decidir sobre el propio cuerpo, por la dignidad de quienes han sido criminalizados por buscar alivio.</p>
+      <div class="editorial-rule"></div>
+      <p>Vamos a publicar periodismo independiente, riguroso y comprometido con las comunidades que más lo necesitan: pacientes, investigadores, activistas, pueblos originarios cuyos conocimientos botánicos han sido ignorados o apropiados sin reconocimiento.</p>
+      <p>Creemos en la ciencia. Creemos en los saberes tradicionales. Creemos que ambas tradiciones tienen más para enseñarse mutuamente de lo que los sistemas actuales permiten.</p>
+      <div class="editorial-rule"></div>
+      <p>Bienvenidos a Revista Hierba.</p>
+      <p class="editorial-signature" data-i18n="editorial.firma">— La Redacción</p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .section-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    padding: 20px 40px 14px;
+    border-bottom: 1px solid #eee;
+  }
+  .editorial-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .editorial-meta {
+    padding: 36px 28px;
+    border-right: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .meta-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 4px;
+  }
+  .meta-value {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .meta-value--big {
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .editorial-body {
+    padding: 36px 48px;
+  }
+  .editorial-title {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  .editorial-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--black);
+    margin: 20px 0;
+  }
+  .editorial-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 16px;
+    font-family: var(--font-serif);
+  }
+  .lead { font-size: 17px; font-weight: 500; color: var(--black); }
+  .drop-cap::first-letter {
+    float: left;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 0.82;
+    margin-right: 10px;
+    margin-top: 6px;
+  }
+  .editorial-signature {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-top: 12px;
+  }
+  @media (max-width: 600px) {
+    .editorial-layout { grid-template-columns: 1fr; }
+    .editorial-meta { border-right: none; border-bottom: 1px solid var(--gray-light); }
+    .editorial-body { padding: 24px 20px; }
+  }
+</style>
