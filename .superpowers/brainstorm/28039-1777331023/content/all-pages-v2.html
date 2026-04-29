@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Pages — Faithful Style Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; background: #ddd; color: #111; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── SHARED CHROME ── */
+  .frame { background: #fff; border: 2px solid #111; box-shadow: 6px 6px 0 #888; margin: 32px auto; max-width: 1000px; }
+  .page-label-banner {
+    background: #333; color: #fff; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; padding: 7px 20px; text-align: center;
+  }
+
+  nav {
+    display: flex; align-items: flex-end; gap: 32px;
+    padding: 8px 40px 8px 0; border-bottom: 2px solid #111;
+    background: #fff; min-height: 56px; padding-top: 8px;
+  }
+  .nav-logo img { height: 52px; width: auto; margin: -8px 0; display: block; }
+  .nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links a { color: #111; }
+  .nav-links a.active { border-bottom: 1px solid #111; }
+  .lang-toggle { display: flex; align-items: center; gap: 4px; margin-left: auto; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+  .lang-active { background: #111; color: #fff; padding: 2px 8px; }
+  .lang-inactive { padding: 2px 8px; color: #888; }
+  .lang-sep { color: #ccc; }
+
+  .section-label {
+    font-family: 'Poppins', sans-serif; font-size: 10px; letter-spacing: 4px;
+    text-transform: uppercase; color: #888;
+    padding: 20px 40px 14px; border-bottom: 1px solid #eee; background: #fff;
+  }
+
+  footer {
+    background: #fff; border-top: 2px solid #111; padding: 28px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer img { height: 80px; width: auto; margin: -24px 0; }
+  .footer-links { display: flex; gap: 24px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #888; }
+  .footer-copy { font-size: 10px; color: #bbb; letter-spacing: 1px; }
+
+  /* ── EDITORIAL PAGE ── */
+  .editorial-banner {
+    padding: 48px 40px 40px; border-bottom: 2px solid #111; background: #fff;
+    display: grid; grid-template-columns: 160px 1fr; gap: 0;
+  }
+  .ed-meta {
+    border-right: 1px solid #e0e0e0; padding-right: 32px;
+    display: flex; flex-direction: column; gap: 24px; padding-top: 4px;
+  }
+  .ed-meta-item {}
+  .ed-meta-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .ed-meta-val { font-size: 13px; font-weight: 700; }
+  .ed-meta-val.big { font-size: 28px; font-weight: 900; }
+  .ed-content { padding-left: 40px; }
+  .ed-title { font-size: 36px; font-weight: 900; line-height: 1.05; letter-spacing: -1px; margin-bottom: 24px; }
+  .ed-rule { width: 40px; height: 2px; background: #111; margin: 20px 0; }
+  .ed-body p { font-size: 14px; line-height: 1.8; color: #333; margin-bottom: 16px; }
+  .ed-body p.lead { font-size: 16px; font-weight: 500; }
+  .ed-body p.lead::first-letter { font-size: 60px; font-weight: 900; float: left; line-height: 0.82; margin-right: 8px; margin-top: 6px; }
+  .ed-sig { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-top: 8px; }
+
+  /* ── SECCIONES INDEX ── */
+  .sec-grid { display: grid; grid-template-columns: repeat(4,1fr); background: #fff; border-bottom: 2px solid #111; }
+  .sec-card { padding: 28px 24px; border-right: 1px solid #e0e0e0; }
+  .sec-card:last-child { border-right: none; }
+  .sec-card h3 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; border-bottom: 2px solid #111; padding-bottom: 8px; }
+  .sec-card p { font-size: 12px; line-height: 1.65; color: #555; margin-bottom: 14px; }
+  .sec-link { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #111; padding-bottom: 1px; cursor: pointer; }
+
+  /* ── SECTION SUB-PAGE ── */
+  .section-hero { padding: 36px 40px 32px; border-bottom: 2px solid #111; background: #fff; }
+  .section-hero-kicker { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 10px; }
+  .section-hero-title { font-size: 40px; font-weight: 900; letter-spacing: -1px; line-height: 1.05; margin-bottom: 10px; }
+  .section-hero-desc { font-size: 13px; color: #555; line-height: 1.65; max-width: 520px; }
+
+  .articles-grid { display: grid; grid-template-columns: 2fr 1fr; border-bottom: 2px solid #111; }
+  .art-featured { padding: 32px; border-right: 1px solid #e0e0e0; }
+  .art-stack { display: flex; flex-direction: column; }
+  .art-small { padding: 22px 24px; border-bottom: 1px solid #e0e0e0; flex: 1; }
+  .art-small:last-child { border-bottom: none; }
+  .img-wrapper { overflow: hidden; border: 1px solid #e0e0e0; margin-bottom: 16px; }
+  .art-featured .img-wrapper { aspect-ratio: 16/9; }
+  .art-small .img-wrapper { aspect-ratio: 3/2; margin-bottom: 12px; }
+  .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+  .art-tag { display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #fff; background: #111; padding: 2px 8px; margin-bottom: 9px; }
+  .art-title-lg { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  .art-title-sm { font-size: 15px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .art-excerpt { font-size: 13px; line-height: 1.65; color: #444; margin: 8px 0 12px; }
+  .art-byline { font-size: 10px; color: #999; letter-spacing: 1px; }
+
+  /* ── NOSOTROS ── */
+  .nosotros-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .nos-left { padding: 40px; border-right: 1px solid #e0e0e0; }
+  .nos-right { padding: 40px; }
+  .nos-kicker { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 16px; }
+  .nos-headline { font-size: 32px; font-weight: 900; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 24px; }
+  .nos-body p { font-size: 13px; line-height: 1.8; color: #333; margin-bottom: 16px; }
+  .nos-rule { width: 40px; height: 2px; background: #111; margin: 24px 0; }
+  .nos-pillars { display: flex; flex-direction: column; gap: 20px; }
+  .pillar { border-top: 1px solid #e0e0e0; padding-top: 16px; }
+  .pillar-num { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .pillar-name { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .pillar-desc { font-size: 12px; color: #555; line-height: 1.6; margin-top: 4px; }
+
+  /* ── CONTACTO ── */
+  .contacto-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .contact-left { padding: 40px; border-right: 1px solid #e0e0e0; }
+  .contact-left .nos-kicker { margin-bottom: 16px; }
+  .contact-headline { font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
+  .contact-left p { font-size: 13px; line-height: 1.8; color: #555; }
+  .contact-right { padding: 40px; display: flex; flex-direction: column; gap: 18px; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #888; }
+  .form-input {
+    border: 1px solid #ccc; padding: 10px 12px;
+    font-size: 13px; font-family: 'Poppins', sans-serif; outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-input:focus { border-color: #111; }
+  textarea.form-input { resize: vertical; min-height: 90px; }
+  .form-submit {
+    padding: 12px 32px; background: #111; color: #fff; border: 1px solid #111;
+    font-family: 'Poppins', sans-serif; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; cursor: pointer; align-self: flex-start; margin-top: 4px;
+  }
+  .form-submit:hover { background: #333; }
+
+  /* page divider label between pages */
+  .page-divider { text-align: center; padding: 24px; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #999; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     1. EDITORIAL
+═══════════════════════════════════════ -->
+<div class="page-divider">Page 1 of 6 — /editorial</div>
+<div class="frame">
+  <nav>
+    <div class="nav-logo"><img src="https://enchanting-flan-5c547a.netlify.app/hierba-mark.png" alt="h" /></div>
+    <div class="nav-links">
+      <a href="#" class="active">Editorial</a>
+      <a href="#">Secciones</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-active">ES</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-inactive">EN</span>
+    </div>
+  </nav>
+
+  <div class="editorial-banner">
+    <div class="ed-meta">
+      <div class="ed-meta-item">
+        <div class="ed-meta-label">Número</div>
+        <div class="ed-meta-val big">001</div>
+      </div>
+      <div class="ed-meta-item">
+        <div class="ed-meta-label">Fecha</div>
+        <div class="ed-meta-val">Abril 2026</div>
+      </div>
+      <div class="ed-meta-item">
+        <div class="ed-meta-label">Edición</div>
+        <div class="ed-meta-val">Fundación</div>
+      </div>
+    </div>
+    <div class="ed-content">
+      <div class="ed-title">Carta a<br>los Lectores</div>
+      <div class="ed-body">
+        <p class="lead">Revista Hierba nace de una convicción simple: hablar de cannabis es hablar de derechos humanos.</p>
+        <div class="ed-rule"></div>
+        <p>No existe otra planta que concentre tantas batallas simultáneas — la batalla por el acceso a la salud, por el derecho a decidir sobre el propio cuerpo, por la dignidad de quienes han sido criminalizados por buscar alivio.</p>
+        <p>Vamos a publicar periodismo independiente, riguroso y comprometido con las comunidades que más lo necesitan: pacientes, investigadores, activistas, pueblos originarios cuyos conocimientos botánicos han sido ignorados.</p>
+        <div class="ed-rule"></div>
+        <p>Creemos en la ciencia. Creemos en los saberes tradicionales. Bienvenidos a Revista Hierba.</p>
+        <p class="ed-sig">— La Redacción</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://enchanting-flan-5c547a.netlify.app/hierba-logo.png" alt="Revista Hierba" />
+    <div class="footer-links"><span>Cannabis</span><span>Plantas</span><span>Ciencia</span><span>Derechos</span><span>Nosotros</span></div>
+    <div class="footer-copy">© 2026 Revista Hierba</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════
+     2. SECCIONES INDEX
+═══════════════════════════════════════ -->
+<div class="page-divider">Page 2 of 6 — /secciones</div>
+<div class="frame">
+  <nav>
+    <div class="nav-logo"><img src="https://enchanting-flan-5c547a.netlify.app/hierba-mark.png" alt="h" /></div>
+    <div class="nav-links">
+      <a href="#">Editorial</a>
+      <a href="#" class="active">Secciones</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-active">ES</span><span class="lang-sep">/</span><span class="lang-inactive">EN</span>
+    </div>
+  </nav>
+
+  <div class="section-label">Nuestras Secciones</div>
+  <div class="sec-grid">
+    <div class="sec-card"><h3>Cannabis</h3><p>Políticas, cultura, legislación y el debate sobre regulación en América Latina y el mundo.</p><span class="sec-link">Explorar →</span></div>
+    <div class="sec-card"><h3>Plantas Medicinales</h3><p>Etnobotánica, medicina tradicional, y la ciencia detrás de las plantas que curan.</p><span class="sec-link">Explorar →</span></div>
+    <div class="sec-card"><h3>Ciencia</h3><p>Investigaciones, ensayos clínicos, y los últimos hallazgos en fitoterapia y farmacología.</p><span class="sec-link">Explorar →</span></div>
+    <div class="sec-card"><h3>Derechos Humanos</h3><p>El acceso a la salud, la criminalización de usuarios, y la lucha por los derechos del paciente.</p><span class="sec-link">Explorar →</span></div>
+  </div>
+
+  <footer>
+    <img src="https://enchanting-flan-5c547a.netlify.app/hierba-logo.png" alt="Revista Hierba" />
+    <div class="footer-links"><span>Cannabis</span><span>Plantas</span><span>Ciencia</span><span>Derechos</span><span>Nosotros</span></div>
+    <div class="footer-copy">© 2026 Revista Hierba</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════
+     3. SECTION SUB-PAGE (Cannabis example)
+═══════════════════════════════════════ -->
+<div class="page-divider">Page 3–6 of 6 — /secciones/cannabis (same template × 4)</div>
+<div class="frame">
+  <nav>
+    <div class="nav-logo"><img src="https://enchanting-flan-5c547a.netlify.app/hierba-mark.png" alt="h" /></div>
+    <div class="nav-links">
+      <a href="#">Editorial</a>
+      <a href="#" class="active">Secciones</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-active">ES</span><span class="lang-sep">/</span><span class="lang-inactive">EN</span>
+    </div>
+  </nav>
+
+  <div class="section-hero">
+    <div class="section-hero-kicker">Secciones</div>
+    <div class="section-hero-title">Cannabis</div>
+    <div class="section-hero-desc">Políticas, cultura, legislación y el debate sobre regulación en América Latina y el mundo.</div>
+  </div>
+
+  <div class="section-label">Artículos</div>
+  <div class="articles-grid">
+    <div class="art-featured">
+      <div class="img-wrapper"><img src="https://picsum.photos/seed/herb42/800/450" alt="" /></div>
+      <span class="art-tag">Cannabis</span>
+      <h2 class="art-title-lg">El cannabis medicinal y la reforma pendiente en América Latina</h2>
+      <p class="art-excerpt">Una mirada a los avances legislativos en Argentina, Colombia y Uruguay, y los obstáculos que enfrentan los pacientes.</p>
+      <p class="art-byline">Por la Redacción · 15 Abr 2026</p>
+    </div>
+    <div class="art-stack">
+      <div class="art-small">
+        <div class="img-wrapper"><img src="https://picsum.photos/seed/herb99/400/267" alt="" /></div>
+        <span class="art-tag">Cannabis</span>
+        <h3 class="art-title-sm">Regulación y mercado: qué aprender de Uruguay</h3>
+        <p class="art-byline">10 Abr 2026</p>
+      </div>
+      <div class="art-small">
+        <div class="img-wrapper"><img src="https://picsum.photos/seed/herb55/400/267" alt="" /></div>
+        <span class="art-tag">Cannabis</span>
+        <h3 class="art-title-sm">Cultivo doméstico: derechos y límites legales</h3>
+        <p class="art-byline">5 Abr 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://enchanting-flan-5c547a.netlify.app/hierba-logo.png" alt="Revista Hierba" />
+    <div class="footer-links"><span>Cannabis</span><span>Plantas</span><span>Ciencia</span><span>Derechos</span><span>Nosotros</span></div>
+    <div class="footer-copy">© 2026 Revista Hierba</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════
+     4. NOSOTROS
+═══════════════════════════════════════ -->
+<div class="page-divider">Page 7 of 8 — /nosotros</div>
+<div class="frame">
+  <nav>
+    <div class="nav-logo"><img src="https://enchanting-flan-5c547a.netlify.app/hierba-mark.png" alt="h" /></div>
+    <div class="nav-links">
+      <a href="#">Editorial</a>
+      <a href="#">Secciones</a>
+      <a href="#" class="active">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-active">ES</span><span class="lang-sep">/</span><span class="lang-inactive">EN</span>
+    </div>
+  </nav>
+
+  <div class="section-label">Nosotros</div>
+  <div class="nosotros-body">
+    <div class="nos-left">
+      <div class="nos-kicker">Quiénes somos</div>
+      <div class="nos-headline">Periodismo<br>independiente<br>desde 2026</div>
+      <div class="nos-body">
+        <p>Revista Hierba es una publicación bilingüe dedicada al periodismo independiente sobre cannabis, plantas medicinales, ciencia y derechos humanos.</p>
+        <p>Nacemos convencidos de que el acceso a la información es un derecho, no un privilegio. Trabajamos desde América Latina con una perspectiva global, priorizando las voces de comunidades históricamente ignoradas.</p>
+      </div>
+    </div>
+    <div class="nos-right">
+      <div class="nos-kicker">Nuestros principios</div>
+      <div class="nos-pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-name">Independencia editorial</div>
+          <div class="pillar-desc">Sin financiamiento de la industria, sin línea editorial impuesta por anunciantes.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-name">Rigor científico</div>
+          <div class="pillar-desc">Citamos fuentes. Distinguimos evidencia de opinión. No publicamos desinformación.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-name">Derechos humanos</div>
+          <div class="pillar-desc">El eje de toda nuestra cobertura es la dignidad de las personas, no el mercado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://enchanting-flan-5c547a.netlify.app/hierba-logo.png" alt="Revista Hierba" />
+    <div class="footer-links"><span>Cannabis</span><span>Plantas</span><span>Ciencia</span><span>Derechos</span><span>Nosotros</span></div>
+    <div class="footer-copy">© 2026 Revista Hierba</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════
+     5. CONTACTO
+═══════════════════════════════════════ -->
+<div class="page-divider">Page 8 of 8 — /contacto</div>
+<div class="frame">
+  <nav>
+    <div class="nav-logo"><img src="https://enchanting-flan-5c547a.netlify.app/hierba-mark.png" alt="h" /></div>
+    <div class="nav-links">
+      <a href="#">Editorial</a>
+      <a href="#">Secciones</a>
+      <a href="#">Nosotros</a>
+      <a href="#" class="active">Contacto</a>
+    </div>
+    <div class="lang-toggle">
+      <span class="lang-active">ES</span><span class="lang-sep">/</span><span class="lang-inactive">EN</span>
+    </div>
+  </nav>
+
+  <div class="section-label">Contacto</div>
+  <div class="contacto-body">
+    <div class="contact-left">
+      <div class="nos-kicker">Escribinos</div>
+      <div class="contact-headline">¿Tenés una historia,<br>una pregunta o<br>una colaboración?</div>
+      <p>Estamos abiertos a escuchar a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
+    </div>
+    <div class="contact-right">
+      <div class="form-group">
+        <div class="form-label">Nombre</div>
+        <input class="form-input" type="text" placeholder="Tu nombre" />
+      </div>
+      <div class="form-group">
+        <div class="form-label">Email</div>
+        <input class="form-input" type="email" placeholder="tu@email.com" />
+      </div>
+      <div class="form-group">
+        <div class="form-label">Asunto</div>
+        <input class="form-input" type="text" placeholder="¿De qué se trata?" />
+      </div>
+      <div class="form-group">
+        <div class="form-label">Mensaje</div>
+        <textarea class="form-input" placeholder="Tu mensaje..."></textarea>
+      </div>
+      <button class="form-submit">Enviar →</button>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://enchanting-flan-5c547a.netlify.app/hierba-logo.png" alt="Revista Hierba" />
+    <div class="footer-links"><span>Cannabis</span><span>Plantas</span><span>Ciencia</span><span>Derechos</span><span>Nosotros</span></div>
+    <div class="footer-copy">© 2026 Revista Hierba</div>
+  </footer>
+</div>
+
+</body>
+</html>
