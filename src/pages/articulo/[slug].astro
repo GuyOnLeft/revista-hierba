@@ -8,28 +8,49 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
-const { Content } = await article.render();
-const { title, author, date, section, tag, image, excerpt, photo_credit } = article.data;
-const dateStr = new Date(date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+const { Content: ContentES } = await article.render();
+
+const allEN = await getCollection('articles-en');
+const articleEN = allEN.find(a => a.slug === article.slug);
+const ContentEN = articleEN ? (await articleEN.render()).Content : null;
+
+const { title, author, date, section, tag, image, excerpt, photo_credit, title_en, excerpt_en, tag_en } = article.data;
+const esDate = new Date(date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+const enDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 ---
 <Layout title={title} description={excerpt}>
   <div class="article-page">
     <div class="article-meta-top">
       <a class="back-link" href={`/secciones/${section}`}>← {section.charAt(0).toUpperCase() + section.slice(1)}</a>
-      <span class="tag-label">{tag}</span>
+      <span class="tag-label es-only">{tag}</span>
+      {tag_en && <span class="tag-label en-only">{tag_en}</span>}
     </div>
-    <h1 class="article-headline">{title}</h1>
-    <p class="article-excerpt-lead">{excerpt}</p>
-    <div class="article-byline">Por {author} · {dateStr}</div>
+    <h1 class="article-headline">
+      <span class="es-only">{title}</span>
+      {title_en && <span class="en-only">{title_en}</span>}
+    </h1>
+    <p class="article-excerpt-lead">
+      <span class="es-only">{excerpt}</span>
+      {excerpt_en && <span class="en-only">{excerpt_en}</span>}
+    </p>
+    <div class="article-byline">
+      <span class="es-only">Por {author} · {esDate}</span>
+      <span class="en-only">By {author} · {enDate}</span>
+    </div>
     {image && (
       <figure class="article-hero-figure">
         <img class="article-hero-img" src={image} alt={title} />
         {photo_credit && <figcaption class="photo-credit">{photo_credit} · Wikimedia Commons</figcaption>}
       </figure>
     )}
-    <div class="article-body">
-      <Content />
+    <div class="article-body es-only">
+      <ContentES />
     </div>
+    {ContentEN && (
+      <div class="article-body en-only">
+        <ContentEN />
+      </div>
+    )}
   </div>
 </Layout>
 
@@ -112,14 +133,16 @@ const dateStr = new Date(date).toLocaleDateString('es-AR', { day: 'numeric', mon
     line-height: 1.8;
     color: #222;
   }
-  .article-body h2 {
+  .article-body :global(h2) {
     font-size: 20px;
     font-weight: bold;
     margin: 36px 0 12px;
     border-top: 1px solid var(--gray-light);
     padding-top: 24px;
   }
-  .article-body p { margin-bottom: 20px; }
-  .article-body em { font-style: italic; }
-  .article-body strong { font-weight: bold; }
+  .article-body :global(p) { margin-bottom: 20px; }
+  .article-body :global(em) { font-style: italic; }
+  .article-body :global(strong) { font-weight: bold; }
+  .article-body :global(ul) { padding-left: 20px; margin-bottom: 20px; }
+  .article-body :global(li) { margin-bottom: 8px; }
 </style>

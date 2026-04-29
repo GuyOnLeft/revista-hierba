@@ -7,6 +7,9 @@ excerpt: "Una historia de diez mil años de convivencia, saberes y resistencias.
 image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Cannabis_sativa_1542.jpg"
 photo_credit: "Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"
 tag: "Historia"
+title_en: "Cannabis: The Plant That Found Us First"
+excerpt_en: "A ten-thousand-year history of coexistence, knowledge, and resistance. Cannabis was not simply used — it was also teacher, guide, companion."
+tag_en: "History"
 ---
 
 La cannabis ha sido llamada de mil maneras: "la mama santa", "el néctar de los dioses", "la planta del rey Salomón". Detrás de esos nombres late algo más que metáforas: un reconocimiento milenario al vínculo íntimo que la humanidad sostiene con esta planta. Una relación tejida en lo cotidiano, lo ritual, lo medicinal y lo espiritual, que resiste a los intentos de olvido y estigmatización del último siglo.

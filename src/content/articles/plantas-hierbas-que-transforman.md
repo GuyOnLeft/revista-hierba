@@ -7,6 +7,9 @@ excerpt: "Manzanilla, jengibre, menta, lavanda y romero: cinco plantas con siglo
 image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Chamomile_or_camomile_%28in_Spanish_Manzanilla_%29.JPG"
 photo_credit: "David Adam Kess — CC BY-SA 4.0"
 tag: "Salud"
+title_en: "Herbs That Transform: Natural Medicine for Everyone"
+excerpt_en: "Chamomile, ginger, peppermint, lavender, and rosemary: five plants with centuries of traditional use and modern scientific support for accessible healthcare."
+tag_en: "Health"
 ---
 
 La medicina natural ha ganado popularidad en los últimos años. Muchas personas buscan alternativas a los medicamentos convencionales, y las hierbas medicinales se destacan como una opción accesible y efectiva. Cada hierba mencionada en este artículo ha sido utilizada tradicionalmente y, en muchos casos, cuenta con respaldo científico moderno.

@@ -12,10 +12,20 @@ const secondary = rest.slice(0, 2);
     <div class="img-wrapper">
       <img src={featured.data.image} alt={featured.data.title} />
     </div>
-    <span class="tag">{featured.data.tag}</span>
-    <h2 class="article-title">{featured.data.title}</h2>
-    <p class="article-excerpt">{featured.data.excerpt}</p>
-    <p class="article-byline">Por {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+    <span class="tag es-only">{featured.data.tag}</span>
+    {featured.data.tag_en && <span class="tag en-only">{featured.data.tag_en}</span>}
+    <h2 class="article-title">
+      <span class="es-only">{featured.data.title}</span>
+      {featured.data.title_en && <span class="en-only">{featured.data.title_en}</span>}
+    </h2>
+    <p class="article-excerpt">
+      <span class="es-only">{featured.data.excerpt}</span>
+      {featured.data.excerpt_en && <span class="en-only">{featured.data.excerpt_en}</span>}
+    </p>
+    <p class="article-byline">
+      <span class="es-only">Por {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+      <span class="en-only">By {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+    </p>
   </a>
   <div class="article-stack">
     {secondary.map(a => (
@@ -23,9 +33,16 @@ const secondary = rest.slice(0, 2);
         <div class="img-wrapper">
           <img src={a.data.image} alt={a.data.title} />
         </div>
-        <span class="tag">{a.data.tag}</span>
-        <h3 class="article-title-sm">{a.data.title}</h3>
-        <p class="article-byline">Por {a.data.author} · {new Date(a.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+        <span class="tag es-only">{a.data.tag}</span>
+        {a.data.tag_en && <span class="tag en-only">{a.data.tag_en}</span>}
+        <h3 class="article-title-sm">
+          <span class="es-only">{a.data.title}</span>
+          {a.data.title_en && <span class="en-only">{a.data.title_en}</span>}
+        </h3>
+        <p class="article-byline">
+          <span class="es-only">Por {a.data.author} · {new Date(a.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+          <span class="en-only">By {a.data.author} · {new Date(a.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+        </p>
       </a>
     ))}
   </div>

@@ -23,6 +23,9 @@ img { display: block; max-width: 100%; }
 
 a { color: inherit; text-decoration: none; }
 
+html[lang="en"] .es-only { display: none !important; }
+html[lang="es"] .en-only { display: none !important; }
+
 .section-label {
   font-family: var(--font-sans);
   font-size: 10px;

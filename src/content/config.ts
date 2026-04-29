@@ -11,7 +11,22 @@ const articles = defineCollection({
     image: z.string(),
     photo_credit: z.string().optional(),
     tag: z.string(),
+    title_en: z.string().optional(),
+    excerpt_en: z.string().optional(),
+    tag_en: z.string().optional(),
   }),
 });
 
-export const collections = { articles };
+const articlesEn = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    excerpt: z.string(),
+    tag: z.string(),
+  }),
+});
+
+export const collections = {
+  articles,
+  'articles-en': articlesEn,
+};

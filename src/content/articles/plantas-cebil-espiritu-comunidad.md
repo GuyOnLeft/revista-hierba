@@ -7,6 +7,9 @@ excerpt: "Planta maestra en los andes desde hace casi 5 mil años, el cebil reve
 image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Anadenanthera_colubrina-flowers_and_leaves.JPG"
 photo_credit: "Zimbres — CC BY-SA 3.0"
 tag: "Pueblos Originarios"
+title_en: "Hallucinogen? The Ethics of Cebil and the Spirit of Indigenous Community"
+excerpt_en: "A plant teacher in the Andes for nearly five thousand years, cebil reveals a history that unsettles the powerful — and the modern scientific categories that seek to contain everything."
+tag_en: "Indigenous Peoples"
 ---
 
 En las laderas áridas de la Quebrada de Humahuaca, donde los vientos del altiplano erosionan la piedra y el tiempo parece sedimentarse en capas yuxtapuestas de polvo, aún resuena una pregunta incómoda: ¿qué significa llamar "alucinógeno" a una planta que para las comunidades originarias fue —y en algunos casos sigue siendo— maestra, guía y medicina?
