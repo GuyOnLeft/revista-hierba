@@ -11,7 +11,10 @@ import Layout from '../components/Layout.astro';
       </div>
       <div class="meta-item">
         <div class="meta-label" data-i18n="editorial.fecha">Fecha</div>
-        <div class="meta-value">Abril 2026</div>
+        <div class="meta-value">
+          <span class="es-only">Abril 2026</span>
+          <span class="en-only">April 2026</span>
+        </div>
       </div>
       <div class="meta-item">
         <div class="meta-label" data-i18n="editorial.edicion">Edición</div>
@@ -21,14 +24,29 @@ import Layout from '../components/Layout.astro';
     <div class="editorial-body">
       <h1 class="editorial-title" data-i18n="editorial.title">Carta a quienes leen</h1>
       <div class="editorial-rule"></div>
-      <p class="lead drop-cap">Revista Hierba nace en Jujuy con una idea clara: el cannabis y las plantas medicinales no son temas marginales ni curiosidades de moda. Son cuestiones de salud, de derechos humanos, de autonomía sobre el propio cuerpo y de soberanía cultural. Les pertenecen, en partes iguales, a quienes las usan, a quienes las estudian, a quienes las defienden, y a las comunidades originarias que las cuidan, cultivan y conocen desde mucho antes de los sistemas que hoy las regulan.</p>
-      <p>Esta revista quiere ser un lugar donde esa conversación pase entre voces reales —no donde se hable sobre ellas—. Publicamos investigación periodística, divulgación científica con fuentes verificables, ensayos, testimonios de personas que usan estas plantas, columnas de comunidades originarias escritas por sus propios miembros, notas de cultivo, debates de política pública. La idea no es elegir entre el laboratorio y el campo, entre la lengua de la academia y la lengua de la abuela. Las dos describen el mismo cuerpo desde lugares distintos.</p>
+      <p class="lead drop-cap">
+        <span class="es-only">Revista Hierba nace en Jujuy con una idea clara: el cannabis y las plantas medicinales no son temas marginales ni curiosidades de moda. Son cuestiones de salud, de derechos humanos, de autonomía sobre el propio cuerpo y de soberanía cultural. Les pertenecen, en partes iguales, a quienes las usan, a quienes las estudian, a quienes las defienden, y a las comunidades originarias que las cuidan, cultivan y conocen desde mucho antes de los sistemas que hoy las regulan.</span>
+        <span class="en-only">Revista Hierba was born in Jujuy with a clear idea: cannabis and medicinal plants are not marginal topics or passing trends. They are matters of health, human rights, bodily autonomy, and cultural sovereignty. They belong equally to those who use them, those who study them, those who defend them, and the indigenous communities who have cared for, cultivated, and known these plants long before the systems that regulate them today.</span>
+      </p>
+      <p>
+        <span class="es-only">Esta revista quiere ser un lugar donde esa conversación pase entre voces reales —no donde se hable sobre ellas—. Publicamos investigación periodística, divulgación científica con fuentes verificables, ensayos, testimonios de personas que usan estas plantas, columnas de comunidades originarias escritas por sus propios miembros, notas de cultivo, debates de política pública. La idea no es elegir entre el laboratorio y el campo, entre la lengua de la academia y la lengua de la abuela. Las dos describen el mismo cuerpo desde lugares distintos.</span>
+        <span class="en-only">This magazine wants to be a space where that conversation happens between real voices — not where others speak about them. We publish investigative journalism, science writing with verifiable sources, essays, testimonies from people who use these plants, columns from indigenous communities written in their own voice, cultivation notes, and public policy debates. The idea is not to choose between the laboratory and the field, between the language of academia and the language of grandmothers. Both describe the same body from different places.</span>
+      </p>
       <div class="editorial-rule"></div>
-      <p>Sostenemos algunos compromisos desde el primer día. Que el cannabis es un derecho, no una tendencia. Que no reproducimos la criminalización de quienes lo usan. Que hablar de cannabis sin tener en cuenta el uso adulto, el disfrute y el goce es hablarlo desde una mirada médica hegemónica que también queremos discutir. Que no hablamos por los pueblos originarios: les ofrecemos espacio para que escriban con su voz. Y que trabajamos en pie de igualdad tanto con las personas que viven con dolor crónico, epilepsia, ansiedad, esclerosis múltiple u otras condiciones para las que el cannabis es parte del cuidado, como con quienes la usan por elección adulta —para el disfrute, el descanso, el ritual o el encuentro—. No son "casos clínicos" ni "consumidores": son interlocutoras.</p>
+      <p>
+        <span class="es-only">Sostenemos algunos compromisos desde el primer día. Que el cannabis es un derecho, no una tendencia. Que no reproducimos la criminalización de quienes lo usan. Que hablar de cannabis sin tener en cuenta el uso adulto, el disfrute y el goce es hablarlo desde una mirada médica hegemónica que también queremos discutir. Que no hablamos por los pueblos originarios: les ofrecemos espacio para que escriban con su voz. Y que trabajamos en pie de igualdad tanto con las personas que viven con dolor crónico, epilepsia, ansiedad, esclerosis múltiple u otras condiciones para las que el cannabis es parte del cuidado, como con quienes la usan por elección adulta —para el disfrute, el descanso, el ritual o el encuentro—. No son "casos clínicos" ni "consumidores": son interlocutoras.</span>
+        <span class="en-only">We hold certain commitments from day one. That cannabis is a right, not a trend. That we do not reproduce the criminalization of those who use it. That talking about cannabis without accounting for adult use, pleasure, and enjoyment means approaching it through a hegemonic medical lens — one we also want to challenge. That we do not speak for indigenous peoples: we offer them space to write in their own voice. And that we work as equals with people who live with chronic pain, epilepsy, anxiety, multiple sclerosis, and other conditions for which cannabis is part of their care, and with those who use it by adult choice — for enjoyment, rest, ritual, or connection. They are not "clinical cases" or "consumers": they are interlocutors.</span>
+      </p>
       <div class="editorial-rule"></div>
-      <p>Si tenés algo para contar —una historia clínica, una receta familiar, una denuncia, un dato científico, una experiencia de cultivo, una columna de opinión— escribinos. Hierba es un proyecto colectivo y crece con cada persona que se anima a sumar su voz.</p>
+      <p>
+        <span class="es-only">Si tenés algo para contar —una historia clínica, una receta familiar, una denuncia, un dato científico, una experiencia de cultivo, una columna de opinión— escribinos. Hierba es un proyecto colectivo y crece con cada persona que se anima a sumar su voz.</span>
+        <span class="en-only">If you have something to share — a clinical history, a family recipe, a complaint, a scientific finding, a cultivation experience, an opinion piece — write to us. Hierba is a collective project and it grows with every person who dares to add their voice.</span>
+      </p>
       <p class="editorial-signature" data-i18n="editorial.firma">— LA REDACCIÓN</p>
-      <p class="editorial-place">Jujuy, Abril / 2026</p>
+      <p class="editorial-place">
+        <span class="es-only">Jujuy, Abril / 2026</span>
+        <span class="en-only">Jujuy, April / 2026</span>
+      </p>
     </div>
   </div>
 </Layout>
