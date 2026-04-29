@@ -13,9 +13,9 @@ const pathname = Astro.url.pathname;
       <span class="nav-dropdown-trigger" data-i18n="nav.sections">Secciones ▾</span>
       <div class="dropdown-menu">
         <a href="/secciones/cannabis">Cannabis</a>
-        <a href="/secciones/plantas">Plantas Medicinales</a>
-        <a href="/secciones/ciencia">Ciencia</a>
-        <a href="/secciones/derechos">Derechos Humanos</a>
+        <a href="/secciones/plantas"><span class="es-only">Plantas Medicinales</span><span class="en-only">Medicinal Plants</span></a>
+        <a href="/secciones/ciencia"><span class="es-only">Ciencia</span><span class="en-only">Science</span></a>
+        <a href="/secciones/derechos"><span class="es-only">Derechos Humanos</span><span class="en-only">Human Rights</span></a>
       </div>
     </div>
     <a href="/nosotros"
@@ -40,9 +40,9 @@ const pathname = Astro.url.pathname;
   <div class="mobile-section-group">
     <div class="mobile-section-label" data-i18n="nav.sections">Secciones</div>
     <a href="/secciones/cannabis">Cannabis</a>
-    <a href="/secciones/plantas">Plantas Medicinales</a>
-    <a href="/secciones/ciencia">Ciencia</a>
-    <a href="/secciones/derechos">Derechos Humanos</a>
+    <a href="/secciones/plantas"><span class="es-only">Plantas Medicinales</span><span class="en-only">Medicinal Plants</span></a>
+    <a href="/secciones/ciencia"><span class="es-only">Ciencia</span><span class="en-only">Science</span></a>
+    <a href="/secciones/derechos"><span class="es-only">Derechos Humanos</span><span class="en-only">Human Rights</span></a>
   </div>
   <a href="/nosotros" class:list={[{ active: pathname.startsWith('/nosotros') }]} data-i18n="nav.about">Nosotros</a>
   <a href="/contacto" class:list={[{ active: pathname.startsWith('/contacto') }]} data-i18n="nav.contact">Contacto</a>
