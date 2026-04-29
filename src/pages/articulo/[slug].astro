@@ -43,13 +43,16 @@ const enDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 
         {photo_credit && <figcaption class="photo-credit">{photo_credit} · Wikimedia Commons</figcaption>}
       </figure>
     )}
-    <div class="article-body es-only">
-      <ContentES />
-    </div>
-    {ContentEN && (
-      <div class="article-body en-only">
-        <ContentEN />
-      </div>
+    {ContentEN ? (
+      <>
+        <div class="article-body es-only"><ContentES /></div>
+        <div class="article-body en-only"><ContentEN /></div>
+      </>
+    ) : (
+      <>
+        <p class="lang-note en-only">This article is available in Spanish only.</p>
+        <div class="article-body"><ContentES /></div>
+      </>
     )}
   </div>
 </Layout>
@@ -145,4 +148,12 @@ const enDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 
   .article-body :global(strong) { font-weight: bold; }
   .article-body :global(ul) { padding-left: 20px; margin-bottom: 20px; }
   .article-body :global(li) { margin-bottom: 8px; }
+  .lang-note {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 24px;
+  }
 </style>
