@@ -1,33 +1,33 @@
 ---
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('articles');
+const sorted = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const [featured, ...rest] = sorted;
+const secondary = rest.slice(0, 2);
 ---
 <div class="section-label" data-i18n="featured.label">Artículos Destacados</div>
 <div class="article-grid">
-  <div class="article-featured">
+  <a class="article-featured" href={`/articulo/${featured.slug}`}>
     <div class="img-wrapper">
-      <img src="https://picsum.photos/seed/herb42/800/450" alt="Cannabis medicinal" />
+      <img src={featured.data.image} alt={featured.data.title} />
     </div>
-    <span class="tag">Derechos Humanos</span>
-    <h2 class="article-title">El cannabis medicinal y la reforma pendiente en América Latina</h2>
-    <p class="article-excerpt">Una mirada a los avances legislativos en Argentina, Colombia y Uruguay, y los obstáculos que enfrentan los pacientes en el acceso a tratamientos.</p>
-    <p class="article-byline">Por la Redacción · 15 Abr 2026</p>
-  </div>
+    <span class="tag">{featured.data.tag}</span>
+    <h2 class="article-title">{featured.data.title}</h2>
+    <p class="article-excerpt">{featured.data.excerpt}</p>
+    <p class="article-byline">Por {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+  </a>
   <div class="article-stack">
-    <div class="article-small">
-      <div class="img-wrapper">
-        <img src="https://picsum.photos/seed/lab77/400/267" alt="Ciencia" />
-      </div>
-      <span class="tag">Ciencia</span>
-      <h3 class="article-title-sm">Nuevos estudios sobre cannabinoides y dolor crónico</h3>
-      <p class="article-byline">14 Abr 2026</p>
-    </div>
-    <div class="article-small">
-      <div class="img-wrapper">
-        <img src="https://picsum.photos/seed/plant99/400/267" alt="Plantas medicinales" />
-      </div>
-      <span class="tag">Plantas Medicinales</span>
-      <h3 class="article-title-sm">La valeriana y el sueño: lo que dice la evidencia</h3>
-      <p class="article-byline">12 Abr 2026</p>
-    </div>
+    {secondary.map(a => (
+      <a class="article-small" href={`/articulo/${a.slug}`}>
+        <div class="img-wrapper">
+          <img src={a.data.image} alt={a.data.title} />
+        </div>
+        <span class="tag">{a.data.tag}</span>
+        <h3 class="article-title-sm">{a.data.title}</h3>
+        <p class="article-byline">Por {a.data.author} · {new Date(a.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+      </a>
+    ))}
   </div>
 </div>
 
@@ -40,9 +40,14 @@
     border-bottom: 2px solid var(--black);
   }
   .article-featured {
+    display: block;
     padding: 32px;
     border-right: 1px solid var(--gray-light);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
   }
+  .article-featured:hover { background: #fafafa; }
   .img-wrapper {
     overflow: hidden;
     border: 1px solid var(--gray-light);
@@ -53,11 +58,16 @@
   .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
   .article-stack { display: flex; flex-direction: column; }
   .article-small {
+    display: block;
     padding: 22px 24px;
     border-bottom: 1px solid var(--gray-light);
     flex: 1;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
   }
   .article-small:last-child { border-bottom: none; }
+  .article-small:hover { background: #fafafa; }
   .tag {
     display: inline-block;
     font-family: var(--font-sans);
@@ -92,5 +102,9 @@
     font-size: 10px;
     color: #999;
     letter-spacing: 1px;
+  }
+  @media (max-width: 700px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-featured { border-right: none; border-bottom: 1px solid var(--gray-light); }
   }
 </style>

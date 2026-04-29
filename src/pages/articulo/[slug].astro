@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map(a => ({ params: { slug: a.slug }, props: { article: a } }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+const { title, author, date, section, tag, image, excerpt } = article.data;
+const dateStr = new Date(date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Layout title={title} description={excerpt}>
+  <div class="article-page">
+    <div class="article-meta-top">
+      <a class="back-link" href={`/secciones/${section}`}>← {section.charAt(0).toUpperCase() + section.slice(1)}</a>
+      <span class="tag-label">{tag}</span>
+    </div>
+    <h1 class="article-headline">{title}</h1>
+    <p class="article-excerpt-lead">{excerpt}</p>
+    <div class="article-byline">Por {author} · {dateStr}</div>
+    {image && <img class="article-hero-img" src={image} alt={title} />}
+    <div class="article-body">
+      <Content />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .article-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .article-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .back-link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    text-decoration: none;
+  }
+  .back-link:hover { color: var(--black); }
+  .tag-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 2px 8px;
+  }
+  .article-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: bold;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .article-excerpt-lead {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    border-left: 3px solid var(--black);
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .article-byline {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+  .article-hero-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--gray-light);
+    margin-bottom: 36px;
+    display: block;
+  }
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.8;
+    color: #222;
+  }
+  .article-body h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 24px;
+  }
+  .article-body p { margin-bottom: 20px; }
+  .article-body em { font-style: italic; }
+  .article-body strong { font-weight: bold; }
+</style>
