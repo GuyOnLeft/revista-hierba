@@ -5,6 +5,7 @@ interface Article {
   excerpt: string;
   byline: string;
   img: string;
+  slug: string;
 }
 interface Props {
   section: string;
@@ -14,7 +15,6 @@ interface Props {
 }
 const { section, sectionSlug, description, articles } = Astro.props;
 const [featured, ...rest] = articles;
-if (!featured) throw new Error(`SectionPage: "${section}" received an empty articles array`);
 import Layout from './Layout.astro';
 ---
 <Layout title={section} description={description}>
@@ -23,33 +23,43 @@ import Layout from './Layout.astro';
     <h1 class="section-hero-title">{section}</h1>
     <p class="section-hero-desc">{description}</p>
   </div>
-  <div class="section-label" data-i18n="secciones.articulos">Artículos</div>
-  <div class="article-grid">
-    <div class="article-featured">
-      <div class="img-wrapper">
-        <img src={featured.img} alt={featured.title} />
-      </div>
-      <span class="tag">{featured.tag}</span>
-      <h2 class="article-title">{featured.title}</h2>
-      <p class="article-excerpt">{featured.excerpt}</p>
-      <p class="article-byline">{featured.byline}</p>
-    </div>
-    <div class="article-stack">
-      {rest.map(article => (
-        <div class="article-small">
+
+  {featured ? (
+    <>
+      <div class="section-label" data-i18n="secciones.articulos">Artículos</div>
+      <div class="article-grid">
+        <a class="article-featured" href={`/articulo/${featured.slug}`}>
           <div class="img-wrapper">
-            <img src={article.img} alt={article.title} />
+            <img src={featured.img} alt={featured.title} />
           </div>
-          <span class="tag">{article.tag}</span>
-          <h3 class="article-title-sm">{article.title}</h3>
-          <p class="article-byline">{article.byline}</p>
+          <span class="tag">{featured.tag}</span>
+          <h2 class="article-title">{featured.title}</h2>
+          <p class="article-excerpt">{featured.excerpt}</p>
+          <p class="article-byline">{featured.byline}</p>
+        </a>
+        <div class="article-stack">
+          {rest.map(article => (
+            <a class="article-small" href={`/articulo/${article.slug}`}>
+              <div class="img-wrapper">
+                <img src={article.img} alt={article.title} />
+              </div>
+              <span class="tag">{article.tag}</span>
+              <h3 class="article-title-sm">{article.title}</h3>
+              <p class="article-byline">{article.byline}</p>
+            </a>
+          ))}
         </div>
-      ))}
+      </div>
+      <div class="ver-todos">
+        <a href={`/secciones/todos/${sectionSlug}`} class="ver-todos-link">Ver todos los artículos →</a>
+      </div>
+    </>
+  ) : (
+    <div class="empty-state">
+      <div class="empty-label">Próximamente</div>
+      <p class="empty-body">Estamos preparando los primeros artículos de esta sección. Volvé pronto.</p>
     </div>
-  </div>
-  <div class="ver-todos">
-    <a href={`/secciones/todos/${sectionSlug}`} class="ver-todos-link">Ver todos los artículos →</a>
-  </div>
+  )}
 </Layout>
 
 <style>
@@ -79,6 +89,26 @@ import Layout from './Layout.astro';
     max-width: 540px;
     font-family: var(--font-serif);
   }
+  .empty-state {
+    padding: 80px 40px;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .empty-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+  .empty-body {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    color: #777;
+    max-width: 400px;
+    line-height: 1.7;
+  }
   .article-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -87,9 +117,14 @@ import Layout from './Layout.astro';
     border-bottom: 2px solid var(--black);
   }
   .article-featured {
+    display: block;
     padding: 32px;
     border-right: 1px solid var(--gray-light);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
   }
+  .article-featured:hover { background: #fafafa; }
   .img-wrapper {
     overflow: hidden;
     border: 1px solid var(--gray-light);
@@ -100,11 +135,16 @@ import Layout from './Layout.astro';
   .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
   .article-stack { display: flex; flex-direction: column; }
   .article-small {
+    display: block;
     padding: 22px 24px;
     border-bottom: 1px solid var(--gray-light);
     flex: 1;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
   }
   .article-small:last-child { border-bottom: none; }
+  .article-small:hover { background: #fafafa; }
   .tag {
     display: inline-block;
     font-family: var(--font-sans);
@@ -158,8 +198,10 @@ import Layout from './Layout.astro';
   }
   .ver-todos-link:hover { color: var(--gray-mid); border-color: var(--gray-mid); }
   @media (max-width: 700px) {
+    .section-hero { padding: 28px 20px; }
     .article-grid { grid-template-columns: 1fr; }
     .article-featured { border-right: none; border-bottom: 1px solid var(--gray-light); }
-    .ver-todos { padding: 20px 20px; }
+    .ver-todos { padding: 20px; }
+    .empty-state { padding: 48px 20px; }
   }
 </style>

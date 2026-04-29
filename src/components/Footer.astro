@@ -1,6 +1,7 @@
 ---
 ---
 <footer>
+  <div class="footer-inner">
   <div class="footer-logo">
     <a href="/"><img src="/hierba-ghost.png" alt="Revista Hierba" /></a>
   </div>
@@ -17,11 +18,16 @@
     <div class="footer-copy">Una publicación de <a href="https://punafoundation.org" target="_blank" rel="noopener">Puna Foundation</a> (501(c)(3), EE.UU.) · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
     <div class="footer-copy">© 2026 Revista Hierba · <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a></div>
   </div>
+  </div>
 </footer>
 
 <style>
   footer {
     background: #111;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 36px 40px;
     display: flex;
     align-items: center;
@@ -71,7 +77,7 @@
   }
   .footer-copy a:hover { color: #fff; border-color: #fff; }
   @media (max-width: 600px) {
-    footer {
+    .footer-inner {
       flex-direction: column;
       align-items: flex-start;
       gap: 16px;
