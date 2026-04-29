@@ -35,7 +35,7 @@ const enDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 
     </p>
     <div class="article-byline">
       <span class="es-only">Por {author} · {esDate}</span>
-      <span class="en-only">By {author} · {enDate}</span>
+      <span class="en-only">By {author === 'La Redacción' ? 'The Editorial Team' : author} · {enDate}</span>
     </div>
     {image && (
       <figure class="article-hero-figure">

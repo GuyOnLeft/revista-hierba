@@ -24,7 +24,7 @@ const secondary = rest.slice(0, 2);
     </p>
     <p class="article-byline">
       <span class="es-only">Por {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-      <span class="en-only">By {featured.data.author} · {new Date(featured.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+      <span class="en-only">By {featured.data.author === 'La Redacción' ? 'The Editorial Team' : featured.data.author} · {new Date(featured.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
     </p>
   </a>
   <div class="article-stack">
@@ -41,7 +41,7 @@ const secondary = rest.slice(0, 2);
         </h3>
         <p class="article-byline">
           <span class="es-only">Por {a.data.author} · {new Date(a.data.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-          <span class="en-only">By {a.data.author} · {new Date(a.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+          <span class="en-only">By {a.data.author === 'La Redacción' ? 'The Editorial Team' : a.data.author} · {new Date(a.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
         </p>
       </a>
     ))}
