@@ -4,7 +4,8 @@ section: plantas
 date: 2026-04-28
 author: "La Redacción"
 excerpt: "Manzanilla, jengibre, menta, lavanda y romero: cinco plantas con siglos de uso tradicional y respaldo científico moderno para cuidar la salud de forma accesible."
-image: "https://picsum.photos/seed/p202/800/500"
+image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Chamomile_or_camomile_%28in_Spanish_Manzanilla_%29.JPG"
+photo_credit: "David Adam Kess — CC BY-SA 4.0"
 tag: "Salud"
 ---
 

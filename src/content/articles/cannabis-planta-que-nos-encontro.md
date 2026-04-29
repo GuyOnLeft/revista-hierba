@@ -4,7 +4,8 @@ section: cannabis
 date: 2026-04-28
 author: "Iván Ramón"
 excerpt: "Una historia de diez mil años de convivencia, saberes y resistencias. La cannabis no fue simplemente usada; fue también maestra, guía, acompañante."
-image: "https://picsum.photos/seed/c201/800/500"
+image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Cannabis_sativa_1542.jpg"
+photo_credit: "Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"
 tag: "Historia"
 ---
 

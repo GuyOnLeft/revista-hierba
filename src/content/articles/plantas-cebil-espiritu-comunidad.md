@@ -4,7 +4,8 @@ section: plantas
 date: 2026-04-28
 author: "Pablo L. Gutkin"
 excerpt: "Planta maestra en los andes desde hace casi 5 mil años, el cebil revela una historia que incomoda a los poderosos y a las categorías científicas modernas que todo lo atrapan."
-image: "https://picsum.photos/seed/p201/800/500"
+image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Anadenanthera_colubrina-flowers_and_leaves.JPG"
+photo_credit: "Zimbres — CC BY-SA 3.0"
 tag: "Pueblos Originarios"
 ---
 
