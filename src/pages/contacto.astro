@@ -10,7 +10,8 @@ import Layout from '../components/Layout.astro';
       <p class="intro-body">Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
       <a class="intro-email" href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a>
     </div>
-    <div class="contact-form">
+    <form class="contact-form" name="contacto" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contacto" />
       <div class="form-group">
         <label class="form-label" data-i18n="contacto.nombre">Nombre</label>
         <input class="form-input" type="text" name="nombre" placeholder="Tu nombre" required />
@@ -28,8 +29,20 @@ import Layout from '../components/Layout.astro';
         <textarea class="form-input" name="mensaje" rows="5" placeholder="Tu mensaje..." required></textarea>
       </div>
       <button class="btn-filled" type="submit" data-i18n="contacto.enviar">Enviar →</button>
-    </div>
+      <p class="success-msg" hidden>¡Gracias! Te respondemos pronto.</p>
+    </form>
   </div>
+<script>
+  const form = document.querySelector('.contact-form');
+  const success = document.querySelector('.success-msg');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    await fetch('/', { method: 'POST', body: data });
+    form.querySelector('button').hidden = true;
+    success.hidden = false;
+  });
+</script>
 </Layout>
 
 <style>
@@ -122,6 +135,13 @@ import Layout from '../components/Layout.astro';
     align-self: flex-start;
   }
   .btn-filled:hover { background: #333; }
+  .success-msg {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gray-mid);
+    margin-top: 8px;
+  }
   @media (max-width: 700px) {
     .contacto-body { grid-template-columns: 1fr; }
     .contact-intro { border-right: none; border-bottom: 1px solid var(--gray-light); }
