@@ -25,6 +25,13 @@ const pathname = Astro.url.pathname;
        class:list={[{ active: pathname.startsWith('/contacto') }]}
        data-i18n="nav.contact">Contacto</a>
   </div>
+  <a class="nav-instagram" href="https://www.instagram.com/hierba.revista?igsh=MWp3bmxvemdtbnR1aw==" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  </a>
   <div class="lang-toggle">
     <span data-lang="es" class="active">ES</span>
     <span class="sep">/</span>
@@ -151,6 +158,14 @@ const pathname = Astro.url.pathname;
   .lang-toggle [data-lang] { cursor: pointer; padding: 2px 8px; }
   .lang-toggle [data-lang].active { background: var(--black); color: var(--white); }
   .lang-toggle .sep { color: #ccc; }
+  .nav-instagram {
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    transition: opacity 0.15s;
+    margin-left: auto;
+  }
+  .nav-instagram:hover { opacity: 0.5; }
 
   /* Hamburger button */
   .hamburger {
