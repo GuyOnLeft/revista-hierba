@@ -9,8 +9,11 @@ const articles = all
   .slice(0, 3)
   .map(a => ({
     tag: a.data.tag,
+    tag_en: a.data.tag_en,
     title: a.data.title,
+    title_en: a.data.title_en,
     excerpt: a.data.excerpt,
+    excerpt_en: a.data.excerpt_en,
     byline: a.data.author,
     img: a.data.image,
     slug: a.slug,

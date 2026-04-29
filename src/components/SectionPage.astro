@@ -1,8 +1,11 @@
 ---
 interface Article {
   tag: string;
+  tag_en?: string;
   title: string;
+  title_en?: string;
   excerpt: string;
+  excerpt_en?: string;
   byline: string;
   img: string;
   slug: string;
@@ -33,9 +36,16 @@ import Layout from './Layout.astro';
           <div class="img-wrapper">
             <img src={featured.img} alt={featured.title} />
           </div>
-          <span class="tag">{featured.tag}</span>
-          <h2 class="article-title">{featured.title}</h2>
-          <p class="article-excerpt">{featured.excerpt}</p>
+          <span class="tag es-only">{featured.tag}</span>
+          {featured.tag_en && <span class="tag en-only">{featured.tag_en}</span>}
+          <h2 class="article-title">
+            <span class="es-only">{featured.title}</span>
+            {featured.title_en && <span class="en-only">{featured.title_en}</span>}
+          </h2>
+          <p class="article-excerpt">
+            <span class="es-only">{featured.excerpt}</span>
+            {featured.excerpt_en && <span class="en-only">{featured.excerpt_en}</span>}
+          </p>
           <p class="article-byline">{featured.byline}</p>
         </a>
         <div class="article-stack">
@@ -44,8 +54,12 @@ import Layout from './Layout.astro';
               <div class="img-wrapper">
                 <img src={article.img} alt={article.title} />
               </div>
-              <span class="tag">{article.tag}</span>
-              <h3 class="article-title-sm">{article.title}</h3>
+              <span class="tag es-only">{article.tag}</span>
+              {article.tag_en && <span class="tag en-only">{article.tag_en}</span>}
+              <h3 class="article-title-sm">
+                <span class="es-only">{article.title}</span>
+                {article.title_en && <span class="en-only">{article.title_en}</span>}
+              </h3>
               <p class="article-byline">{article.byline}</p>
             </a>
           ))}
