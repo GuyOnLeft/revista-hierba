@@ -1,7 +1,7 @@
 ---
 title: "Cannabis: la planta que nos encontró primero"
 section: cannabis
-date: 2026-04-30
+date: 2026-04-29
 author: "Iván Montiel"
 excerpt: "Una historia de diez mil años de convivencia, saberes y resistencias. La cannabis no fue simplemente usada; fue también maestra, guía, acompañante."
 image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Cannabis_sativa_1542.jpg"
