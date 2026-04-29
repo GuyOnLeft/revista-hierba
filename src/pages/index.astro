@@ -19,6 +19,12 @@ import '../styles/global.css';
     <main>
       <Hero />
       <ArticleGrid />
+      <div class="ver-todos-home">
+        <a href="/articulos" class="ver-todos-link">
+          <span class="es-only">Ver todos los artículos →</span>
+          <span class="en-only">See all articles →</span>
+        </a>
+      </div>
       <SectionPreviews />
       <Newsletter />
     </main>
@@ -26,3 +32,22 @@ import '../styles/global.css';
     <script is:inline src="/i18n.js"></script>
   </body>
 </html>
+
+<style>
+  .ver-todos-home {
+    padding: 24px 40px;
+    border-bottom: 2px solid var(--black);
+    background: var(--white);
+  }
+  .ver-todos-link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+  }
+  .ver-todos-link:hover { color: var(--gray-mid); border-color: var(--gray-mid); }
+</style>

@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../components/Layout.astro';
+
+const all = await getCollection('articles');
+const articles = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const sectionLabels: Record<string, { es: string; en: string }> = {
+  cannabis:  { es: 'Cannabis',          en: 'Cannabis' },
+  plantas:   { es: 'Plantas Medicinales', en: 'Medicinal Plants' },
+  ciencia:   { es: 'Ciencia',           en: 'Science' },
+  derechos:  { es: 'Derechos Humanos',  en: 'Human Rights' },
+};
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Layout title="Artículos" description="Todos los artículos de Revista Hierba.">
+  <div class="page-header">
+    <div class="page-kicker" data-i18n="nav.sections">Secciones</div>
+    <h1 class="page-title">
+      <span class="es-only">Todos los artículos</span>
+      <span class="en-only">All Articles</span>
+    </h1>
+    <p class="article-count">
+      <span class="es-only">{articles.length} artículo{articles.length !== 1 ? 's' : ''}</span>
+      <span class="en-only">{articles.length} article{articles.length !== 1 ? 's' : ''}</span>
+    </p>
+  </div>
+  <div class="listing-grid">
+    {articles.map(article => (
+      <a class="listing-card" href={`/articulo/${article.slug}`}>
+        <div class="card-img">
+          <img src={article.data.image} alt={article.data.title} loading="lazy" />
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="section-badge es-only">{sectionLabels[article.data.section]?.es ?? article.data.section}</span>
+            <span class="section-badge en-only">{sectionLabels[article.data.section]?.en ?? article.data.section}</span>
+            <span class="tag es-only">{article.data.tag}</span>
+            {article.data.tag_en && <span class="tag en-only">{article.data.tag_en}</span>}
+          </div>
+          <h2 class="card-title">
+            <span class="es-only">{article.data.title}</span>
+            {article.data.title_en
+              ? <span class="en-only">{article.data.title_en}</span>
+              : <span class="en-only">{article.data.title}</span>}
+          </h2>
+          <p class="card-excerpt">
+            <span class="es-only">{article.data.excerpt}</span>
+            {article.data.excerpt_en
+              ? <span class="en-only">{article.data.excerpt_en}</span>
+              : <span class="en-only">{article.data.excerpt}</span>}
+          </p>
+          <div class="card-meta">
+            <span class="card-author">{article.data.author}</span>
+            <span class="card-date">{formatDate(article.data.date)}</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 32px 40px 28px;
+    border-bottom: 2px solid var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .page-kicker {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+  .page-title {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+  }
+  .article-count {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+  .listing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid var(--black);
+  }
+  .listing-card {
+    border-right: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
+  }
+  .listing-card:hover { background: #fafafa; }
+  .listing-card:nth-child(3n) { border-right: none; }
+  .card-img {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s; }
+  .listing-card:hover .card-img img { transform: scale(1.02); }
+  .card-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .section-badge {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    border: 1px solid var(--gray-light);
+    padding: 1px 6px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 2px 8px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: var(--font-sans);
+  }
+  .card-excerpt {
+    font-size: 12px;
+    line-height: 1.65;
+    color: #555;
+    font-family: var(--font-serif);
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    padding-top: 12px;
+    border-top: 1px solid var(--gray-light);
+  }
+  .card-author {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gray-mid);
+    text-transform: uppercase;
+  }
+  .card-date {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    color: #bbb;
+  }
+  @media (max-width: 900px) {
+    .listing-grid { grid-template-columns: repeat(2, 1fr); }
+    .listing-card:nth-child(3n) { border-right: 1px solid var(--gray-light); }
+    .listing-card:nth-child(2n) { border-right: none; }
+  }
+  @media (max-width: 500px) {
+    .listing-grid { grid-template-columns: 1fr; }
+    .listing-card { border-right: none !important; }
+    .page-header { padding: 24px 20px; }
+  }
+</style>
