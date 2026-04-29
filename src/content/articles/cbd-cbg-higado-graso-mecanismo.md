@@ -2,7 +2,7 @@
 title: "CBD y CBG contra el hígado graso: cómo dos cannabinoides reparan el hígado a nivel celular"
 section: ciencia
 date: 2026-04-28
-author: "La Redacción"
+author: "Victoria Araya"
 excerpt: "Un estudio publicado en el British Journal of Pharmacology identificó por primera vez dos mecanismos precisos por los cuales el cannabidiol y el cannabigerol reducen la acumulación de grasa hepática. La investigación abre una vía terapéutica para una enfermedad que afecta a uno de cada tres adultos en el mundo y no tiene tratamiento farmacológico aprobado."
 image: "https://upload.wikimedia.org/wikipedia/commons/1/19/Liver_steatosis_fatty_change.jpg"
 photo_credit: "Laboratory of Experimental Pathology, NIEHS/NIH — Dominio Público"

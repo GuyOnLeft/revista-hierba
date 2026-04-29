@@ -2,7 +2,7 @@
 title: "Brasil abre la puerta: por primera vez, las asociaciones de pacientes podrán cultivar cannabis legalmente"
 section: derechos
 date: 2026-04-27
-author: "La Redacción"
+author: "Victoria Araya"
 excerpt: "La ANVISA aprobó en enero de 2026 un marco regulatorio que permite a las asociaciones de pacientes sin fines de lucro cultivar cannabis medicinal y distribuirlo a sus miembros. Es el resultado de más de una década de lucha de familias de bajos ingresos que encontraron en el habeas corpus su único camino legal. Ahora ese camino tiene nombre oficial, pero no está exento de contradicciones."
 image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/CDH_-_Audi%C3%AAncia_p%C3%BAblica_sobre_a_regulamenta%C3%A7%C3%A3o_do_uso_da_maconha_%2815342486530%29.jpg"
 photo_credit: "Geraldo Magela / Agência Senado — CC BY 2.0"
