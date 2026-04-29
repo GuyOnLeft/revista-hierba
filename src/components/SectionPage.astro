@@ -8,10 +8,11 @@ interface Article {
 }
 interface Props {
   section: string;
+  sectionSlug: string;
   description: string;
   articles: Article[];
 }
-const { section, description, articles } = Astro.props;
+const { section, sectionSlug, description, articles } = Astro.props;
 const [featured, ...rest] = articles;
 if (!featured) throw new Error(`SectionPage: "${section}" received an empty articles array`);
 import Layout from './Layout.astro';
@@ -45,6 +46,9 @@ import Layout from './Layout.astro';
         </div>
       ))}
     </div>
+  </div>
+  <div class="ver-todos">
+    <a href={`/secciones/todos/${sectionSlug}`} class="ver-todos-link">Ver todos los artículos →</a>
   </div>
 </Layout>
 
@@ -137,8 +141,25 @@ import Layout from './Layout.astro';
     color: #999;
     letter-spacing: 1px;
   }
+  .ver-todos {
+    padding: 24px 40px;
+    border-bottom: 2px solid var(--black);
+    background: var(--white);
+  }
+  .ver-todos-link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+  }
+  .ver-todos-link:hover { color: var(--gray-mid); border-color: var(--gray-mid); }
   @media (max-width: 700px) {
     .article-grid { grid-template-columns: 1fr; }
     .article-featured { border-right: none; border-bottom: 1px solid var(--gray-light); }
+    .ver-todos { padding: 20px 20px; }
   }
 </style>

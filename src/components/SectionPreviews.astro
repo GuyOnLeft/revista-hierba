@@ -63,4 +63,16 @@
     color: var(--black);
     text-decoration: none;
   }
+  @media (max-width: 700px) {
+    .sections-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-card:nth-child(odd) { border-right: 1px solid var(--gray-light); }
+    .section-card:nth-child(even) { border-right: none; }
+    .section-card:nth-child(3),
+    .section-card:nth-child(4) { border-top: 1px solid var(--gray-light); }
+  }
+  @media (max-width: 400px) {
+    .sections-grid { grid-template-columns: 1fr; }
+    .section-card { border-right: none !important; border-top: 1px solid var(--gray-light); }
+    .section-card:first-child { border-top: none; }
+  }
 </style>

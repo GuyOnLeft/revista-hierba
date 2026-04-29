@@ -1,31 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
 import SectionPage from '../../components/SectionPage.astro';
-const articles = [
-  {
-    tag: 'Derechos Humanos',
-    title: 'Criminalización y acceso: el doble estándar del sistema de salud',
-    excerpt: 'Cómo el marco legal penaliza el consumo mientras el sistema médico lo ignora como opción terapéutica.',
-    byline: 'Por la Redacción · 13 Abr 2026',
-    img: 'https://picsum.photos/seed/rights42/800/450',
-  },
-  {
-    tag: 'Derechos Humanos',
-    title: 'Mujeres y cannabis: invisibilizadas por la investigación',
-    excerpt: 'La mayoría de los ensayos clínicos excluyen a mujeres. Las consecuencias son concretas y urgentes.',
-    byline: 'Por la Redacción · 7 Abr 2026',
-    img: 'https://picsum.photos/seed/rights77/400/267',
-  },
-  {
-    tag: 'Derechos Humanos',
-    title: 'Pueblos originarios y conocimiento botánico: una deuda pendiente',
-    excerpt: 'La apropiación de saberes tradicionales sin reconocimiento ni compensación para las comunidades de origen.',
-    byline: 'Por la Redacción · 2 Abr 2026',
-    img: 'https://picsum.photos/seed/rights11/400/267',
-  },
-];
+
+const all = await getCollection('articles');
+const articles = all
+  .filter(a => a.data.section === 'derechos')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3)
+  .map(a => ({
+    tag: a.data.tag,
+    title: a.data.title,
+    excerpt: a.data.excerpt,
+    byline: a.data.author,
+    img: a.data.image,
+  }));
 ---
 <SectionPage
   section="Derechos Humanos"
+  sectionSlug="derechos"
   description="El acceso a la salud, la criminalización de usuarios, y la lucha por los derechos del paciente."
   articles={articles}
 />

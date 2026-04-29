@@ -1,31 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
 import SectionPage from '../../components/SectionPage.astro';
-const articles = [
-  {
-    tag: 'Cannabis',
-    title: 'El cannabis medicinal y la reforma pendiente en América Latina',
-    excerpt: 'Una mirada a los avances legislativos en Argentina, Colombia y Uruguay, y los obstáculos que enfrentan los pacientes en el acceso a tratamientos.',
-    byline: 'Por la Redacción · 15 Abr 2026',
-    img: 'https://picsum.photos/seed/herb42/800/450',
-  },
-  {
-    tag: 'Cannabis',
-    title: 'Regulación y mercado: qué aprender de Uruguay',
-    excerpt: 'Diez años de regulación uruguaya y sus efectos en el consumo y la salud pública.',
-    byline: 'Por la Redacción · 10 Abr 2026',
-    img: 'https://picsum.photos/seed/herb99/400/267',
-  },
-  {
-    tag: 'Cannabis',
-    title: 'Cultivo doméstico: derechos y límites legales',
-    excerpt: 'El estado legal del autocultivo en distintos países de América Latina.',
-    byline: 'Por la Redacción · 5 Abr 2026',
-    img: 'https://picsum.photos/seed/herb55/400/267',
-  },
-];
+
+const all = await getCollection('articles');
+const articles = all
+  .filter(a => a.data.section === 'cannabis')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3)
+  .map(a => ({
+    tag: a.data.tag,
+    title: a.data.title,
+    excerpt: a.data.excerpt,
+    byline: a.data.author,
+    img: a.data.image,
+  }));
 ---
 <SectionPage
   section="Cannabis"
+  sectionSlug="cannabis"
   description="Políticas, cultura, legislación y el debate sobre regulación en América Latina y el mundo."
   articles={articles}
 />

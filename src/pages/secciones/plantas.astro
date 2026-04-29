@@ -1,31 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
 import SectionPage from '../../components/SectionPage.astro';
-const articles = [
-  {
-    tag: 'Plantas Medicinales',
-    title: 'La valeriana y el sueño: lo que dice la evidencia',
-    excerpt: 'Un repaso por los estudios clínicos más recientes sobre el uso de valeriana como inductora del sueño.',
-    byline: 'Por la Redacción · 12 Abr 2026',
-    img: 'https://picsum.photos/seed/plant99/800/450',
-  },
-  {
-    tag: 'Plantas Medicinales',
-    title: 'Ashwagandha: adaptógeno y tradición ayurvédica',
-    excerpt: 'La historia y la ciencia detrás de una de las plantas medicinales más estudiadas del mundo.',
-    byline: 'Por la Redacción · 8 Abr 2026',
-    img: 'https://picsum.photos/seed/plant55/400/267',
-  },
-  {
-    tag: 'Plantas Medicinales',
-    title: 'Cúrcuma: más allá del marketing',
-    excerpt: 'Separar la evidencia del ruido en torno a uno de los suplementos más vendidos del mundo.',
-    byline: 'Por la Redacción · 3 Abr 2026',
-    img: 'https://picsum.photos/seed/plant22/400/267',
-  },
-];
+
+const all = await getCollection('articles');
+const articles = all
+  .filter(a => a.data.section === 'plantas')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3)
+  .map(a => ({
+    tag: a.data.tag,
+    title: a.data.title,
+    excerpt: a.data.excerpt,
+    byline: a.data.author,
+    img: a.data.image,
+  }));
 ---
 <SectionPage
   section="Plantas Medicinales"
+  sectionSlug="plantas"
   description="Etnobotánica, medicina tradicional, y la ciencia detrás de las plantas que curan."
   articles={articles}
 />

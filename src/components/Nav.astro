@@ -9,9 +9,15 @@ const pathname = Astro.url.pathname;
     <a href="/editorial"
        class:list={[{ active: pathname.startsWith('/editorial') }]}
        data-i18n="nav.editorial">Editorial</a>
-    <a href="/secciones"
-       class:list={[{ active: pathname.startsWith('/secciones') }]}
-       data-i18n="nav.sections">Secciones</a>
+    <div class:list={['nav-dropdown', { active: pathname.startsWith('/secciones') }]}>
+      <span class="nav-dropdown-trigger" data-i18n="nav.sections">Secciones ▾</span>
+      <div class="dropdown-menu">
+        <a href="/secciones/cannabis">Cannabis</a>
+        <a href="/secciones/plantas">Plantas Medicinales</a>
+        <a href="/secciones/ciencia">Ciencia</a>
+        <a href="/secciones/derechos">Derechos Humanos</a>
+      </div>
+    </div>
     <a href="/nosotros"
        class:list={[{ active: pathname.startsWith('/nosotros') }]}
        data-i18n="nav.about">Nosotros</a>
@@ -24,7 +30,33 @@ const pathname = Astro.url.pathname;
     <span class="sep">/</span>
     <span data-lang="en">EN</span>
   </div>
+  <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/editorial" class:list={[{ active: pathname.startsWith('/editorial') }]} data-i18n="nav.editorial">Editorial</a>
+  <div class="mobile-section-group">
+    <div class="mobile-section-label" data-i18n="nav.sections">Secciones</div>
+    <a href="/secciones/cannabis">Cannabis</a>
+    <a href="/secciones/plantas">Plantas Medicinales</a>
+    <a href="/secciones/ciencia">Ciencia</a>
+    <a href="/secciones/derechos">Derechos Humanos</a>
+  </div>
+  <a href="/nosotros" class:list={[{ active: pathname.startsWith('/nosotros') }]} data-i18n="nav.about">Nosotros</a>
+  <a href="/contacto" class:list={[{ active: pathname.startsWith('/contacto') }]} data-i18n="nav.contact">Contacto</a>
+</div>
+
+<script>
+  const hamburger = document.querySelector('.hamburger') as HTMLButtonElement;
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(!!isOpen));
+    hamburger.classList.toggle('open', !!isOpen);
+  });
+</script>
 
 <style>
   nav {
@@ -32,15 +64,13 @@ const pathname = Astro.url.pathname;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 32px;
-    padding: 0 40px 0 0;
+    padding: 8px 40px 8px 0;
     border-bottom: 2px solid var(--black);
     background: var(--white);
     position: sticky;
     top: 0;
     z-index: 100;
     min-height: 56px;
-    padding-top: 8px;
-    padding-bottom: 8px;
   }
   .nav-links {
     display: flex;
@@ -52,6 +82,50 @@ const pathname = Astro.url.pathname;
   }
   .nav-links a:hover { border-bottom: 1px solid var(--black); }
   .nav-links a.active { border-bottom: 1px solid var(--black); }
+
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+  .nav-dropdown-trigger {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    user-select: none;
+  }
+  .nav-dropdown.active .nav-dropdown-trigger,
+  .nav-dropdown:hover .nav-dropdown-trigger { border-bottom: 1px solid var(--black); }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    min-width: 200px;
+    z-index: 200;
+    flex-direction: column;
+  }
+  .nav-dropdown:hover .dropdown-menu { display: flex; }
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .dropdown-menu a:last-child { border-bottom: none; }
+  .dropdown-menu a:hover { background: var(--black); color: var(--white); }
+
+  /* Logo */
   .nav-logo { margin-left: 0; }
   .nav-logo a { display: block; }
   .nav-logo img {
@@ -62,6 +136,8 @@ const pathname = Astro.url.pathname;
     border: none;
     outline: none;
   }
+
+  /* Lang toggle */
   .lang-toggle {
     display: flex;
     align-items: center;
@@ -75,9 +151,81 @@ const pathname = Astro.url.pathname;
   .lang-toggle [data-lang] { cursor: pointer; padding: 2px 8px; }
   .lang-toggle [data-lang].active { background: var(--black); color: var(--white); }
   .lang-toggle .sep { color: #ccc; }
+
+  /* Hamburger button */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 8px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu drawer */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    border-bottom: 2px solid var(--black);
+    position: sticky;
+    top: 56px;
+    z-index: 99;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu > a {
+    padding: 14px 24px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .mobile-menu > a.active { font-weight: 700; }
+  .mobile-menu > a:last-child { border-bottom: none; }
+  .mobile-section-group {
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .mobile-section-label {
+    padding: 14px 24px 8px;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+  }
+  .mobile-section-group a {
+    display: block;
+    padding: 10px 24px 10px 36px;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-top: 1px solid var(--gray-light);
+  }
+  .mobile-section-group a:hover { background: #f5f5f5; }
+
   @media (max-width: 600px) {
     nav { gap: 12px; padding: 8px 16px; }
     .nav-links { display: none; }
     .nav-logo img { height: 52px; margin: -8px 0; }
+    .hamburger { display: flex; }
   }
 </style>
