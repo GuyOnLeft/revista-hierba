@@ -2,48 +2,83 @@
 ---
 <footer>
   <div class="footer-logo">
-    <img src="/hierba-logo.png" alt="Revista Hierba" />
+    <a href="/"><img src="/hierba-ghost.png" alt="Revista Hierba" /></a>
   </div>
-  <div class="footer-links">
-    <span>Cannabis</span>
-    <span>Plantas</span>
-    <span>Ciencia</span>
-    <span>Derechos</span>
-    <span data-i18n="nav.about">Nosotros</span>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/secciones/cannabis">Cannabis</a>
+      <a href="/secciones/plantas">Plantas</a>
+      <a href="/secciones/ciencia">Ciencia</a>
+      <a href="/secciones/derechos">Derechos</a>
+      <a href="/nosotros" data-i18n="nav.about">Nosotros</a>
+      <a href="/editorial" data-i18n="nav.editorial">Editorial</a>
+      <a href="/contacto" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="footer-copy">Una publicación de <a href="https://punafoundation.org" target="_blank" rel="noopener">Puna Foundation</a> (501(c)(3), EE.UU.) · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+    <div class="footer-copy">© 2026 Revista Hierba · <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a></div>
   </div>
-  <div class="footer-copy">© 2026 Revista Hierba</div>
 </footer>
 
 <style>
   footer {
-    background: var(--white);
-    border-top: 2px solid var(--black);
-    padding: 28px 40px;
+    background: #111;
+    padding: 36px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 48px;
+  }
+  .footer-logo {
+    flex-shrink: 0;
   }
   .footer-logo img {
-    height: 150px;
+    height: 72px;
     width: auto;
-    margin: -45px 0;
     display: block;
+    opacity: 0.45;
+    transition: opacity 0.15s;
+  }
+  .footer-logo:hover img { opacity: 0.7; }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
   .footer-links {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 6px 20px;
     font-family: var(--font-sans);
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gray-mid);
   }
-  .footer-links span { cursor: pointer; }
-  .footer-links span:hover { color: var(--black); }
+  .footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: #fff; }
   .footer-copy {
     font-family: var(--font-sans);
     font-size: 10px;
-    color: #bbb;
+    color: #444;
     letter-spacing: 1px;
+  }
+  .footer-copy a {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+  }
+  .footer-copy a:hover { color: #fff; border-color: #fff; }
+  @media (max-width: 600px) {
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 28px 20px;
+    }
+    .footer-logo img { height: 60px; opacity: 0.6; }
+    .footer-links { display: none; }
+    .footer-copy { font-size: 10px; color: #555; }
   }
 </style>

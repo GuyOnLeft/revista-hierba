@@ -8,6 +8,7 @@ import Layout from '../components/Layout.astro';
       <div class="intro-cta" data-i18n="contacto.escribinos">Escribinos</div>
       <p class="intro-invite" data-i18n="contacto.invite">Contanos tu historia.</p>
       <p class="intro-body">Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
+      <a class="intro-email" href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a>
     </div>
     <div class="contact-form">
       <div class="form-group">
@@ -71,6 +72,18 @@ import Layout from '../components/Layout.astro';
     font-family: var(--font-serif);
     margin: 0;
   }
+  .intro-email {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1px;
+    align-self: flex-start;
+  }
+  .intro-email:hover { opacity: 0.6; }
   .contact-form {
     padding: 40px;
     display: flex;
