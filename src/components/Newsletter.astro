@@ -3,8 +3,9 @@
 <section class="newsletter">
   <h2 data-i18n="newsletter.headline">Suscríbete</h2>
   <p data-i18n="newsletter.sub">Periodismo independiente sobre cannabis y plantas medicinales</p>
-  <form class="newsletter-form" onsubmit="return false;">
-    <input type="email" placeholder="tu@email.com" required />
+  <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <input type="email" name="email" placeholder="tu@email.com" required />
     <button type="submit" data-i18n="newsletter.btn">Suscribirse</button>
   </form>
   <p class="success-msg" hidden>¡Gracias! Te avisamos cuando lancemos.</p>
@@ -13,7 +14,10 @@
 <script>
   const form = document.querySelector('.newsletter-form');
   const success = document.querySelector('.success-msg');
-  form?.addEventListener('submit', () => {
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    await fetch('/', { method: 'POST', body: data });
     form.hidden = true;
     success.hidden = false;
   });
