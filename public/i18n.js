@@ -130,18 +130,21 @@ function applyLang(lang) {
     const key = el.getAttribute('data-i18n-placeholder');
     if (strings[lang]?.[key]) el.placeholder = strings[lang][key];
   });
-  document.querySelectorAll('.lang-toggle [data-lang]').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-  });
   document.documentElement.lang = lang;
   localStorage.setItem('lang', lang);
+  const btn = document.getElementById('lang-switch');
+  if (btn) btn.textContent = lang === 'es' ? 'EN' : 'ES';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('lang') || 'es';
   applyLang(saved);
 
-  document.querySelectorAll('.lang-toggle [data-lang]').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
-  });
+  const btn = document.getElementById('lang-switch');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'es';
+      applyLang(current === 'es' ? 'en' : 'es');
+    });
+  }
 });

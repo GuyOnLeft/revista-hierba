@@ -25,6 +25,7 @@ const pathname = Astro.url.pathname;
        class:list={[{ active: pathname.startsWith('/contacto') }]}
        data-i18n="nav.contact">Contacto</a>
   </div>
+  <button class="lang-switch" id="lang-switch" aria-label="Switch language">EN</button>
   <a class="nav-instagram" href="https://www.instagram.com/hierba.revista?igsh=MWp3bmxvemdtbnR1aw==" target="_blank" rel="noopener" aria-label="Instagram">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -34,11 +35,6 @@ const pathname = Astro.url.pathname;
     <span class="nav-instagram-label es-only">Seguinos</span>
     <span class="nav-instagram-label en-only">Follow us</span>
   </a>
-  <div class="lang-toggle">
-    <span data-lang="es" class="active">ES</span>
-    <span class="sep">/</span>
-    <span data-lang="en">EN</span>
-  </div>
   <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -146,26 +142,28 @@ const pathname = Astro.url.pathname;
     outline: none;
   }
 
-  /* Lang toggle */
-  .lang-toggle {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  /* Lang switch — single button */
+  .lang-switch {
+    margin-left: auto;
+    align-self: center;
+    background: none;
+    border: 1px solid var(--black);
+    cursor: pointer;
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    padding: 3px 9px;
+    color: var(--black);
+    transition: background 0.15s, color 0.15s;
   }
-  .lang-toggle [data-lang] { cursor: pointer; padding: 2px 8px; }
-  .lang-toggle [data-lang].active { background: var(--black); color: var(--white); }
-  .lang-toggle .sep { color: #ccc; }
+  .lang-switch:hover { background: var(--black); color: var(--white); }
   .nav-instagram {
     color: var(--black);
     display: flex;
     align-items: center;
     gap: 6px;
     transition: opacity 0.15s;
-    margin-left: auto;
     align-self: center;
     text-decoration: none;
   }
