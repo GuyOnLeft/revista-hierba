@@ -7,26 +7,26 @@ import Layout from '../components/Layout.astro';
     <div class="contact-intro">
       <div class="intro-cta" data-i18n="contacto.escribinos">Escribinos</div>
       <p class="intro-invite" data-i18n="contacto.invite">Contanos tu historia.</p>
-      <p class="intro-body">Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
+      <p class="intro-body" data-i18n="contacto.body">Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.</p>
       <a class="intro-email" href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a>
     </div>
     <form class="contact-form" name="contacto" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contacto" />
       <div class="form-group">
         <label class="form-label" data-i18n="contacto.nombre">Nombre</label>
-        <input class="form-input" type="text" name="nombre" placeholder="Tu nombre" required />
+        <input class="form-input" type="text" name="nombre" placeholder="Tu nombre" data-i18n-placeholder="contacto.ph.nombre" required />
       </div>
       <div class="form-group">
         <label class="form-label" data-i18n="contacto.email">Email</label>
-        <input class="form-input" type="email" name="email" placeholder="tu@email.com" required />
+        <input class="form-input" type="email" name="email" placeholder="tu@email.com" data-i18n-placeholder="contacto.ph.email" required />
       </div>
       <div class="form-group">
         <label class="form-label" data-i18n="contacto.asunto">Asunto</label>
-        <input class="form-input" type="text" name="asunto" placeholder="¿De qué se trata?" required />
+        <input class="form-input" type="text" name="asunto" placeholder="¿De qué se trata?" data-i18n-placeholder="contacto.ph.asunto" required />
       </div>
       <div class="form-group">
         <label class="form-label" data-i18n="contacto.mensaje">Mensaje</label>
-        <textarea class="form-input" name="mensaje" rows="5" placeholder="Tu mensaje..." required></textarea>
+        <textarea class="form-input" name="mensaje" rows="5" placeholder="Tu mensaje..." data-i18n-placeholder="contacto.ph.mensaje" required></textarea>
       </div>
       <button class="btn-filled" type="submit" data-i18n="contacto.enviar">Enviar →</button>
       <p class="success-msg" hidden>¡Gracias! Te respondemos pronto.</p>

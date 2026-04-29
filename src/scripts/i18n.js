@@ -29,11 +29,17 @@ const strings = {
     'nosotros.p03.name':       'Derechos humanos',
     'contacto.label':          'Contacto',
     'contacto.escribinos':     'Escribinos',
+    'contacto.invite':         'Contanos tu historia.',
+    'contacto.body':           'Estamos abiertos a investigadores, pacientes, activistas y periodistas que quieran contribuir o comunicarse con la redacción.',
     'contacto.nombre':         'Nombre',
     'contacto.email':          'Email',
     'contacto.asunto':         'Asunto',
     'contacto.mensaje':        'Mensaje',
     'contacto.enviar':         'Enviar →',
+    'contacto.ph.nombre':      'Tu nombre',
+    'contacto.ph.email':       'tu@email.com',
+    'contacto.ph.asunto':      '¿De qué se trata?',
+    'contacto.ph.mensaje':     'Tu mensaje...',
   },
   en: {
     'nav.editorial':           'Editorial',
@@ -65,11 +71,17 @@ const strings = {
     'nosotros.p03.name':       'Human rights',
     'contacto.label':          'Contact',
     'contacto.escribinos':     'Write to us',
+    'contacto.invite':         'Tell us your story.',
+    'contacto.body':           'We are open to researchers, patients, activists, and journalists who want to contribute or get in touch with the editorial team.',
     'contacto.nombre':         'Name',
     'contacto.email':          'Email',
     'contacto.asunto':         'Subject',
     'contacto.mensaje':        'Message',
     'contacto.enviar':         'Send →',
+    'contacto.ph.nombre':      'Your name',
+    'contacto.ph.email':       'you@email.com',
+    'contacto.ph.asunto':      'What is it about?',
+    'contacto.ph.mensaje':     'Your message...',
   },
 };
 
@@ -77,6 +89,10 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (strings[lang]?.[key]) el.textContent = strings[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (strings[lang]?.[key]) el.placeholder = strings[lang][key];
   });
   document.querySelectorAll('.lang-toggle [data-lang]').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
