@@ -29,6 +29,7 @@ const strings = {
     'nosotros.p03.name':       'Derechos humanos',
     'contacto.label':          'Contacto',
     'contacto.escribinos':     'Escribinos',
+    'contacto.invite':         'Contanos tu historia.',
     'contacto.nombre':         'Nombre',
     'contacto.email':          'Email',
     'contacto.asunto':         'Asunto',
@@ -65,6 +66,7 @@ const strings = {
     'nosotros.p03.name':       'Human rights',
     'contacto.label':          'Contact',
     'contacto.escribinos':     'Write to us',
+    'contacto.invite':         'Tell us your story.',
     'contacto.nombre':         'Name',
     'contacto.email':          'Email',
     'contacto.asunto':         'Subject',
@@ -85,11 +87,16 @@ function applyLang(lang) {
   localStorage.setItem('lang', lang);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   const saved = localStorage.getItem('lang') || 'es';
   applyLang(saved);
-
   document.querySelectorAll('.lang-toggle [data-lang]').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
