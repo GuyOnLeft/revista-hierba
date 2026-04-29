@@ -15,6 +15,13 @@
       <a href="/contacto" data-i18n="nav.contact">Contacto</a>
     </div>
     <div class="footer-copy">© 2026 Revista Hierba · <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a></div>
+    <div class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
+      <span class="footer-sep">·</span>
+      <a href="/privacidad"><span class="es-only">Privacidad</span><span class="en-only">Privacy</span></a>
+      <span class="footer-sep">·</span>
+      <a href="/politica-editorial"><span class="es-only">Política Editorial</span><span class="en-only">Editorial Policy</span></a>
+    </div>
   </div>
 </footer>
 
@@ -68,6 +75,20 @@
     border-bottom: 1px solid #444;
   }
   .footer-copy a:hover { color: #fff; border-color: #fff; }
+  .footer-license {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: #444;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .footer-license a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-license a:hover { color: #aaa; }
+  .footer-sep { margin: 0 6px; color: #333; }
   @media (max-width: 600px) {
     .footer-inner { padding: 36px 20px; gap: 16px; }
     .footer-logo img { height: 52px; }

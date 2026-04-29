@@ -1,0 +1,124 @@
+---
+import Layout from '../components/Layout.astro';
+---
+<Layout title="Política Editorial / Editorial Policy" description="Principios y criterios editoriales de Revista Hierba.">
+  <div class="section-label">
+    <span class="es-only">Política Editorial</span>
+    <span class="en-only">Editorial Policy</span>
+  </div>
+  <div class="policy-body">
+
+    <h1 class="policy-title">
+      <span class="es-only">Política Editorial</span>
+      <span class="en-only">Editorial Policy</span>
+    </h1>
+    <p class="policy-date">
+      <span class="es-only">Última actualización: Abril 2026</span>
+      <span class="en-only">Last updated: April 2026</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Independencia editorial</span>
+      <span class="en-only">Editorial independence</span>
+    </h2>
+    <p>
+      <span class="es-only">Revista Hierba no recibe financiamiento de la industria cannábica, farmacéutica ni de ningún anunciante que pueda influir en nuestra cobertura. No tenemos línea editorial impuesta por patrocinadores. Nuestra única obligación es con la verdad y con nuestros lectores.</span>
+      <span class="en-only">Revista Hierba does not receive funding from the cannabis industry, the pharmaceutical sector, or any advertiser that could influence our coverage. We have no editorial line imposed by sponsors. Our only obligation is to the truth and to our readers.</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Rigor y verificación</span>
+      <span class="en-only">Rigor and verification</span>
+    </h2>
+    <p>
+      <span class="es-only">Todo contenido publicado en Revista Hierba pasa por una revisión editorial. Citamos fuentes. Distinguimos entre evidencia científica, opinión y testimonio. No publicamos desinformación. Cuando cometemos un error, lo corregimos públicamente y con transparencia.</span>
+      <span class="en-only">All content published in Revista Hierba goes through an editorial review. We cite sources. We distinguish between scientific evidence, opinion, and testimony. We do not publish misinformation. When we make an error, we correct it publicly and transparently.</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Perspectiva y cobertura</span>
+      <span class="en-only">Perspective and coverage</span>
+    </h2>
+    <p>
+      <span class="es-only">Trabajamos desde América Latina con una perspectiva global. Priorizamos las voces de comunidades históricamente ignoradas por los medios tradicionales: pacientes, activistas, pueblos originarios, usuarixs adultos. Creemos que hablar de cannabis implica hablar de derechos humanos: del derecho a la salud, al disfrute, a decidir sobre el propio cuerpo, y a no ser criminalizadxs por ello.</span>
+      <span class="en-only">We work from Latin America with a global perspective. We prioritize the voices of communities historically ignored by mainstream media: patients, activists, indigenous peoples, adult users. We believe that talking about cannabis means talking about human rights: the right to health, to enjoyment, to decide about one's own body, and not to be criminalized for it.</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Contenido de colaboradores</span>
+      <span class="en-only">Contributor content</span>
+    </h2>
+    <p>
+      <span class="es-only">Los artículos firmados por colaboradores expresan la perspectiva de sus autores. Revista Hierba puede editarlos por claridad, extensión o precisión factual, pero no altera su postura ni sus argumentos centrales sin acuerdo del autor. Los colaboradores externos no representan a la redacción.</span>
+      <span class="en-only">Articles signed by contributors express the perspective of their authors. Revista Hierba may edit them for clarity, length, or factual accuracy, but will not alter their position or central arguments without the author's agreement. External contributors do not represent the editorial team.</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Licencia de contenidos</span>
+      <span class="en-only">Content license</span>
+    </h2>
+    <p>
+      <span class="es-only">Los contenidos originales de Revista Hierba se publican bajo la licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons CC BY-NC-SA 4.0</a>. Podés reproducir, adaptar y distribuir nuestro contenido siempre que cites la fuente, no lo uses con fines comerciales y lo compartas bajo la misma licencia.</span>
+      <span class="en-only">Original content from Revista Hierba is published under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons CC BY-NC-SA 4.0</a> license. You may reproduce, adapt, and distribute our content as long as you credit the source, do not use it for commercial purposes, and share it under the same license.</span>
+    </p>
+
+    <h2>
+      <span class="es-only">Contacto editorial</span>
+      <span class="en-only">Editorial contact</span>
+    </h2>
+    <p>
+      <span class="es-only">Para propuestas de colaboración, correcciones o consultas editoriales, escribinos a <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a>.</span>
+      <span class="en-only">For collaboration proposals, corrections, or editorial inquiries, write to us at <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a>.</span>
+    </p>
+
+  </div>
+</Layout>
+
+<style>
+  .policy-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 40px 64px;
+    border-top: 2px solid var(--black);
+  }
+  .policy-title {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .policy-date {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 40px;
+  }
+  .policy-body h2 {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    margin: 32px 0 10px;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 8px;
+  }
+  .policy-body p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    font-family: var(--font-serif);
+    margin-bottom: 12px;
+  }
+  .policy-body a {
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+    text-decoration: none;
+  }
+  .policy-body a:hover { opacity: 0.6; }
+  @media (max-width: 600px) {
+    .policy-body { padding: 32px 20px 48px; }
+  }
+</style>
