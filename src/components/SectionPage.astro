@@ -10,18 +10,19 @@ interface Article {
 interface Props {
   section: string;
   sectionSlug: string;
+  sectionKey: string;
   description: string;
   articles: Article[];
 }
-const { section, sectionSlug, description, articles } = Astro.props;
+const { section, sectionSlug, sectionKey, description, articles } = Astro.props;
 const [featured, ...rest] = articles;
 import Layout from './Layout.astro';
 ---
 <Layout title={section} description={description}>
   <div class="section-hero">
     <div class="section-hero-kicker" data-i18n="nav.sections">Secciones</div>
-    <h1 class="section-hero-title">{section}</h1>
-    <p class="section-hero-desc">{description}</p>
+    <h1 class="section-hero-title" data-i18n={`sec.${sectionKey}.name`}>{section}</h1>
+    <p class="section-hero-desc" data-i18n={`sec.${sectionKey}.desc`}>{description}</p>
   </div>
 
   {featured ? (
@@ -51,13 +52,13 @@ import Layout from './Layout.astro';
         </div>
       </div>
       <div class="ver-todos">
-        <a href={`/secciones/todos/${sectionSlug}`} class="ver-todos-link">Ver todos los artículos →</a>
+        <a href={`/secciones/todos/${sectionSlug}`} class="ver-todos-link" data-i18n="sec.vertodos">Ver todos los artículos →</a>
       </div>
     </>
   ) : (
     <div class="empty-state">
-      <div class="empty-label">Próximamente</div>
-      <p class="empty-body">Estamos preparando los primeros artículos de esta sección. Volvé pronto.</p>
+      <div class="empty-label" data-i18n="sec.proximamente">Próximamente</div>
+      <p class="empty-body" data-i18n="sec.empty">Estamos preparando los primeros artículos de esta sección. Volvé pronto.</p>
     </div>
   )}
 </Layout>
