@@ -14,6 +14,10 @@
       <a href="/editorial" data-i18n="nav.editorial">Editorial</a>
       <a href="/contacto" data-i18n="nav.contact">Contacto</a>
     </div>
+    <div class="footer-allied">
+      <img src="/allied-la-rama.png" alt="La Rama Que Llama" />
+      <img src="/allied-puna.png" alt="Fundación Puna" />
+    </div>
     <div class="footer-copy">© 2026 Revista Hierba · <a href="mailto:prensa@punafoundation.org">prensa@punafoundation.org</a></div>
     <div class="footer-license">
       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
@@ -89,6 +93,24 @@
   }
   .footer-license a:hover { color: #aaa; }
   .footer-sep { margin: 0 6px; color: #333; }
+  .footer-allied {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding: 16px 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    width: 100%;
+  }
+  .footer-allied img {
+    height: 48px;
+    width: auto;
+    opacity: 0.7;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.15s;
+  }
+  .footer-allied img:hover { opacity: 1; }
   @media (max-width: 600px) {
     .footer-inner { padding: 36px 20px; gap: 16px; }
     .footer-logo img { height: 52px; }
