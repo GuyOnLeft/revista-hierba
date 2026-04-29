@@ -17,11 +17,21 @@ const ContentEN = articleEN ? (await articleEN.render()).Content : null;
 const { title, author, date, section, tag, image, excerpt, photo_credit, title_en, excerpt_en, tag_en } = article.data;
 const esDate = new Date(date).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
 const enDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const sectionLabels: Record<string, {es: string, en: string}> = {
+  cannabis:  { es: 'Cannabis',         en: 'Cannabis' },
+  plantas:   { es: 'Plantas',          en: 'Plants' },
+  ciencia:   { es: 'Ciencia',          en: 'Science' },
+  derechos:  { es: 'Derechos Humanos', en: 'Human Rights' },
+};
+const secLabel = sectionLabels[section] ?? { es: section, en: section };
 ---
 <Layout title={title} description={excerpt}>
   <div class="article-page">
     <div class="article-meta-top">
-      <a class="back-link" href={`/secciones/${section}`}>← {section.charAt(0).toUpperCase() + section.slice(1)}</a>
+      <a class="back-link" href={`/secciones/${section}`}>
+        <span class="es-only">← {secLabel.es}</span>
+        <span class="en-only">← {secLabel.en}</span>
+      </a>
       <span class="tag-label es-only">{tag}</span>
       {tag_en && <span class="tag-label en-only">{tag_en}</span>}
     </div>
