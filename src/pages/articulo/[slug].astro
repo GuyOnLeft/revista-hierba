@@ -64,8 +64,59 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
         <div class="article-body"><ContentES /></div>
       </>
     )}
+    <div class="article-share" aria-label="Compartir / Share">
+      <span class="share-label">
+        <span class="es-only">Compartir</span>
+        <span class="en-only">Share</span>
+      </span>
+      <button type="button" class="share-btn" data-share="native" hidden>
+        <span class="es-only">Compartir</span>
+        <span class="en-only">Share</span>
+      </button>
+      <a class="share-btn" data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="share-btn" data-share="twitter" href="#" target="_blank" rel="noopener">X · Twitter</a>
+      <button type="button" class="share-btn" data-share="copy">
+        <span class="es-only">Copiar enlace</span>
+        <span class="en-only">Copy link</span>
+      </button>
+    </div>
   </div>
 </Layout>
+
+<script is:inline>
+  (function () {
+    const url = window.location.href;
+    const title = document.title;
+    const text = title + ' — ' + url;
+
+    const native = document.querySelector('.share-btn[data-share="native"]');
+    if (native && navigator.share) {
+      native.hidden = false;
+      native.addEventListener('click', () => {
+        navigator.share({ title, url }).catch(() => {});
+      });
+    }
+
+    const wa = document.querySelector('.share-btn[data-share="whatsapp"]');
+    if (wa) wa.setAttribute('href', 'https://wa.me/?text=' + encodeURIComponent(text));
+
+    const tw = document.querySelector('.share-btn[data-share="twitter"]');
+    if (tw) tw.setAttribute('href', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url));
+
+    document.querySelectorAll('.share-btn[data-share="copy"]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const original = btn.innerHTML;
+        try {
+          await navigator.clipboard.writeText(url);
+          btn.innerHTML = '<span class="es-only">¡Copiado!</span><span class="en-only">Copied!</span>';
+        } catch (e) {
+          btn.innerHTML = '<span class="es-only">Error</span><span class="en-only">Error</span>';
+        }
+        setTimeout(() => { btn.innerHTML = original; }, 1800);
+      });
+    });
+  })();
+</script>
 
 <style>
   .article-page {
@@ -166,4 +217,43 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
     color: #aaa;
     margin-bottom: 24px;
   }
+  .article-share {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 56px;
+    padding: 18px 0;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+  }
+  .share-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-right: 8px;
+  }
+  .share-btn {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: transparent;
+    border: 1.5px solid var(--black);
+    padding: 8px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.1s ease, color 0.1s ease;
+  }
+  .share-btn:hover,
+  .share-btn:focus {
+    background: var(--black);
+    color: var(--white);
+    outline: none;
+  }
+  .share-btn[hidden] { display: none; }
 </style>
