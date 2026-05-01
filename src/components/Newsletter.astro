@@ -3,23 +3,38 @@
 <section class="newsletter">
   <h2 data-i18n="newsletter.headline">Suscríbete</h2>
   <p data-i18n="newsletter.sub">Periodismo independiente sobre cannabis y plantas medicinales</p>
-  <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+  <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="newsletter" />
-    <input type="email" name="email" placeholder="tu@email.com" required />
+    <p class="hp-field" hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+    <input type="email" name="email" data-i18n-placeholder="newsletter.placeholder" placeholder="tu@email.com" required />
     <button type="submit" data-i18n="newsletter.btn">Suscribirse</button>
   </form>
-  <p class="success-msg" hidden>¡Gracias! Te avisamos cuando lancemos.</p>
+  <p class="success-msg" data-i18n="newsletter.success" hidden>¡Gracias! Te avisamos cuando lancemos.</p>
+  <p class="error-msg" data-i18n="newsletter.error" hidden>No pudimos registrar tu email. Probá de nuevo en un momento.</p>
 </section>
 
 <script>
   const form = document.querySelector('.newsletter-form');
   const success = document.querySelector('.success-msg');
+  const error = document.querySelector('.error-msg');
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    await fetch('/', { method: 'POST', body: data });
-    form.hidden = true;
-    success.hidden = false;
+    const body = new URLSearchParams();
+    for (const [k, v] of data.entries()) body.append(k, String(v));
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error('submit failed: ' + res.status);
+      form.hidden = true;
+      success.hidden = false;
+    } catch (err) {
+      error.hidden = false;
+      console.error(err);
+    }
   });
 </script>
 
@@ -73,11 +88,14 @@
     font-weight: bold;
   }
   .newsletter-form button:hover { background: #e0e0e0; }
-  .success-msg {
+  .success-msg,
+  .error-msg {
     font-family: var(--font-sans);
     font-size: 12px;
     letter-spacing: 2px;
-    color: var(--gray-mid);
     margin-top: 16px;
   }
+  .success-msg { color: var(--gray-mid); }
+  .error-msg { color: #ff8a80; }
+  .hp-field { position: absolute; left: -9999px; }
 </style>
