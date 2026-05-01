@@ -64,7 +64,7 @@ Announce each phase as you enter it.
 
 For each of the four sections (`cannabis`, `plantas`, `ciencia`, `derechos`), prioritize the briefing email's leads. Where the briefing did not cover a section, fall back to `WebSearch` against the curated source list below first, then — if nothing recent qualifies — extend the search to the broader web. **The curated list is the starting point, not the only-allowed-set.** Any reputable outlet (peer-reviewed journals, government bulletins, established news, NGO reports) is fair use as long as the source itself meets the editorial-rigor bar.
 
-**Recency rule (hard):** every story must be from the last 24–48 hours. If a section has no qualifying piece in that window after both the curated and broader search, **skip the section** for today and ship the other three. Do not soften the recency rule by reaching for older content. (The `plantas` and `ciencia` beats are slow-moving and may legitimately have no 24–48hr news on a given day; a 3-article day is preferable to forcing a stale piece in.)
+**Recency rule:** prefer stories from the last 24–48 hours. If a section has no qualifying piece in that window after both the curated and broader search, **expand the recency window for that section** (out to ~30 days) and find the strongest recent story that fits the section's scope. **Do not skip a section unilaterally.** The user is the editor; if you cannot find a recent piece, surface candidates and ask the editor for direction — do not announce "no qualifying piece exists" as if that ends the conversation. The recency rule is a guideline, not a wall.
 
 **Curated sources (locked):**
 
