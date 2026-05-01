@@ -29,11 +29,13 @@ Announce each phase as you enter it. After Phase 4 you must stop and wait for th
    - Any topic with `date` within the last 30 days from today.
    - Any topic whose subject overlaps strongly with an existing article (e.g., do not write a second history-of-cannabis piece, do not republish a recent ANVISA story).
 
-3. Confirm the byline. Default: `Victoria Araya`. If the user has named a different author in the slash invocation, use that instead.
+3. **Check Jeremy's Gmail for a recent editorial-briefing email.** Use the `mcp__claude_ai_Gmail__search_threads` tool with a query like `from:jmunson0711@gmail.com subject:"Revista Hierba" newer_than:3d` to find the most recent "Revista Hierba — Investigación editorial del día" message. If one exists, read it — it contains verified primary sources, exact decree numbers, DOIs, and section assignments that **supersede fresh web search**. Use those leads. Only fall back to a fresh web-search pass against the curated source list (Phase 2) for sections the briefing did not cover, or if no briefing exists in the last 72 hours.
 
-4. Check git working tree state with `git status --short`. If there are unrelated staged changes, warn the user — your final commit should be just the new article files.
+4. Confirm the byline. Default: `Victoria Araya`. If the user has named a different author in the slash invocation, use that instead.
 
-5. Print a one-paragraph summary of what you found: count of existing articles, recency of the most recent per section, and the do-not-duplicate list. Then proceed to Phase 2.
+5. Check git working tree state with `git status --short`. If there are unrelated staged changes, warn the user — your final commit should be just the new article files.
+
+6. Print a one-paragraph summary of what you found: count of existing articles, recency of the most recent per section, the do-not-duplicate list, and whether a briefing email was found. Then proceed to Phase 2.
 
 ---
 
@@ -98,7 +100,14 @@ For each of the four chosen topics, write a complete English article.
 
 > **REVIEW GATE — Phase 4 complete. Please approve each draft (or request edits) before I translate and write files.**
 
-Then stop. Do not proceed to Phase 5 actions until the user explicitly approves.
+Then **also create a Gmail draft to Victoria Araya** using `mcp__claude_ai_Gmail__create_draft` with these parameters:
+
+- `to`: `["arayaflorenciavictoria@gmail.com"]`
+- `cc`: `["jmunson0711@gmail.com"]`
+- `subject`: `Revista Hierba — 4 borradores en inglés para tu revisión · <today in Spanish, e.g. "1 de mayo 2026">`
+- `body`: a Spanish intro paragraph (2–4 lines explaining the four pieces and the review process), then the four English drafts inline separated by `═══` rules, each followed by its `## Sources` block and a `Imagen candidata: <attribution> — <license>. URL: <upload.wikimedia.org URL>` line. Close with a Spanish line inviting comments and noting that translation + publication happens after her approval. Sign as Jeremy.
+
+The Gmail integration only creates drafts (not sends) — tell the user the draft is in their Drafts folder waiting to be reviewed and sent. Then stop. Do not proceed to Phase 5 actions until the user explicitly approves (Victoria's reply forwarded by Jeremy, or Jeremy's direct go-ahead in chat).
 
 ---
 
