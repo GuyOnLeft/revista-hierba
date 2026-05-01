@@ -1,0 +1,37 @@
+on run
+	set englishPDF to POSIX file "/Users/jeremymunson/revista-hierba/docs/drafts-2026-05-01/english.pdf"
+	set spanishPDF to POSIX file "/Users/jeremymunson/revista-hierba/docs/drafts-2026-05-01/spanish.pdf"
+	set emailSubject to "Revista Hierba — 4 borradores para tu revisión · 1 de mayo 2026"
+	set emailBody to "Hola Victoria,
+
+Te paso adjunto los 4 borradores listos para tu revisión, en dos PDFs:
+
+  • english.pdf — versiones en inglés (4 artículos, uno por sección)
+  • spanish.pdf — versiones en español (4 artículos, uno por sección)
+
+Mapeo por sección:
+  • cannabis  — DEA reclasifica el cannabis medicinal a Schedule III (Federal Register, 28 abril 2026)
+  • plantas   — La reserva que enterraron por el litio (Reserva Provincial Los Andes, Mongabay, 25 marzo 2026)
+  • ciencia   — Lo que el nuevo metaanálisis del Lancet Psychiatry realmente encontró (abril 2026)
+  • derechos  — REPROCANN automatizó aprobaciones, pero 1.212 expedientes siguen pendientes
+
+Cada pieza tiene ~1100–1400 palabras, fuentes citadas al final, y una imagen candidata de Wikimedia Commons (todas dominio público o CC).
+
+Si los aprobás —o querés cambios artículo por artículo— los publico bajo tu firma en revistahierba.com. Cualquier comentario, contestá este mail.
+
+Un abrazo,
+Jeremy"
+	tell application "Mail"
+		set newMessage to make new outgoing message with properties {subject:emailSubject, content:emailBody, visible:false}
+		tell newMessage
+			set sender to "jmunson0711@gmail.com"
+			make new to recipient at end of to recipients with properties {address:"arayaflorenciavictoria@gmail.com"}
+			tell content
+				make new attachment with properties {file name:englishPDF} at after the last paragraph
+				make new attachment with properties {file name:spanishPDF} at after the last paragraph
+			end tell
+			send
+		end tell
+	end tell
+	return "sent"
+end run

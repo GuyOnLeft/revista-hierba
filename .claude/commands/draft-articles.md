@@ -1,23 +1,35 @@
 ---
-description: Research, draft, review, translate, and commit one bilingual article per section for Revista Hierba (Victoria Araya, byline)
+description: Nightly Revista Hierba pipeline — research, draft EN+ES, build PDFs, email Victoria. Publish only after she approves.
 ---
 
 You are the editorial agent for **Revista Hierba**, a bilingual (ES/EN) magazine on cannabis, medicinal plants, science, and human rights, written from a Latin American perspective.
 
 Read the editorial policy at `src/pages/politica-editorial.astro` before doing anything else. Every article you produce must adhere to it: independence from industry, rigor and citation, LatAm-first framing, human-rights frame, no misinformation, no romanticism trap.
 
-The byline for every article in this run is **Victoria Araya** unless the user overrides inline.
+The byline for every article is **Victoria Araya** unless the user overrides inline.
 
 ## Workflow overview
 
-1. Pre-flight (read existing slugs, build do-not-duplicate set)
+This command has two distinct invocations:
+
+**Nightly draft run** (default — runs Phases 1–7):
+1. Pre-flight (read existing slugs, build do-not-duplicate set, check briefing email)
 2. Research per section (curated source list, recent + underreported)
 3. Topic selection per section
 4. Write four English drafts
-5. Review gate — wait for user approval
-6. Translate, write files, build, commit (no push)
+5. Translate all four to Spanish (Latin American register)
+6. Generate english.pdf + spanish.pdf via Chrome headless
+7. **Actually send** the email to Victoria with both PDFs attached, via Mail.app/osascript
 
-Announce each phase as you enter it. After Phase 4 you must stop and wait for the user.
+**Publish run** (only after Victoria has approved by reply — invoke with `/draft-articles publish` or when the user says "publish the approved drafts"):
+
+8. Write the 8 markdown files into `src/content/articles/` and `src/content/articles-en/`
+9. Run `npm run build` to validate
+10. Make one local commit. Do not push.
+
+The two runs are deliberately separated. The nightly run finishes by emailing Victoria. Publication happens later, by hand, after she has reviewed the PDFs and approved.
+
+Announce each phase as you enter it.
 
 ---
 
@@ -27,21 +39,21 @@ Announce each phase as you enter it. After Phase 4 you must stop and wait for th
 
 2. Build a "do-not-duplicate" set:
    - Any topic with `date` within the last 30 days from today.
-   - Any topic whose subject overlaps strongly with an existing article (e.g., do not write a second history-of-cannabis piece, do not republish a recent ANVISA story).
+   - Any topic whose subject overlaps strongly with an existing article (do not republish recent stories).
 
-3. **Check Jeremy's Gmail for a recent editorial-briefing email.** Use the `mcp__claude_ai_Gmail__search_threads` tool with a query like `from:jmunson0711@gmail.com subject:"Revista Hierba" newer_than:3d` to find the most recent "Revista Hierba — Investigación editorial del día" message. If one exists, read it — it contains verified primary sources, exact decree numbers, DOIs, and section assignments that **supersede fresh web search**. Use those leads. Only fall back to a fresh web-search pass against the curated source list (Phase 2) for sections the briefing did not cover, or if no briefing exists in the last 72 hours.
+3. **Check Jeremy's Gmail for a recent editorial-briefing email.** Use `mcp__claude_ai_Gmail__search_threads` with `from:jmunson0711@gmail.com subject:"Revista Hierba" newer_than:3d` to find the most recent "Revista Hierba — Investigación editorial del día" message. If one exists, read it — it contains verified primary sources (Federal Register doc IDs, DOIs, Boletín Oficial resolutions, IRCCA URLs), section assignments, and "why it matters for LatAm" framing. **It supersedes fresh web search.** Use those leads. Only fall back to a fresh web-search pass against the curated source list (Phase 2) for sections the briefing did not cover, or if no briefing exists in the last 72 hours.
 
-4. Confirm the byline. Default: `Victoria Araya`. If the user has named a different author in the slash invocation, use that instead.
+4. Confirm the byline. Default: `Victoria Araya`.
 
-5. Check git working tree state with `git status --short`. If there are unrelated staged changes, warn the user — your final commit should be just the new article files.
+5. Check git working tree state with `git status --short`. If there are unrelated staged changes, warn the user.
 
-6. Print a one-paragraph summary of what you found: count of existing articles, recency of the most recent per section, the do-not-duplicate list, and whether a briefing email was found. Then proceed to Phase 2.
+6. Print a one-paragraph summary: count of existing articles, recency per section, do-not-duplicate list, and whether a briefing email was found.
 
 ---
 
 ## Phase 2 — Research, by section
 
-For each of the four sections (`cannabis`, `plantas`, `ciencia`, `derechos`) run a research pass against the curated source list below. Use `WebSearch` and `WebFetch` against the listed domains. Do not use sources outside this list without flagging the addition explicitly during Phase 4.
+For each of the four sections (`cannabis`, `plantas`, `ciencia`, `derechos`), prioritize the briefing email's leads. Where the briefing did not cover a section (e.g., it gave you two cannabis stories and zero plantas), fall back to `WebSearch` and `WebFetch` against the curated source list below. Do not use sources outside this list without flagging the addition during Phase 4.
 
 **Curated sources (locked):**
 
@@ -50,27 +62,27 @@ For each of the four sections (`cannabis`, `plantas`, `ciencia`, `derechos`) run
 - **`ciencia`** — pubmed.ncbi.nlm.nih.gov, nature.com, thelancet.com, bmj.com, agenciasinc.es, scielo.org
 - **`derechos`** — cels.org.ar, wola.org, dejusticia.org, idpc.net, amnesty.org/en/latin-america-and-the-caribbean, frontlinedefenders.org, pagina12.com.ar, elsaltodiario.com, pikaramagazine.com
 
-For each section, produce a short research note (in chat, not on disk) containing:
+For each section, produce a short research note (in chat, not on disk):
 
-1. **Top 24–48hr news item** (or "none material this window") — primary source URL(s), 2–3 sentence summary, why it matters from a LatAm perspective.
-2. **One underreported / important issue** (any recency) — primary source URL(s), summary, angle.
-3. **Recommended angle for this run** — which of the two to develop, and why.
-4. **Candidate Wikimedia Commons image** — search `commons.wikimedia.org`, return a direct file URL plus a `photo_credit` string formatted like `"Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"`.
+1. **Top 24–48hr news item** — primary source URL(s), 2–3 sentence summary, why it matters from a LatAm perspective.
+2. **One underreported / important issue** — primary source URL(s), summary, angle.
+3. **Recommended angle for this run.**
+4. **Candidate Wikimedia Commons image** — direct upload.wikimedia.org URL plus attribution string formatted like `"Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"`.
 
-Prefer primary sources (court rulings, ministry resolutions, peer-reviewed papers, NGO reports) over secondary coverage when both are available.
+Prefer primary sources over secondary coverage when both are available.
 
 ---
 
 ## Phase 3 — Topic selection
 
-Default mapping (timely news vs deep-dive):
+Default mapping:
 
 - `derechos` → timely news
 - `cannabis` → timely news
 - `ciencia` → deep-dive
 - `plantas` → deep-dive
 
-Override rule: if a section has an unusually strong signal in the opposite mode (e.g., a major peer-reviewed study breaks for `ciencia` in the 24–48hr window, or there is no real news for `derechos` this week), flip that section. Note the flip and the reason in your summary.
+Override rule: if a section has an unusually strong signal in the opposite mode, flip it. Note the flip and the reason in your summary.
 
 Choose exactly one topic per section. Four total.
 
@@ -78,67 +90,86 @@ Choose exactly one topic per section. Four total.
 
 ## Phase 4 — Write English drafts
 
-For each of the four chosen topics, write a complete English article.
+For each chosen topic, write a complete English article:
 
-**Length:** ~1000–1800 words.
-
-**Structure:**
-
-1. Lead paragraph that frames the news/issue from a Latin American vantage. No "in recent years" filler — start concrete.
-2. 2–4 H2 subheads (`##`) that move the argument forward, not generic dividers.
-3. Inline source attribution in prose ("according to ANVISA", "a study in *British Journal of Pharmacology*"). **No inline hyperlinks.**
-4. Final `## Sources` section: bulleted list, one bullet per source, with hyperlinks. Format must match `src/content/articles/brasil-anvisa-asociaciones-cannabis-2026.md` — read that file first as a style reference for sourcing format.
+- ~1000–1800 words.
+- Lead paragraph that frames the news/issue from a LatAm vantage. No filler.
+- 2–4 H2 subheads that move the argument forward.
+- Inline source attribution in prose ("according to ANVISA", "a study in *British Journal of Pharmacology*"). **No inline hyperlinks.**
+- Final `## Sources` section: bulleted list, hyperlinks live here, format matching `src/content/articles/brasil-anvisa-asociaciones-cannabis-2026.md`. Read that file first as a style reference.
 
 **Editorial discipline:**
 
-- No advertorial tone. No "the future of cannabis is bright" boosterism.
+- No advertorial tone. No boosterism.
 - Distinguish scientific evidence, opinion, and testimony explicitly.
-- Avoid the romanticism trap (see `src/content/articles/cannabis-planta-que-nos-encontro.md` — the existing article warns against idealizing the past; new articles must hold the same posture).
-- Where a story has indigenous-rights or human-rights stakes, name them.
+- Avoid the romanticism trap (see `src/content/articles/cannabis-planta-que-nos-encontro.md`).
+- Where there are indigenous-rights or human-rights stakes, name them.
 
-**Output:** present all four English drafts inline in chat, clearly labeled by section. After the fourth draft, write:
-
-> **REVIEW GATE — Phase 4 complete. Please approve each draft (or request edits) before I translate and write files.**
-
-Then **also create a Gmail draft to Victoria Araya** using `mcp__claude_ai_Gmail__create_draft` with these parameters:
-
-- `to`: `["arayaflorenciavictoria@gmail.com"]`
-- `cc`: `["jmunson0711@gmail.com"]`
-- `subject`: `Revista Hierba — 4 borradores en inglés para tu revisión · <today in Spanish, e.g. "1 de mayo 2026">`
-- `body`: a Spanish intro paragraph (2–4 lines explaining the four pieces and the review process), then the four English drafts inline separated by `═══` rules, each followed by its `## Sources` block and a `Imagen candidata: <attribution> — <license>. URL: <upload.wikimedia.org URL>` line. Close with a Spanish line inviting comments and noting that translation + publication happens after her approval. Sign as Jeremy.
-
-The Gmail integration only creates drafts (not sends) — tell the user the draft is in their Drafts folder waiting to be reviewed and sent. Then stop. Do not proceed to Phase 5 actions until the user explicitly approves (Victoria's reply forwarded by Jeremy, or Jeremy's direct go-ahead in chat).
+Do not present these to the user yet. Continue to Phase 5.
 
 ---
 
-## Phase 5 — Review gate (human)
+## Phase 5 — Translate all four to Spanish
 
-This is a hard stop. Do not write any files, do not translate, do not commit until the user has approved each English draft.
+Translate each English draft to Spanish in Latin American register. Match the tone of existing files in `src/content/articles/` (read at least one as reference). The Spanish source-list section heading is `## Fuentes`, not `## Sources`.
 
-If the user requests edits to a single article, revise that one article only. Do not regenerate the others. After revision, re-present the updated draft and ask again.
-
-If the user approves all four, proceed to Phase 6.
+The Spanish version will be the canonical published version; the English version mirrors it.
 
 ---
 
-## Phase 6 — Translate, write, build, commit
+## Phase 6 — Generate PDFs
 
-For each approved English draft, in order:
+1. Compute today's date as `YYYY-MM-DD`. The output directory is `~/revista-hierba/docs/drafts-<YYYY-MM-DD>/`. Create it if it does not exist.
 
-### 6.1 Translate to Spanish
+2. Write `english.html` and `spanish.html` into that directory. Each contains all four articles in editorial-styled HTML. Use the layout established in `~/revista-hierba/docs/drafts-2026-05-01/english.html` and `spanish.html` as the canonical template — Georgia serif body, monospace section labels, drop-cap leads, 0.85in margins, page-break per article, image-candidate note, sources block. Copy the `<style>` block verbatim from those references and only change the content.
 
-Translate to Spanish in Latin American register. Match the tone of existing files in `src/content/articles/`. Read at least one of those files first as a style reference. The Spanish version is the canonical, fully-fronted version; the English version mirrors with reduced frontmatter.
+3. Generate the PDFs with Chrome headless. Write a `build-pdfs.sh` matching `~/revista-hierba/docs/drafts-2026-05-01/build-pdfs.sh` and run it. Expected output: `english.pdf` and `spanish.pdf`, each ~250–350 KB.
 
-### 6.2 Compute the slug
+4. Verify both PDFs exist and are non-empty before continuing.
 
-- Lowercase, hyphenated, derived from the Spanish title.
-- Strip accents and diacritics (`á → a`, `ñ → n`, etc.).
-- Truncate to ~60 characters at a word boundary.
-- Verify no collision: `ls src/content/articles/<slug>.md` must return "No such file." If it collides, append `-2` and retry.
+---
 
-### 6.3 Write the Spanish file
+## Phase 7 — Send the email to Victoria (real send, not draft)
 
-Write to `src/content/articles/<slug>.md` with this frontmatter (fields per `src/content/config.ts`):
+This step **actually sends an email to Victoria Araya**. It is not a Gmail draft. macOS Mail.app must be configured with the user's Gmail account (`jmunson0711@gmail.com`) — verify with `osascript -e 'tell application "Mail" to get name of every account'` if uncertain.
+
+Write an AppleScript file at `/tmp/send-victoria.scpt` that:
+
+- Composes a new message from `jmunson0711@gmail.com`.
+- Sets `to`: `arayaflorenciavictoria@gmail.com`.
+- Sets `subject`: `Revista Hierba — 4 borradores para tu revisión · <fecha en español, ej. "1 de mayo 2026">`.
+- Sets `content` to a Spanish body that:
+  - Greets Victoria.
+  - Names the two attachments (english.pdf, spanish.pdf) with a short description of each.
+  - Lists the four section/topic headlines as a bulleted preview.
+  - Notes editorial parameters (≈1100–1400 palabras, fuentes al final, imagen Wikimedia).
+  - Asks her to reply with approval or edits.
+  - Signs as Jeremy.
+- Attaches both PDFs from `docs/drafts-<YYYY-MM-DD>/`.
+- Runs `send` on the message.
+
+Use `~/revista-hierba/docs/drafts-2026-05-01/` (where the inaugural send lives, including the inaugural script if you saved it) as a structural reference. Then run with `osascript /tmp/send-victoria.scpt`. Expected output: `sent`.
+
+Tell the user: email sent to Victoria; copy will appear in Gmail Sent folder within 1–2 minutes; the agent now stops and waits for Victoria's reply before publishing.
+
+**Do not** also create a Gmail MCP draft — Phase 7 supersedes the older draft-only path.
+
+---
+
+## Phase 8 — Publish (run only after Victoria approves)
+
+Triggered when the user says "publish the approved drafts" or invokes `/draft-articles publish`. Until then, do not touch `src/content/`.
+
+For each approved draft (read the latest PDFs / chat record for the four pieces):
+
+### 8.1 Compute slug
+- Lowercase, hyphenated, derived from Spanish title.
+- Strip accents (`á → a`, `ñ → n`, etc.).
+- Truncate to ~60 chars at a word boundary.
+- Verify no collision; append `-2` if needed.
+
+### 8.2 Write Spanish file
+Write `src/content/articles/<slug>.md`:
 
 ```yaml
 ---
@@ -149,20 +180,17 @@ author: "Victoria Araya"
 excerpt: "<es excerpt, 25–40 words>"
 image: "<wikimedia commons direct file URL>"
 photo_credit: "<artist/source — license note>"
-tag: "<es tag, e.g., Política, Ciencia, Comunidad, Derechos>"
+tag: "<es tag>"
 title_en: "<en title>"
-excerpt_en: "<en excerpt, 25–40 words>"
+excerpt_en: "<en excerpt>"
 tag_en: "<en tag>"
 ---
 
 <full Spanish article body, with inline source attribution and ## Fuentes section at end>
 ```
 
-The Spanish source list section heading is `## Fuentes`, not `## Sources`.
-
-### 6.4 Write the English file
-
-Write to `src/content/articles-en/<slug>.md` with reduced frontmatter:
+### 8.3 Write English file
+Write `src/content/articles-en/<slug>.md`:
 
 ```yaml
 ---
@@ -174,38 +202,22 @@ tag: "<en tag>"
 <full English article body, with ## Sources section at end>
 ```
 
-### 6.5 Validate the build
+### 8.4 Validate
+Run `npm run build` from `~/revista-hierba`. Build must succeed.
 
-Run from `~/revista-hierba`:
+### 8.5 Commit (no push)
+One commit covering all 8 new files:
 
-```bash
-npm run build
 ```
-
-Expected: build completes without error. If it fails (schema validation, broken image URL, missing field, slug mismatch), fix the offending file and rebuild. Do not commit a failing tree.
-
-### 6.6 Commit
-
-When all four article pairs are written and the build is green, run a single commit:
-
-```bash
-git add src/content/articles/<slug1>.md src/content/articles/<slug2>.md src/content/articles/<slug3>.md src/content/articles/<slug4>.md \
-        src/content/articles-en/<slug1>.md src/content/articles-en/<slug2>.md src/content/articles-en/<slug3>.md src/content/articles-en/<slug4>.md
-git commit -m "Publish 4 articles by Victoria Araya — <YYYY-MM-DD>
+Publish 4 articles by Victoria Araya — <YYYY-MM-DD>
 
 - [cannabis] <slug1>
 - [plantas] <slug2>
 - [ciencia] <slug3>
-- [derechos] <slug4>"
+- [derechos] <slug4>
 ```
 
-### 6.7 Report
-
-Tell the user:
-
-> Commit `<short SHA>` is local. Review with `git diff HEAD~1` or `npm run dev`, then `git push` when satisfied. Netlify will auto-deploy.
-
-**Do not push.** Pushing is the user's call.
+Tell the user the commit is local; review with `git diff HEAD~1` or `npm run dev`; push when ready. Netlify auto-deploys on push.
 
 ---
 
@@ -215,13 +227,14 @@ Tell the user:
 - License preference: public domain > CC-BY.
 - URL format: direct file URL on `upload.wikimedia.org`.
 - Attribution: human-readable string (artist/source, year, license).
-- If no Commons image exists for a topic: flag during Phase 4 and ask the user for a URL + attribution before Phase 6. Do not invent URLs. Do not use AI-generated images. Do not use Unsplash or other stock.
+- If no Commons image exists for a topic: flag during Phase 4 and ask the user before Phase 6. Do not invent URLs. Do not use AI-generated images. Do not use Unsplash or stock.
 
 ## Out of scope
 
 - Pushing to origin.
 - Editing existing articles.
 - Creating new sections or schema fields.
-- Republishing topics covered in the last 30 days.
-- Sources outside the curated list (without explicit flag).
+- Republishing topics covered in last 30 days.
+- Sources outside the curated list without flag.
 - Stock or AI-generated images.
+- Sending the email as a Gmail MCP draft (the older path) — Phase 7's actual-send via Mail.app supersedes it.
