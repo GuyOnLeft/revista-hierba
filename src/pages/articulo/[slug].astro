@@ -75,10 +75,12 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
       </button>
       <a class="share-btn" data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
       <a class="share-btn" data-share="twitter" href="#" target="_blank" rel="noopener">X · Twitter</a>
+      <button type="button" class="share-btn" data-share="instagram">Instagram</button>
       <button type="button" class="share-btn" data-share="copy">
         <span class="es-only">Copiar enlace</span>
         <span class="en-only">Copy link</span>
       </button>
+      <span class="share-toast" data-share="toast" aria-live="polite" hidden></span>
     </div>
   </div>
 </Layout>
@@ -113,6 +115,27 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
           btn.innerHTML = '<span class="es-only">Error</span><span class="en-only">Error</span>';
         }
         setTimeout(() => { btn.innerHTML = original; }, 1800);
+      });
+    });
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const toast = document.querySelector('.share-toast[data-share="toast"]');
+    const showToast = (esText, enText) => {
+      if (!toast) return;
+      toast.innerHTML = '<span class="es-only">' + esText + '</span><span class="en-only">' + enText + '</span>';
+      toast.hidden = false;
+      setTimeout(() => { toast.hidden = true; }, 3500);
+    };
+
+    document.querySelectorAll('.share-btn[data-share="instagram"]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(url); } catch (e) {}
+        if (isMobile) {
+          showToast('Enlace copiado — pegá en tu Instagram', 'Link copied — paste it in Instagram');
+          window.location.href = 'instagram://';
+        } else {
+          showToast('Enlace copiado — abrí Instagram en tu teléfono y pegalo', 'Link copied — open Instagram on your phone and paste it');
+        }
       });
     });
   })();
@@ -256,4 +279,15 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
     outline: none;
   }
   .share-btn[hidden] { display: none; }
+  .share-toast {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 8px 14px;
+    margin-left: auto;
+  }
+  .share-toast[hidden] { display: none; }
 </style>
