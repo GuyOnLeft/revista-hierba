@@ -249,3 +249,26 @@ Tell the user the commit is local; review with `git diff HEAD~1` or `npm run dev
 - Sources outside the curated list without flag.
 - Stock or AI-generated images.
 - Sending the email as a Gmail MCP draft (the older path) — Phase 7's actual-send via Mail.app supersedes it.
+
+## Build-budget rules (mandatory for every commit on this repo)
+
+Netlify free tier = 300 build minutes/month, billed in whole-minute increments. Each push to `main` triggers a build, even if the change is 15 seconds long. The rules below are not optional — they apply to **every commit** to this repo, not just to `/draft-articles` runs.
+
+**Rule 1 — `[skip ci]` for non-deploy commits.** If the change does not affect the rendered site, append `[skip ci]` to the commit message. Netlify will skip the build. Files that **never** affect the site:
+
+- `.claude/**` (Claude Code config, slash commands, agents)
+- `docs/**` (specs, plans, design notes, draft PDFs)
+- `*.md` at the repo root (README, etc.) unless they're imported into the Astro site
+- `~/.claude/projects/...` memory files (not in the repo at all, but mentioning for completeness)
+
+Files that **do** affect the site (must build):
+- `src/**` (content, pages, components, scripts, styles)
+- `public/**`
+- `package.json`, `package-lock.json`, `astro.config.mjs`, `netlify.toml`, `tsconfig.json`
+- Article markdown under `src/content/articles/` and `src/content/articles-en/`
+
+**Rule 2 — Batch commits before pushing.** Make several small commits locally, then one `git push`. Netlify builds on push, not commit. Phase 8 of `/draft-articles` already follows this: commits but does not push. The user pushes when ready.
+
+**Rule 3 — Iterate via `npm run dev`, not pushes.** For UI / styling / layout work, run `npm run dev` from `~/revista-hierba` (~600 ms boot, hot reload) and iterate locally. Push only when the change is final. Pushing each iteration burns whole-minute increments unnecessarily.
+
+**How to apply during a `/draft-articles` run.** Phase 8's article publish commit DOES affect the site (writes to `src/content/`) — that's a normal commit, no `[skip ci]`. But when this command itself is being edited (or memory, or specs, or PDFs in `docs/drafts-*/`), use `[skip ci]`.
