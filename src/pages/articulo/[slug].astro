@@ -244,6 +244,7 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-top: 56px;
     padding: 18px 0;
@@ -287,7 +288,17 @@ const secLabel = sectionLabels[section] ?? { es: section, en: section };
     color: var(--white);
     background: var(--black);
     padding: 8px 14px;
-    margin-left: auto;
+    flex-basis: 100%;
+    text-align: center;
   }
   .share-toast[hidden] { display: none; }
+  @media (max-width: 600px) {
+    .article-share { gap: 6px; }
+    .share-label { display: none; }
+    .share-btn {
+      font-size: 9px;
+      letter-spacing: 1px;
+      padding: 7px 9px;
+    }
+  }
 </style>
