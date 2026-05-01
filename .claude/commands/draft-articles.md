@@ -34,3 +34,25 @@ Announce each phase as you enter it. After Phase 4 you must stop and wait for th
 4. Check git working tree state with `git status --short`. If there are unrelated staged changes, warn the user — your final commit should be just the new article files.
 
 5. Print a one-paragraph summary of what you found: count of existing articles, recency of the most recent per section, and the do-not-duplicate list. Then proceed to Phase 2.
+
+---
+
+## Phase 2 — Research, by section
+
+For each of the four sections (`cannabis`, `plantas`, `ciencia`, `derechos`) run a research pass against the curated source list below. Use `WebSearch` and `WebFetch` against the listed domains. Do not use sources outside this list without flagging the addition explicitly during Phase 4.
+
+**Curated sources (locked):**
+
+- **`cannabis`** — thcmagazine.com.ar, lamarihuana.com (Revista Cáñamo), filtermag.org, marijuanamoment.net, volcanicas.com, elplanteo.com, reuters.com, apnews.com
+- **`plantas`** — es.mongabay.com, agenciatierraviva.com.ar, scidev.net (LatAm), servindi.org, debatesindigenas.org
+- **`ciencia`** — pubmed.ncbi.nlm.nih.gov, nature.com, thelancet.com, bmj.com, agenciasinc.es, scielo.org
+- **`derechos`** — cels.org.ar, wola.org, dejusticia.org, idpc.net, amnesty.org/en/latin-america-and-the-caribbean, frontlinedefenders.org, pagina12.com.ar, elsaltodiario.com, pikaramagazine.com
+
+For each section, produce a short research note (in chat, not on disk) containing:
+
+1. **Top 24–48hr news item** (or "none material this window") — primary source URL(s), 2–3 sentence summary, why it matters from a LatAm perspective.
+2. **One underreported / important issue** (any recency) — primary source URL(s), summary, angle.
+3. **Recommended angle for this run** — which of the two to develop, and why.
+4. **Candidate Wikimedia Commons image** — search `commons.wikimedia.org`, return a direct file URL plus a `photo_credit` string formatted like `"Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"`.
+
+Prefer primary sources (court rulings, ministry resolutions, peer-reviewed papers, NGO reports) over secondary coverage when both are available.
