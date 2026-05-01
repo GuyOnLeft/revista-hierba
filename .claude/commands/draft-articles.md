@@ -99,3 +99,120 @@ For each of the four chosen topics, write a complete English article.
 > **REVIEW GATE — Phase 4 complete. Please approve each draft (or request edits) before I translate and write files.**
 
 Then stop. Do not proceed to Phase 5 actions until the user explicitly approves.
+
+---
+
+## Phase 5 — Review gate (human)
+
+This is a hard stop. Do not write any files, do not translate, do not commit until the user has approved each English draft.
+
+If the user requests edits to a single article, revise that one article only. Do not regenerate the others. After revision, re-present the updated draft and ask again.
+
+If the user approves all four, proceed to Phase 6.
+
+---
+
+## Phase 6 — Translate, write, build, commit
+
+For each approved English draft, in order:
+
+### 6.1 Translate to Spanish
+
+Translate to Spanish in Latin American register. Match the tone of existing files in `src/content/articles/`. Read at least one of those files first as a style reference. The Spanish version is the canonical, fully-fronted version; the English version mirrors with reduced frontmatter.
+
+### 6.2 Compute the slug
+
+- Lowercase, hyphenated, derived from the Spanish title.
+- Strip accents and diacritics (`á → a`, `ñ → n`, etc.).
+- Truncate to ~60 characters at a word boundary.
+- Verify no collision: `ls src/content/articles/<slug>.md` must return "No such file." If it collides, append `-2` and retry.
+
+### 6.3 Write the Spanish file
+
+Write to `src/content/articles/<slug>.md` with this frontmatter (fields per `src/content/config.ts`):
+
+```yaml
+---
+title: "<es title>"
+section: <cannabis|plantas|ciencia|derechos>
+date: <today, YYYY-MM-DD>
+author: "Victoria Araya"
+excerpt: "<es excerpt, 25–40 words>"
+image: "<wikimedia commons direct file URL>"
+photo_credit: "<artist/source — license note>"
+tag: "<es tag, e.g., Política, Ciencia, Comunidad, Derechos>"
+title_en: "<en title>"
+excerpt_en: "<en excerpt, 25–40 words>"
+tag_en: "<en tag>"
+---
+
+<full Spanish article body, with inline source attribution and ## Fuentes section at end>
+```
+
+The Spanish source list section heading is `## Fuentes`, not `## Sources`.
+
+### 6.4 Write the English file
+
+Write to `src/content/articles-en/<slug>.md` with reduced frontmatter:
+
+```yaml
+---
+title: "<en title>"
+excerpt: "<en excerpt>"
+tag: "<en tag>"
+---
+
+<full English article body, with ## Sources section at end>
+```
+
+### 6.5 Validate the build
+
+Run from `~/revista-hierba`:
+
+```bash
+npm run build
+```
+
+Expected: build completes without error. If it fails (schema validation, broken image URL, missing field, slug mismatch), fix the offending file and rebuild. Do not commit a failing tree.
+
+### 6.6 Commit
+
+When all four article pairs are written and the build is green, run a single commit:
+
+```bash
+git add src/content/articles/<slug1>.md src/content/articles/<slug2>.md src/content/articles/<slug3>.md src/content/articles/<slug4>.md \
+        src/content/articles-en/<slug1>.md src/content/articles-en/<slug2>.md src/content/articles-en/<slug3>.md src/content/articles-en/<slug4>.md
+git commit -m "Publish 4 articles by Victoria Araya — <YYYY-MM-DD>
+
+- [cannabis] <slug1>
+- [plantas] <slug2>
+- [ciencia] <slug3>
+- [derechos] <slug4>"
+```
+
+### 6.7 Report
+
+Tell the user:
+
+> Commit `<short SHA>` is local. Review with `git diff HEAD~1` or `npm run dev`, then `git push` when satisfied. Netlify will auto-deploy.
+
+**Do not push.** Pushing is the user's call.
+
+---
+
+## Image policy
+
+- Source: Wikimedia Commons only.
+- License preference: public domain > CC-BY.
+- URL format: direct file URL on `upload.wikimedia.org`.
+- Attribution: human-readable string (artist/source, year, license).
+- If no Commons image exists for a topic: flag during Phase 4 and ask the user for a URL + attribution before Phase 6. Do not invent URLs. Do not use AI-generated images. Do not use Unsplash or other stock.
+
+## Out of scope
+
+- Pushing to origin.
+- Editing existing articles.
+- Creating new sections or schema fields.
+- Republishing topics covered in the last 30 days.
+- Sources outside the curated list (without explicit flag).
+- Stock or AI-generated images.
