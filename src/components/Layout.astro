@@ -21,6 +21,104 @@ import '../styles/global.css';
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
     <script defer src="https://umami-production-026b.up.railway.app/script.js" data-website-id="cb317954-e44a-43e1-9447-0a679ffe3e17"></script>
+    <script is:inline>
+    (function () {
+      function track(name, data) {
+        try { if (window.umami) umami.track(name, data || {}); } catch (e) {}
+      }
+      var fired = {};
+      function fireOnce(name, data) {
+        if (fired[name]) return;
+        fired[name] = 1;
+        track(name, data);
+      }
+      function pathType() {
+        var p = location.pathname;
+        if (p === '/' || p === '') return 'home';
+        if (p.indexOf('/articulo/') === 0) return 'article';
+        if (p.indexOf('/secciones/') === 0) return 'section';
+        if (p.indexOf('/editorial') === 0) return 'editorial';
+        if (p.indexOf('/contacto') === 0) return 'contact';
+        if (p.indexOf('/nosotros') === 0) return 'about';
+        if (p.indexOf('/articulos') === 0) return 'index';
+        return 'other';
+      }
+      function lang() { try { return localStorage.getItem('lang') || 'es'; } catch (e) { return 'es'; } }
+      var ctx = function () { return { lang: lang(), path_type: pathType() }; };
+
+      // Scroll-depth milestones
+      var scrollMax = 0;
+      window.addEventListener('scroll', function () {
+        var h = document.documentElement;
+        var pct = Math.round((h.scrollTop + window.innerHeight) / h.scrollHeight * 100);
+        if (pct > scrollMax) scrollMax = pct;
+        if (pct >= 25) fireOnce('scroll_25', ctx());
+        if (pct >= 50) fireOnce('scroll_50', ctx());
+        if (pct >= 75) fireOnce('scroll_75', ctx());
+        if (pct >= 90) fireOnce('scroll_90', ctx());
+        maybeArticleRead();
+      }, { passive: true });
+
+      // Time-on-page heartbeats
+      var engaged60 = false;
+      setTimeout(function () { fireOnce('engaged_30s', ctx()); }, 30000);
+      setTimeout(function () { fireOnce('engaged_60s', ctx()); engaged60 = true; maybeArticleRead(); }, 60000);
+      setTimeout(function () { fireOnce('engaged_180s', ctx()); }, 180000);
+
+      // Composite "actually read this article": only on article pages, requires both scroll_75 and engaged_60s
+      function maybeArticleRead() {
+        if (pathType() !== 'article') return;
+        if (engaged60 && scrollMax >= 75) fireOnce('article_read', { lang: lang(), slug: location.pathname });
+      }
+
+      // Click tracking
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        // Language toggle (uses Hierba's own #lang-switch in Nav)
+        var langBtn = t.closest && t.closest('#lang-switch');
+        if (langBtn) {
+          var from = lang();
+          var to = from === 'es' ? 'en' : 'es';
+          track('lang_toggle', { from: from, to: to, path_type: pathType() });
+          return;
+        }
+        var a = t.closest && t.closest('a');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (href.indexOf('mailto:') === 0) {
+          track('mailto_click', { href: href, path_type: pathType() });
+          return;
+        }
+        if (/^https?:\/\//.test(href) && a.host !== location.host) {
+          var dest = 'other';
+          if (a.host.indexOf('instagram') !== -1) dest = 'instagram';
+          else if (a.host.indexOf('whatsapp') !== -1 || a.host.indexOf('wa.me') !== -1) dest = 'whatsapp';
+          track('outbound_click', { href: href, host: a.host, dest: dest, path_type: pathType() });
+          return;
+        }
+        // Internal navigation: classify clicks from non-article pages into articles or sections
+        if (href.indexOf('/articulo/') === 0 && pathType() !== 'article') {
+          track('article_open', { slug: href, from: pathType(), lang: lang() });
+        } else if (href.indexOf('/secciones/') === 0) {
+          track('section_open', { section: href, from: pathType(), lang: lang() });
+        }
+      });
+
+      // Form submissions
+      document.addEventListener('submit', function (e) {
+        var f = e.target;
+        if (!f || f.tagName !== 'FORM') return;
+        var name = (f.id || f.getAttribute('name') || '').toLowerCase();
+        if (name.indexOf('newsletter') !== -1 || (f.action && f.action.indexOf('newsletter') !== -1)) {
+          track('newsletter_submit', { lang: lang() });
+        } else if (pathType() === 'contact') {
+          track('contact_submit', { lang: lang() });
+        } else {
+          track('form_submit', { name: name, path_type: pathType(), lang: lang() });
+        }
+      }, true);
+    })();
+    </script>
   </head>
   <body>
     <Nav />

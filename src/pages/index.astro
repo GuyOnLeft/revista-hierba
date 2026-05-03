@@ -1,37 +1,22 @@
 ---
-import Nav from '../components/Nav.astro';
+import Layout from '../components/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ArticleGrid from '../components/ArticleGrid.astro';
 import SectionPreviews from '../components/SectionPreviews.astro';
 import Newsletter from '../components/Newsletter.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
 ---
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Revista Hierba — Periodismo independiente sobre cannabis, plantas medicinales, ciencia y derechos humanos." />
-    <title>Revista Hierba</title>
-  </head>
-  <body>
-    <Nav />
-    <main>
-      <Hero />
-      <ArticleGrid />
-      <div class="ver-todos-home">
-        <a href="/articulos" class="ver-todos-link">
-          <span class="es-only">Ver todos los artículos →</span>
-          <span class="en-only">See all articles →</span>
-        </a>
-      </div>
-      <SectionPreviews />
-      <Newsletter />
-    </main>
-    <Footer />
-    <script is:inline src="/i18n.js"></script>
-  </body>
-</html>
+<Layout description="Revista Hierba — Periodismo independiente sobre cannabis, plantas medicinales, ciencia y derechos humanos.">
+  <Hero />
+  <ArticleGrid />
+  <div class="ver-todos-home">
+    <a href="/articulos" class="ver-todos-link">
+      <span class="es-only">Ver todos los artículos →</span>
+      <span class="en-only">See all articles →</span>
+    </a>
+  </div>
+  <SectionPreviews />
+  <Newsletter />
+</Layout>
 
 <style>
   .ver-todos-home {
