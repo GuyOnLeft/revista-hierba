@@ -1,0 +1,12 @@
+[
+  {
+    "state": "OPEN",
+    "closedAt": null,
+    "body": "# Daily drafts\n\n## 1. cannabis\n**Slug:** `draft-slug-1`\n\n## 2. plantas\n**Slug:** `draft-slug-2`"
+  },
+  {
+    "state": "CLOSED",
+    "closedAt": "2026-05-08T08:06:05.585Z",
+    "body": "## 1. derechos\n**Slug:** `draft-slug-3`"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "query": {
+    "pages": {
+      "1": {
+        "title": "File:Pharmacy-good.jpg",
+        "imageinfo": [{
+          "width": 1600, "height": 1200, "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": { "value": "CC BY 4.0" },
+            "Artist": { "value": "Jane Doe" },
+            "ImageDescription": { "value": "A pharmacy interior" }
+          },
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Pharmacy-good.jpg"
+        }]
+      },
+      "2": {
+        "title": "File:Bad-license.jpg",
+        "imageinfo": [{
+          "width": 1200, "height": 800, "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": { "value": "CC BY-SA 3.0" },
+            "Artist": { "value": "X" }
+          },
+          "url": "https://example.com/bad.jpg"
+        }]
+      },
+      "3": {
+        "title": "File:Too-small.jpg",
+        "imageinfo": [{
+          "width": 400, "height": 300, "mime": "image/jpeg",
+          "extmetadata": {
+            "LicenseShortName": { "value": "Public domain" },
+            "Artist": { "value": "Y" }
+          },
+          "url": "https://example.com/small.jpg"
+        }]
+      },
+      "4": {
+        "title": "File:Diagram.svg",
+        "imageinfo": [{
+          "width": 2000, "height": 2000, "mime": "image/svg+xml",
+          "extmetadata": {
+            "LicenseShortName": { "value": "CC BY 4.0" },
+            "Artist": { "value": "Z" }
+          },
+          "url": "https://example.com/diagram.svg"
+        }]
+      }
+    }
+  }
+}
