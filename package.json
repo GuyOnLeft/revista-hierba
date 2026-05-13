@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:scripts": "node --test scripts/daily-draft-pr/test/**/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
