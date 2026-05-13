@@ -3,8 +3,8 @@ import { dirname } from 'node:path';
 
 const ACCEPTABLE_LICENSE_PATTERNS = [
   /^public domain/i,
-  /^cc\s*0/i,
-  /^cc\s*by\s+\d/i,
+  /^cc[\s-]*0/i,
+  /^cc[\s-]*by[\s-]+\d/i,
 ];
 
 const MIN_LONG_EDGE = 800;

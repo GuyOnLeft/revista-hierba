@@ -1,3 +1,6 @@
+// Article bounds (1-4) assume max 4 visible sections.
+// When a section is skipped, articleIndex may exceed visibleArticleCount;
+// callers must validate articleIndex <= visibleArticleCount before applying a swap.
 const SWAP_PATTERN = /^\s*use\s+#([123])\s+on\s+article\s+([1-4])\s*$/i;
 
 export function parseSwapComments(comments) {
