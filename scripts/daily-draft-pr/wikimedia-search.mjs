@@ -1,8 +1,5 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
-import { Readable } from 'node:stream';
-import { pipeline } from 'node:stream/promises';
-import { createWriteStream } from 'node:fs';
 
 const ACCEPTABLE_LICENSE_PATTERNS = [
   /^public domain/i,
