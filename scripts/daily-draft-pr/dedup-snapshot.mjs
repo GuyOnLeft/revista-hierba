@@ -7,3 +7,22 @@ export async function collectMergedArticleSlugs(articlesDir) {
     .filter(name => extname(name) === '.md')
     .map(name => basename(name, '.md'));
 }
+
+const SLUG_PATTERN = /\*\*Slug:\*\*\s+`([a-z0-9-]+)`/gi;
+const DEDUP_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
+
+export function extractSlugsFromPRList(prs) {
+  const cutoff = Date.now() - DEDUP_WINDOW_MS;
+  const slugs = new Set();
+  for (const pr of prs) {
+    if (pr.state === 'CLOSED') {
+      if (!pr.closedAt) continue;
+      if (new Date(pr.closedAt).getTime() < cutoff) continue;
+    }
+    const body = pr.body || '';
+    for (const match of body.matchAll(SLUG_PATTERN)) {
+      slugs.add(match[1]);
+    }
+  }
+  return [...slugs];
+}
