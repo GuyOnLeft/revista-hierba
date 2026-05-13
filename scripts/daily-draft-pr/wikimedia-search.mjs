@@ -1,3 +1,9 @@
+import { writeFile, mkdir } from 'node:fs/promises';
+import { dirname } from 'node:path';
+import { Readable } from 'node:stream';
+import { pipeline } from 'node:stream/promises';
+import { createWriteStream } from 'node:fs';
+
 const ACCEPTABLE_LICENSE_PATTERNS = [
   /^public domain/i,
   /^cc\s*0/i,
@@ -35,4 +41,52 @@ export function filterCandidates(apiResponse) {
     });
   }
   return results;
+}
+
+const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
+
+export async function searchCommons(terms, perTermLimit = 5, fetchImpl = fetch) {
+  const fileTitles = new Set();
+  for (const term of terms) {
+    const url = new URL(COMMONS_API);
+    url.searchParams.set('action', 'query');
+    url.searchParams.set('format', 'json');
+    url.searchParams.set('list', 'search');
+    url.searchParams.set('srnamespace', '6');
+    url.searchParams.set('srsearch', term);
+    url.searchParams.set('srlimit', String(perTermLimit));
+    const resp = await fetchImpl(url, {
+      headers: { 'User-Agent': 'RevistaHierba-DailyDraft/1.0 (https://revistahierba.com)' },
+    });
+    if (!resp.ok) continue;
+    const data = await resp.json();
+    for (const hit of data.query?.search || []) {
+      fileTitles.add(hit.title);
+    }
+  }
+  if (fileTitles.size === 0) return [];
+
+  const titlesParam = [...fileTitles].join('|');
+  const infoUrl = new URL(COMMONS_API);
+  infoUrl.searchParams.set('action', 'query');
+  infoUrl.searchParams.set('format', 'json');
+  infoUrl.searchParams.set('titles', titlesParam);
+  infoUrl.searchParams.set('prop', 'imageinfo');
+  infoUrl.searchParams.set('iiprop', 'url|size|mime|extmetadata');
+  const infoResp = await fetchImpl(infoUrl, {
+    headers: { 'User-Agent': 'RevistaHierba-DailyDraft/1.0 (https://revistahierba.com)' },
+  });
+  const info = await infoResp.json();
+  return filterCandidates(info);
+}
+
+export async function downloadImage(url, destPath, fetchImpl = fetch) {
+  await mkdir(dirname(destPath), { recursive: true });
+  const resp = await fetchImpl(url, {
+    headers: { 'User-Agent': 'RevistaHierba-DailyDraft/1.0 (https://revistahierba.com)' },
+  });
+  if (!resp.ok) throw new Error(`Download failed: ${resp.status} ${url}`);
+  const buf = Buffer.from(await resp.arrayBuffer());
+  await writeFile(destPath, buf);
+  return destPath;
 }

@@ -1,9 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { filterCandidates } from '../wikimedia-search.mjs';
+import { tmpdir } from 'node:os';
+import { filterCandidates, searchCommons, downloadImage } from '../wikimedia-search.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -39,4 +40,36 @@ test('filterCandidates preserves artist + license for photo_credit', async () =>
   const pharmacy = candidates.find(c => c.title === 'File:Pharmacy-good.jpg');
   assert.equal(pharmacy.artist, 'Jane Doe');
   assert.equal(pharmacy.license, 'CC BY 4.0');
+});
+
+test('searchCommons batches title->imageinfo and returns filtered results', async () => {
+  const fixtureRaw = await readFile(join(__dirname, 'fixtures/wikimedia-imageinfo-sample.json'), 'utf8');
+  let callCount = 0;
+  const fakeFetch = async (url) => {
+    callCount += 1;
+    const u = new URL(url);
+    if (u.searchParams.get('list') === 'search') {
+      return {
+        ok: true,
+        json: async () => ({ query: { search: [{ title: 'File:Pharmacy-good.jpg' }] } }),
+      };
+    }
+    return { ok: true, json: async () => JSON.parse(fixtureRaw) };
+  };
+  const results = await searchCommons(['pharmacy'], 5, fakeFetch);
+  assert.ok(results.length >= 1);
+  assert.equal(results[0].title, 'File:Pharmacy-good.jpg');
+  assert.ok(callCount >= 2, 'should make at least one search + one imageinfo call');
+});
+
+test('downloadImage writes bytes to disk', async () => {
+  const tmp = join(tmpdir(), `wm-test-${Date.now()}.bin`);
+  const fakeFetch = async () => ({
+    ok: true,
+    arrayBuffer: async () => new TextEncoder().encode('hello').buffer,
+  });
+  await downloadImage('https://example.com/x.jpg', tmp, fakeFetch);
+  const got = await readFile(tmp, 'utf8');
+  assert.equal(got, 'hello');
+  await rm(tmp);
 });
