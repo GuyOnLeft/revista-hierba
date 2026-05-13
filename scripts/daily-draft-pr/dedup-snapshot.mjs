@@ -26,3 +26,32 @@ export function extractSlugsFromPRList(prs) {
   }
   return [...slugs];
 }
+
+import { execFileSync } from 'node:child_process';
+
+function fetchOpenAndRecentPRs() {
+  const json = execFileSync('gh', [
+    'pr', 'list',
+    '--state', 'all',
+    '--search', 'head:drafts/',
+    '--json', 'state,closedAt,body,headRefName',
+    '--limit', '60',
+  ], { encoding: 'utf8' });
+  return JSON.parse(json);
+}
+
+async function main() {
+  const articlesDir = process.argv[2] || 'src/content/articles';
+  const merged = await collectMergedArticleSlugs(articlesDir);
+  const prs = fetchOpenAndRecentPRs();
+  const fromPRs = extractSlugsFromPRList(prs);
+  const all = [...new Set([...merged, ...fromPRs])].sort();
+  console.log(JSON.stringify({ excludeSlugs: all }, null, 2));
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+}
