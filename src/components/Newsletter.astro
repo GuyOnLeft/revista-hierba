@@ -3,9 +3,8 @@
 <section class="newsletter">
   <h2 data-i18n="newsletter.headline">Suscríbete</h2>
   <p data-i18n="newsletter.sub">Periodismo independiente sobre cannabis y plantas medicinales</p>
-  <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="newsletter" />
-    <p class="hp-field" hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+  <form class="newsletter-form" action="https://formspree.io/f/mzdlldqk" method="POST">
+    <p class="hp-field" hidden><label>Don't fill this out: <input name="_gotcha" /></label></p>
     <input type="email" name="email" data-i18n-placeholder="newsletter.placeholder" placeholder="tu@email.com" required />
     <button type="submit" data-i18n="newsletter.btn">Suscribirse</button>
   </form>
@@ -19,14 +18,11 @@
   const error = document.querySelector('.error-msg');
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const body = new URLSearchParams();
-    for (const [k, v] of data.entries()) body.append(k, String(v));
     try {
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
       });
       if (!res.ok) throw new Error('submit failed: ' + res.status);
       form.hidden = true;
