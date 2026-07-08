@@ -65,11 +65,10 @@ Per article:
 
 ## Phase 7 — Open PR
 
-1. Build the manifest JSON (date, deploy-preview URL placeholder, articles with their image candidates, skipped sections, excluded slugs).
-2. Get deploy preview URL: after `git push origin "$BRANCH"`, GitHub triggers the Netlify integration which posts the deploy-preview URL as a check. Poll `gh pr checks` until the preview URL appears, or simply construct the predicted URL pattern `https://deploy-preview-<N>--revistahierba.netlify.app` after the PR is created (N comes from `gh pr create` output).
-3. Render PR body: `node scripts/daily-draft-pr/render-pr-body.mjs < manifest.json > pr-body.md`. (CLI to be added; if not yet present, import the module inline.)
-4. `gh pr create --base main --head "$BRANCH" --title "Daily drafts — $(date +%Y-%m-%d)" --label daily-draft --body-file pr-body.md`
-5. If any article triggered the image fallback, also: `gh pr edit <num> --add-label needs-image-review`.
+1. Build the manifest JSON (date, articles with their image candidates, skipped sections, excluded slugs). The site is static (GitHub Pages, no per-PR deploy previews) — there is no preview URL; reviewers read the rendered images/excerpts directly in the PR body.
+2. Render PR body: `node scripts/daily-draft-pr/render-pr-body.mjs < manifest.json > pr-body.md`. (CLI to be added; if not yet present, import the module inline.)
+3. `gh pr create --base main --head "$BRANCH" --title "Daily drafts — $(date +%Y-%m-%d)" --label daily-draft --body-file pr-body.md`. Capture the PR URL from the command's output — this is what Phase 8 links to.
+4. If any article triggered the image fallback, also: `gh pr edit <num> --add-label needs-image-review`.
 
 ## Phase 8 — Email Victoria
 
@@ -80,9 +79,9 @@ Use the Gmail MCP `send` action (not `create_draft` — full send, no attachment
 - Body (Spanish):
   > Hola Victoria,
   >
-  > Te paso el link de la vista previa de los borradores del día. Para tu información — Jeremy aprueba antes de publicar.
+  > Te paso el link del PR con los borradores del día. Para tu información — Jeremy aprueba antes de publicar.
   >
-  > Vista previa: <deploy-preview-url>
+  > PR: <pr-url>
   >
   > Secciones de hoy:
   > • cannabis — <título>

@@ -32,7 +32,6 @@ export function renderPRBody(manifest) {
   const parts = [];
   parts.push(`# Daily drafts — ${manifest.date}`);
   parts.push('');
-  parts.push(`**Deploy preview:** ${manifest.deployPreviewUrl}  `);
   parts.push(`**Dedup window:** 30 days · ${manifest.excludedSlugs.length} topics excluded ([list](#dedup))`);
   parts.push('');
   parts.push('---');

@@ -4,7 +4,6 @@ import { renderPRBody } from '../render-pr-body.mjs';
 
 const sampleManifest = {
   date: '2026-05-13',
-  deployPreviewUrl: 'https://deploy-preview-42--revistahierba.netlify.app',
   excludedSlugs: ['old-slug-1', 'old-slug-2'],
   articles: [
     {
@@ -23,11 +22,6 @@ const sampleManifest = {
   ],
   skippedSections: ['plantas'],
 };
-
-test('renderPRBody includes the deploy preview URL', () => {
-  const body = renderPRBody(sampleManifest);
-  assert.match(body, /deploy-preview-42--revistahierba\.netlify\.app/);
-});
 
 test('renderPRBody numbers articles sequentially with a gap for skipped sections', () => {
   const body = renderPRBody(sampleManifest);
