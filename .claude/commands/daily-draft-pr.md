@@ -8,7 +8,7 @@ Autonomous daily draft pipeline for Revista Hierba. Produces a GitHub PR with 4 
 
 ## Flags
 
-- `--dry-run` — Execute phases 1–6 (research + write + build) but skip Phase 7 (PR open) and Phase 8 (email). Leaves the branch on disk for inspection.
+- `--dry-run` — Execute phases 1–6 (research + write + build), then `git push origin "$BRANCH"` so the branch is inspectable on GitHub, but skip Phase 7 (PR open) and Phase 8 (email).
 - `--process-swaps-only` — Skip new-content phases. Only read open daily-draft PRs for unprocessed swap comments and apply them.
 
 ## Phase 1 — Setup
