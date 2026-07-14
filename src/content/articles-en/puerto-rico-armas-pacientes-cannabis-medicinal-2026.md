@@ -1,0 +1,45 @@
+---
+title: "A Puerto Rico Senate Bill Seeks to Fully Bar Medical Cannabis Patients From Owning Firearms"
+excerpt: "P. de la C. 651, already approved by the House, would automatically disqualify any medical cannabis patient in Puerto Rico from a firearm license. G9 Alliance renewed its opposition, citing the U.S. Supreme Court's Hemani ruling, which requires evidence of actual risk before restricting that right."
+tag: "Patient Rights"
+---
+
+A bill sitting before Puerto Rico's Senate would permanently bar anyone holding a medical cannabis license from obtaining a firearm license — and on July 10, 2026, the island's medical cannabis industry alliance renewed its public campaign against it, arguing the measure revives exactly the kind of blanket presumption of dangerousness that the U.S. Supreme Court rejected earlier this year. House Bill 651, P. de la C. 651, cleared Puerto Rico's House of Representatives on March 19, 2026 and has sat with the Senate since, its next procedural step still unscheduled.
+
+The bill amends Puerto Rico's Weapons Law to add medical cannabis licensure to the list of conditions that automatically disqualify an applicant from obtaining a firearm license, alongside addiction to controlled substances and habitual drunkenness. It also requires every firearm-license applicant to submit a controlled-substances test — blood, urine or hair, taken within 15 days of applying — and imposes a 12-month waiting period before reapplying if that test comes back positive. Supporters of the measure, cited in Puerto Rican press coverage of its House passage, argued it gives law enforcement "greater tools to identify whether applicants maintain activities incompatible with applicable legal provisions." No individualized assessment of the applicant's condition, treatment history or actual risk is required.
+
+## G9 Alliance's Renewed Objection
+
+G9 Alliance, which represents operators across Puerto Rico's medical cannabis industry, has opposed the bill since before its House passage, but its most recent public statement — issued July 10 — sharpens the argument by tying it directly to a change in the underlying legal landscape. Earlier this year, the U.S. Supreme Court ruled in United States v. Hemani that the federal government cannot strip someone's Second Amendment rights based on drug use alone; it must show evidence of actual risk, such as documented intoxication or a pattern of dangerous conduct, before restricting a constitutional right.
+
+"A medical cannabis license should not become an automatic presumption of danger, incapacity or substance abuse," G9 Alliance argued in its statement, work carried out in coordination with José A. Rivera, the organization's executive director, who has separately raised concerns about the bill's data-sharing mechanism — it would require Puerto Rico's Department of Health to grant police direct access to verify applicants' medical cannabis licensing status, a provision G9 Alliance frames as a medical-privacy problem layered on top of the constitutional one.
+
+G9 Alliance is not alone in the fight. CODEPOLA, the Corporación para la Defensa del Poseedor de Licencia de Armas de Puerto Rico — an organization representing firearm license holders, not the cannabis industry — has filed complaints alleging that medical cannabis patients have already had licenses affected or weapons confiscated based solely on their status as authorized patients, independent of any bill passing. That complaint points to a second track of the same conflict: even without P. de la C. 651 becoming law, Puerto Rico Police have been reported withholding weapons and licenses from cannabis patients in the months since the Hemani ruling, rather than returning them as the decision would seem to require.
+
+## What "Automatic" Means in Practice
+
+The word doing the most work in this debate is "automatic." Nothing in P. de la C. 651 asks a licensing officer, a judge or a physician to evaluate whether a specific applicant's cannabis treatment has any bearing on their fitness to own a firearm. A veteran managing PTSD with a state-authorized cannabis regimen and no history of violent conduct would be disqualified under the same clause as anyone else on the registry, with no path to individualized review built into the bill's text. That is precisely the design Hemani found constitutionally suspect when applied by federal prosecutors — and precisely the design Puerto Rico's House voted, in March, to write into territorial law regardless.
+
+## Two Fights, One Underlying Question
+
+Read together, the pending Senate bill and the ongoing police practice describe the same underlying dispute playing out on two fronts at once: a legislative attempt to write a categorical cannabis-patient exclusion into law, running in parallel with law enforcement's apparent reluctance to fully implement a Supreme Court ruling that already narrowed how far that kind of exclusion can go. If P. de la C. 651 becomes law, it would give the Police a statutory basis for exactly the practice CODEPOLA says is already happening informally — converting an unresolved compliance dispute into settled policy.
+
+That is precisely what worries advocates on both sides of the industry–gun-rights divide who have aligned against the bill: it would not simply maintain the status quo while courts and agencies sort out how Hemani applies in practice. It would lock in the more restrictive position before that process plays out, for a population — chronic pain, cancer, neurological condition and PTSD patients prominent among those cited in coverage of the debate — whose medical cannabis use has, in most cases, no documented connection to violent or reckless conduct.
+
+## A Program Built on the Assumption of Legitimacy
+
+Puerto Rico's medical cannabis program has operated under regulation since 2017, when the island's Health Department issued rules governing patient registration, dispensary licensing and physician certification — a framework built on the premise that a registered patient using cannabis under medical supervision is engaging in legitimate, regulated healthcare, not criminal or inherently risky behavior. P. de la C. 651 does not repeal that framework. It sits alongside it, creating a program that simultaneously tells patients their treatment is medically legitimate enough to regulate and license, while treating enrollment in that same program as grounds to presume they are unfit to exercise an unrelated constitutional right.
+
+That contradiction is what critics argue distinguishes this bill from ordinary firearm-safety regulation. Existing law already disqualifies applicants found to pose a documented danger, including through the extreme risk protection orders the Puerto Rico legislature adopted in the same March session that passed P. de la C. 651 — a mechanism requiring judicial findings before restricting firearm access. P. de la C. 651, by contrast, requires no judicial finding and no evidence specific to the applicant; enrollment in the medical cannabis registry does the disqualifying work by itself; a structure advocates say inverts the burden the Hemani ruling assigned to the government.
+
+## What Comes Next
+
+The bill remains before the Senate with no committee vote or floor debate scheduled as of this writing. Advocacy groups are using the pause to lobby senators directly, betting that a Senate less rushed than the House was in March will weigh the Hemani precedent more heavily before advancing a bill several organizations argue is likely to draw a constitutional challenge if it passes as written. For Puerto Rico's registered medical cannabis patients — and for cannabis patients in other U.S. jurisdictions watching how the first major post-Hemani legislative test resolves — the outcome will help define how much practical protection the Supreme Court's ruling actually provides.
+
+## Sources
+
+- [Cámara aprueba enmienda para prohibir armas a pacientes de cannabis medicinal — NotiCel](https://noticel.com/en/noticias/20260319/camara-aprueba-enmienda-para-prohibir-armas-a-pacientes-de-cannabis-medicinal/)
+- [G9 Alliance respalda reclamo para que no se discrimine a pacientes de cannabis medicinal en licencias de armas — Revista Crónicas](https://revistacronicas.com/puerto-rico/g9-alliance-respalda-reclamo-para-que-no-se-discrimine-a-pacientes-de-cannabis-medicinal-en-licencias-de-armas/)
+- [Organización advierte sobre impacto de proyecto que limitaría derechos a pacientes de cannabis — Metro Puerto Rico](https://www.metro.pr/noticias/2026/06/19/organizacion-advierte-sobre-impacto-de-proyecto-que-limitaria-derechos-a-pacientes-de-cannabis/)
+- [Presidente de CODEPOLA pide a la Policía aplicar fallo federal sobre cannabis y armas — NotiCel](https://noticel.com/ultima-hora/20260707/presidente-de-codepola-pide-a-la-policia-aplicar-fallo-federal-sobre-cannabis-y-armas/)
+- [Condenan proyecto que impide a usuarios de cannabis obtener licencias de armas — NotiCel](https://noticel.com/en/noticias/la-calle/20260325/condenan-proyecto-que-impide-a-usuarios-de-cannabis-obtener-licencias-de-armas/)
