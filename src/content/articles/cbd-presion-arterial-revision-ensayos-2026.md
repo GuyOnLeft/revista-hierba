@@ -1,0 +1,40 @@
+---
+title: "CBD y presión arterial: qué muestra —y qué no— la nueva revisión de ensayos clínicos"
+section: ciencia
+date: 2026-07-17
+author: "Victoria Araya"
+excerpt: "Una revisión sistemática de cuatro ensayos con 120 adultos halló que el CBD oral podría bajar la presión sistólica bajo estrés. La evidencia es real, pero aún demasiado frágil para reemplazar un tratamiento."
+image: "/images/articles/cbd-presion-arterial-revision-ensayos-2026.jpg"
+photo_credit: "Foto: Steven Fruitsmaak / Wikimedia Commons (CC BY 3.0)"
+tag: "Cardiovascular"
+title_en: "CBD and Blood Pressure: What the New Clinical Trial Review Shows — and Doesn't"
+excerpt_en: "A systematic review of four trials in 120 adults found oral CBD may lower systolic blood pressure under stress. The signal is real, but still too fragile to replace treatment."
+tag_en: "Cardiovascular"
+---
+
+En América Latina, la hipertensión mata más que casi cualquier otro factor de riesgo aislado, y buena parte de esas muertes son evitables: según la Organización Panamericana de la Salud, la presión arterial elevada afecta a entre el 20% y el 40% de los adultos de la región y se asocia a más de dos millones de muertes al año, mientras que la Organización Mundial de la Salud advirtió en una actualización de 2025 que más de mil millones de personas en el mundo viven con la presión mal controlada o sin ningún control. En ese vacío crece un mercado de bienestar —gotas, cápsulas y aceites de cannabidiol (CBD)— que promete calma y, cada vez más, presión arterial más baja. Una revisión sistemática publicada el 19 de junio en la revista *Journal of Cannabis Research* somete esa promesa a su prueba más rigurosa hasta ahora, reuniendo cuatro ensayos clínicos aleatorizados con 120 adultos en total. El hallazgo es real. También es exactamente el tipo de resultado preliminar para el que existe la trampa del romanticismo: interesante, plausible desde el mecanismo, y lejos todavía de estar listo para reemplazar una receta médica.
+
+## Cuatro ensayos, un patrón consistente
+
+La revisión, firmada por los investigadores Albert Roberts, Solon Fountzopoulos y Terun Desai, rastreó las bases PubMed, Web of Science, Scopus y Medline en busca de ensayos aleatorizados y controlados con placebo que evaluaran CBD oral en adultos, con o sin hipertensión diagnosticada. Encontraron cuatro que cumplían los criterios, con dosis de entre 225 y 600 miligramos diarios y duraciones que iban de una toma única (con seguimiento de un par de horas) hasta cinco semanas de uso continuo. En los cuatro, sin excepción, el CBD produjo reducciones estadísticamente significativas de la presión sistólica frente al placebo, con el efecto más marcado bajo estrés o durante el sueño, y mayor cuanto más alta la dosis aguda: un patrón dosis-dependiente. Solo dos de los cuatro estudios mostraron además una caída significativa de la presión diastólica. Los efectos adversos fueron en general leves o moderados —náuseas, diarrea, fatiga— y no se registraron eventos cardiovasculares graves. Es importante notar el matiz metodológico: por la heterogeneidad de dosis, formulaciones y variables medidas entre los cuatro ensayos, los propios autores señalan que no pudieron calcular un tamaño de efecto combinado. Es una revisión sistemática, no un metaanálisis con una cifra única —una distinción de rigor que cambia cuánto peso debe dársele al hallazgo.
+
+## No es la primera vez, y todavía no es un visto bueno
+
+Este resultado no aparece de la nada. En 2017, un ensayo cruzado, aleatorizado y controlado con placebo publicado en la revista *JCI Insight* administró una dosis única de 600 mg de CBD a nueve voluntarios varones sanos y encontró que la presión sistólica en reposo bajaba unos 6 mmHg, con una respuesta atenuada al aumento de presión inducido por una prueba de estrés —una señal mecanística real, aunque proveniente de una muestra minúscula. Más cerca en el tiempo, un metaanálisis publicado en julio de 2025 en la revista brasileña *Revista Brasileira de Farmacognosia* combinó cuatro ensayos con 104 participantes y calculó un efecto combinado estadísticamente significativo para la reducción de la presión sistólica tras una dosis aguda de CBD (diferencia de medias estandarizada de -1,06; intervalo de confianza del 95% de -2,01 a -0,11; p=0,03), pero no encontró un efecto significativo sobre la presión diastólica (DME de -1,17; IC 95% de -2,55 a 0,20; p=0,09). Dos revisiones independientes, separadas por casi un año y firmadas por equipos distintos, convergen en la misma señal acotada: el CBD oral, en dosis altas y de forma aguda, tiende a bajar la presión sistólica, sobre todo bajo estrés, mientras que su efecto sobre la diastólica y sobre el uso crónico y sin supervisión sigue sin comprobarse.
+
+## Por qué esto importa en América Latina
+
+El contexto regional le da a este hallazgo un peso que no tendría en otra parte. El mercado de CBD crece en la región más rápido que su regulación: en México, la Comisión Federal para la Protección contra Riesgos Sanitarios (Cofepris) ha emitido alertas repetidas contra productos con CBD que se venden sin autorización sanitaria; en Brasil, la Anvisa permite el uso terapéutico del CBD únicamente bajo receta médica; y aun así, estimaciones de la industria proyectan que el mercado regional de CBD llegará a varios miles de millones de dólares hacia 2026. Dado que una proporción enorme de la población latinoamericana con hipertensión no recibe tratamiento adecuado, la tentación de recurrir a un tintura de CBD de venta libre en lugar de —o junto a— un antihipertensivo recetado es real y va en aumento. Ese es precisamente el escenario frente al cual advierten los autores de la revisión, no el que están respaldando: ninguno de los cuatro ensayos incluyó a personas con hipertensión severa o mal controlada, ninguno se extendió más de cinco semanas, y el CBD es conocido por interactuar con las mismas enzimas hepáticas (CYP3A4, CYP2C19) que metabolizan muchos antihipertensivos y anticoagulantes de uso común, lo que eleva el riesgo de alterar sus niveles en sangre si se combinan sin supervisión médica.
+
+## Lo que falta para saberlo con certeza
+
+Los propios autores son explícitos sobre lo que hace falta: ensayos más grandes y más largos —de doce meses o más—, con dosis y formulaciones estandarizadas, realizados en personas con hipertensión real y mal controlada, y no mayormente en voluntarios sanos; comparaciones entre vías de administración (sublingual, inhalada) para entender mejor la biodisponibilidad; y estudios que establezcan la seguridad hepática a largo plazo. Hasta que eso exista, el nivel de evidencia sigue siendo el de una revisión sistemática pequeña de ensayos heterogéneos: una señal alentadora, no una indicación clínica. Para una región donde la hipertensión no controlada es una de las principales causas de muerte evitable y donde el marketing del bienestar suele adelantarse años a la ciencia que lo respalda, la distinción entre ambas cosas no es un detalle académico.
+
+## Fuentes
+
+- [The effects of oral cannabidiol supplementation on blood pressure in adults: a systematic review of randomised controlled trials – Journal of Cannabis Research](https://doi.org/10.1186/s42238-026-00463-3)
+- [Systematic Review and Meta-analysis to Investigate the Effects of Cannabidiol on Blood Pressure: Examination of Randomized Triple- and Double-Blind Placebo Trials – Revista Brasileira de Farmacognosia](https://link.springer.com/article/10.1007/s43450-025-00680-6)
+- [A single dose of cannabidiol reduces blood pressure in healthy volunteers in a randomized crossover study – JCI Insight](https://insight.jci.org/articles/view/93760)
+- [Más de mil millones de personas en riesgo por hipertensión arterial no controlada – Organización Mundial de la Salud](https://www.who.int/es/news/item/23-09-2025-uncontrolled-high-blood-pressure-puts-over-a-billion-people-at-risk)
+- [Hipertensión – Organización Panamericana de la Salud](https://www.paho.org/en/topics/hypertension)
+- [Understanding the Latin American Cannabis/CBD Sector – Bizlatin Hub](https://www.bizlatinhub.com/understanding-latin-american-cannabis-sector/)
