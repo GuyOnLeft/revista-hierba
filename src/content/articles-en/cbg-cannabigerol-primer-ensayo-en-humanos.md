@@ -1,0 +1,44 @@
+---
+title: "CBG Under the Microscope: The First Human Trial Arrives After the Market Already Sold It"
+excerpt: "A Phase 1 trial at Johns Hopkins measured CBG's safety for the first time, at doses up to 200 mg. Meanwhile, the cannabinoid is already sold with little regulation across Latin American pharmacies."
+tag: "Pharmacology"
+---
+
+In pharmacies and dispensaries from Mexico City to Bogotá to Buenos Aires, a new bottle has been showing up on shelves next to the familiar CBD oils: cannabigerol, or CBG, sold as gummies, tinctures, and vape cartridges promising focus, calm, or "clear-headed" relief without the high of THC. The marketing has moved faster than the science. Until this month, no published clinical study had directly measured what a single dose of CBG actually does inside a human body — how much reaches the bloodstream, how it behaves compared with placebo, or whether it is safe across the dose range consumers are already buying. A new Phase 1 trial from Johns Hopkins University School of Medicine, published in July in the *Journal of Pharmacology and Experimental Therapeutics*, is the first to close that gap, and its findings are notable less for what they found than for what they didn't.
+
+CBG is one of more than 100 cannabinoids produced by the cannabis plant, often called the "mother cannabinoid" because it is the chemical precursor from which THC and CBD are synthesized as the plant matures. Unlike THC, it is not intoxicating. Unlike CBD, it has had almost no formal human pharmacology behind it, despite years of anecdotal claims about its effects on inflammation, appetite, mood, and gut health — claims built largely on cell-culture and rodent studies, not on data from people. That gap matters commercially: CBG products are legal to sell in most of Latin America under the same hemp-derived, low-THC frameworks that govern CBD, and demand has grown as brands pitch it as a "non-psychoactive" alternative for consumers wary of THC.
+
+## What the trial actually tested
+
+The study enrolled 12 healthy adults in a double-blind, placebo-controlled, single ascending-dose design — the standard early-phase format for establishing basic safety before any efficacy claims are tested. Each participant received, on separate occasions, a placebo and four doses of purified CBG isolate — 25, 50, 100, and 200 milligrams — suspended in medium-chain triglyceride (MCT) oil, a carrier chosen because it mimics how many commercial CBG oil products are actually formulated. Dose order was randomized, and flavor and volume were standardized so participants could not guess which dose they had taken. Researchers, drawn from Johns Hopkins, the University of Maryland, the University of Colorado, and the University of Virginia School of Medicine, then tracked blood cannabinoid concentrations, vital signs, liver function markers, and a battery of self-reported and cognitive measures over several hours after each dose.
+
+This is deliberately narrow science. A 12-person crossover study cannot tell us whether CBG treats anxiety, inflammation, or any specific condition — it was never designed to. What it can do, and what no prior published human study had done, is establish a basic safety and exposure profile: what happens in the body of a healthy adult who takes the doses already sold over the counter.
+
+## No adverse events, and not much of anything else
+
+The topline result is reassuring in its plainness: no adverse events were reported at any dose, including the highest, 200 milligrams — roughly eight times a typical single serving found in commercial products. Liver function markers, a standard concern with any orally administered compound metabolized through the liver, remained within normal limits across all doses.
+
+Beyond safety, the pharmacodynamic findings were modest. Participants reported small, dose-related shifts — feeling less "jittery" and less "active" at 50 milligrams, lower self-rated calmness at 100 milligrams, and increased appetite at the highest 200-milligram dose — but the study did not find robust intoxicating, sedating, or otherwise clearly psychoactive effects at any level tested. Blood concentrations of CBG did rise with dose, as expected, though the researchers noted considerable variability between individual participants in how much drug reached their bloodstream — a common finding with orally administered cannabinoids, whose absorption is notoriously inconsistent depending on formulation, food intake, and individual metabolism.
+
+In plain terms: this is a safety and exposure study, not an efficacy study, and it found that single oral doses of CBG up to 200 milligrams appear to be well tolerated in healthy adults, without producing the kind of dramatic subjective or physiological effects that would raise acute safety flags. It does not tell consumers whether CBG works for whatever it is being marketed for.
+
+## Why this matters for Latin American consumers
+
+For a regional readership, the relevance is less about the specific numbers than about the sequence of events they interrupt. Across Latin America — as in the United States and Europe — hemp-derived cannabinoid markets have consistently outpaced the clinical research meant to inform them. CBD went through exactly this cycle a decade ago: widespread retail availability and health claims years before regulators or clinicians had solid human pharmacokinetic data to work from. CBG is repeating that pattern, arriving on shelves in Mexico, Colombia, Argentina, and Brazil as a "gentler" companion or alternative to CBD and THC, often marketed directly to patients managing chronic pain, anxiety, or sleep issues who are also cannabis patients under existing medical cannabis frameworks.
+
+This trial does not validate any of those therapeutic claims — the researchers themselves were careful on that point. But it does give regulators, physicians, and patients something they did not have before: a documented human safety threshold and a starting pharmacokinetic reference for a compound that is already being sold and consumed at scale. For clinicians in Argentina's REPROCANN program, Colombia's medical cannabis system, or Brazil's ANVISA-regulated pathways — all of which are increasingly encountering patients who combine prescribed THC/CBD products with over-the-counter CBG — having even a small, rigorously controlled human dataset is a meaningful improvement over the near-total absence of data that preceded it.
+
+## The limits of a first step
+
+The study's authors were explicit about what their results do not show. Twelve participants, all healthy adults with no underlying conditions, tested with single doses rather than the repeated daily use that most consumers actually practice, is not sufficient to characterize long-term safety, drug interactions, or effects in people who are unwell, pregnant, elderly, or taking other medications — all populations relevant to the patients this magazine covers. The researchers explicitly called for longer-term, repeated-dosing studies as the next step, and cautioned that these findings should not be extrapolated to chronic use or to clinical populations.
+
+There is also the matter of what "well tolerated" does not mean. It does not mean effective. It does not mean safe in combination with other drugs — a live question given how many patients use CBG alongside prescribed cannabinoids or conventional medications metabolized through the same liver enzyme pathways. And it does not resolve the basic regulatory gap that allows CBG products to reach consumers in most Latin American markets with essentially no standardized dosing, purity testing, or labeling requirements, regardless of what the underlying pharmacology eventually shows.
+
+What the study offers, modestly and specifically, is a first data point in a field that has had remarkably few of them. For a cannabinoid already on pharmacy shelves across the region, that is not a small thing — but it is also not the final word.
+
+## Sources
+
+- Wolinsky, D., Spindle, T.R., Vandrey, R., et al. "Safety, Pharmacodynamics, and Pharmacokinetics of Oral Cannabigerol (CBG) in Healthy Adults." *Journal of Pharmacology and Experimental Therapeutics*, July 2026. https://www.sciencedirect.com/science/article/abs/pii/S0022356526011845
+- The Marijuana Herald. "Oral CBG Safe and Well-Tolerated at Doses Up to 200 Milligrams in Human Study." July 12, 2026. https://themarijuanaherald.com/2026/07/oral-cbg-safe-and-well-tolerated-at-doses-up-to-200-milligrams-in-human-study/
+- Johns Hopkins Cannabis Science Laboratory. "Health Effects of Cannabis." https://www.jhcannabissciencelab.com/publications/health-effects-of-cannabis
+- ClinicalTrials.gov. "Acute Psychological and Physiological Effects of Cannabigerol." NCT06638996. https://clinicaltrials.gov/study/NCT06638996
