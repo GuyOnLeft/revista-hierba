@@ -1,0 +1,41 @@
+---
+title: "Five Years, 241 Patients: The Longest Real-World Study Yet on Inhaled Cannabis for Chronic Low Back Pain"
+excerpt: "A five-year Israeli observational study found inhaled cannabis reduced severe low back pain and opioid use in treatment-refractory patients. For Latin America, it raises pressing questions about access and regulation."
+tag: "Chronic pain"
+---
+
+For patients across Latin America who live with chronic low back pain — one of the region's leading causes of years lived with disability — the conversation with a physician about cannabis usually stalls at the same point: there is plenty of anecdote, but where is the long-term evidence? A new five-year observational study out of Israel, published in the peer-reviewed journal *Biomedicines*, offers the largest and longest real-world dataset yet on inhaled medical cannabis for treatment-refractory chronic low back pain — and its findings on pain, disability, and opioid use are likely to shape how prescribers across the region think about cannabis as part of a chronic pain protocol, even as the authors themselves are careful to flag what the study cannot prove.
+
+## What the Study Found
+
+Researchers at Hasharon Hospital, part of Rabin Medical Center, tracked 241 adults with chronic low back pain who had already failed at least 12 months of conventional multimodal therapy — every one of them had tried opioids, NSAIDs, and physiotherapy without adequate relief, and a majority had also tried antidepressants (80.5%) or anticonvulsants like gabapentin and pregabalin (38.6%). Mean pain duration at enrollment was 15.1 years; average baseline pain, on a 0–10 scale, was a severe 8.08.
+
+Patients were then treated with inhaled cannabis — predominantly smoked flower (about 91% of use), sourced through Israel's regulated medical cannabis supply chain, with THC content ranging from 4% to 22% and CBD from 2% to 22%. Using each patient as their own historical control, the researchers compared outcomes at baseline against outcomes at years one through five.
+
+The changes were large. Mean pain scores fell from 8.08 to 2.72 by year five — a drop of 5.36 points on statistical models that adjusted for missing data and repeated measures. The Oswestry Disability Index, a standard measure of function, improved by nearly 18 percentage points. At year five, 89.2% of patients reported at least a 30% reduction in pain and 77.2% reported at least a 50% reduction — thresholds generally considered clinically meaningful in pain research. Retention was unusually high for an observational study: 98.8% of patients had complete data at five years, and 92.9% were still using cannabis.
+
+## The Opioid-Sparing Signal
+
+The result most likely to interest LatAm health systems is what happened to other medications. At baseline, 100% of patients were on opioids; by year five, only 4.6% still were. NSAID use fell from 100% to 7.1%, antidepressant use from 80.5% to 5.4%, and gabapentinoid use from 38.6% to 2.5%. The authors calculated a within-patient "number needed to treat" for opioid discontinuation of roughly 1 — meaning nearly every patient who stayed in treatment came off opioids — though they are explicit that this is not the same as a randomized-trial NNT and should not be read as proof that cannabis caused the discontinuation.
+
+Adverse events were common but overwhelmingly mild: across 1,205 patient-years of exposure, the most frequent complaints were dry eyes, transient cognitive blunting, and appetite changes. Serious adverse events were rare (0.1% of events), no deaths were recorded, and there was no statistical evidence of tolerance developing over the five years — dose did not have to keep climbing to maintain effect, though average monthly consumption did rise over time (from about 21.5 grams in year one to 50–60 grams by years four and five).
+
+## Why the Caveats Matter as Much as the Results
+
+This is not a randomized controlled trial, and the authors are unusually candid about it. It is a retrospective analysis of prospectively collected data from a single center, a single prescriber, and an open-label protocol in which patients chose and self-titrated their own treatment — conditions that invite placebo and expectancy effects, self-selection bias, and regression to the mean, especially given how severe (and therefore statistically likely to improve on its own) the baseline pain scores were. The authors also note that concurrent, unmeasured changes — shifts in physiotherapy, lifestyle, or the therapeutic relationship itself — could confound the results, and that findings from Israel's specific regulatory and clinical context, where smoked flower is the dominant route of administration, may not generalize to countries where vaporized or oral formulations predominate. They explicitly call for confirmation in randomized, comparative trials before any causal claim is made.
+
+For clinicians in Argentina, Colombia, Brazil, Mexico, and elsewhere in the region, those caveats are not a reason to dismiss the data — but they are a reason to treat it as hypothesis-generating rather than practice-settling. The study's real contribution is duration: five years of patient-reported outcomes is far beyond what most cannabis pain trials, randomized or not, have managed to track, and the consistency of the pain relief without dose-driven tolerance is a genuinely useful data point for a field that has mostly relied on trials lasting weeks or months.
+
+## What It Means for Prescribing and Access in Latin America
+
+The regional backdrop makes the opioid-sparing framing land differently than it would in a US or European context. Several Latin American countries already practice a degree of "opiophobia" — regulatory and clinical caution around opioid prescribing that leaves many chronic pain patients undertreated in the first place. In Argentina, the REPROCANN registry — which as of February 2026 offers expedited, largely automatic approval for lower-risk applicants over 21 — already lists chronic pain among the conditions patients can register for. Colombia's Resolución 2366 of 2023 formally brought cannabis-derived medications, including for chronic pain, under coverage by the country's EPS health insurers when prescribed by a specialist with an INVIMA-registered product. Brazil and Mexico continue to move more slowly, largely through compounding-pharmacy pathways and case-by-case authorizations.
+
+Against that backdrop, a study like this one is likely to be cited less as evidence that cannabis should replace opioids — since many of the region's patients never had reliable opioid access in the first place — and more as support for including inhaled or vaporized cannabis earlier in multimodal chronic pain protocols for patients who have exhausted first-line options. Whether regional regulators and insurers treat a well-designed observational study from a different health system as sufficient grounds to expand coverage remains, as ever, a policy question as much as a scientific one.
+
+## Sources
+
+- [Robinson D, Khatib M, Lavon E, et al. "Long-Term Inhaled Cannabis Therapy for Chronic Low Back Pain: A Five-Year Retrospective Analysis of Prospectively Collected Patient-Reported Outcomes in 241 Treatment-Refractory Patients." *Biomedicines* 2026, 14(6), 1255.](https://www.mdpi.com/2227-9059/14/6/1255)
+- [NORML: "Study: Cannabis Inhalation Associated with Long-Term Pain Relief, Opioid-Sparing Effects in Patients with Treatment-Resistant Lower Back Pain"](https://norml.org/news/2026/07/02/study-cannabis-inhalation-associated-with-long-term-pain-relief-opioid-sparing-effects-in-patients-with-treatment-resistant-lower-back-pain)
+- [Pain News Network: "Inhaled Cannabis More Effective Than Meds for Chronic Low Back Pain"](https://www.painnewsnetwork.org/stories/2026/7/7/inhaled-cannabis-more-effective-than-medication-in-treating-chronic-lower-back-pain)
+- [Argentina.gob.ar: Preguntas frecuentes sobre REPROCANN](https://www.argentina.gob.ar/salud/cannabis-medicinal/frecuentes)
+- [Infobae: "Pacientes con dolores crónicos podrán acceder a marihuana medicinal" — Resolución 2366 de 2023, Colombia](https://www.infobae.com/colombia/2024/02/15/pacientes-con-dolores-cronicos-podran-acceder-a-marihuana-medicinal-esta-fue-la-peticion-de-la-corte-constitucional-al-ministerio-de-salud/)
