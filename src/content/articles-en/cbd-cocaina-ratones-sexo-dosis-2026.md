@@ -1,0 +1,50 @@
+---
+title: "CBD and Cocaine: What the First Study Comparing Effects by Sex and Dose Reveals"
+excerpt: "A mouse study from Universitat Pompeu Fabra found that cannabidiol reduces initial cocaine consumption, but its effects grow more complex — and sex-dependent — once drug-taking is already established."
+tag: "Research"
+---
+
+There is no approved medication anywhere in the world for cocaine use disorder. Not in the United States, not in the European Union, and not in Latin America — the region that supplies most of the world's cocaine and is increasingly confronting its own consumption crisis, from crack cocaine in Brazilian favelas to pasta base in the shantytowns of Buenos Aires and Montevideo. Behavioral therapy remains the only intervention with solid evidence behind it. Into that vacuum comes a new preclinical study, published in February 2026 in Translational Psychiatry, a Nature-portfolio journal, that adds cannabidiol (CBD) — the non-intoxicating compound found in cannabis — to the growing list of candidate treatments. But the finding is not the simple "CBD cures addiction" headline it might seem. Researchers at the Universitat Pompeu Fabra in Barcelona found that CBD's effects on cocaine-seeking behavior in mice depend heavily on dose, on the stage of addiction being modeled, and — most strikingly — on sex.
+
+## A body of research built mostly on males
+
+Cocaine use disorder has long been studied mostly through a male lens. Epidemiological data show that men use cocaine more frequently, so most preclinical research — the animal experiments that determine which compounds eventually reach human trials — has historically relied on male rodents. Yet clinical evidence consistently shows a phenomenon researchers call "telescoping": women who use cocaine tend to start later than men but progress more quickly from first use to dependence, and often experience more severe withdrawal and relapse. Despite that, most of what science knows about how CBD interacts with cocaine's effects on the brain comes from studies in male animals.
+
+The new paper, led by researcher Mireia Medrano and senior author Olga Valverde at the Neurobiology of Behaviour Research Group (GReNeC-NeuroBio) within the Department of Medicine and Life Sciences at Universitat Pompeu Fabra, set out to close part of that gap. The team — which also included Veronika Llerena, Iva Tic, and Maria Llach-Folcrà — designed a study focused primarily on female mice, with a parallel cohort of males for comparison.
+
+## Inside the experiment
+
+The researchers used an intravenous self-administration paradigm, widely considered the gold standard for modeling voluntary drug-taking in animals: mice were fitted with catheters and trained to press a lever to receive an infusion of cocaine (0.6 milligrams per kilogram per infusion), while a second, inactive lever served as a behavioral control. This method captures something simpler models cannot — the animal's own motivation to seek out the drug, session after session, rather than having it administered passively.
+
+In total, 264 female mice and 52 male mice of the CD1 strain took part in the different arms of the study, conducted at the UBIOMEX animal facility at the Barcelona Biomedical Research Park (PRBB). Animals received one of four doses of CBD injected intraperitoneally — 5, 10, 20, or 30 milligrams per kilogram — allowing the researchers to map how the compound's effects shifted along a dose curve, rather than testing a single "does it work or not" dose as many earlier studies did.
+
+The design also went beyond the initial acquisition of drug-taking. It tracked animals through a phase in which cocaine delivery was paired with a mild aversive consequence — a standard way of modeling compulsive drug use, since continuing to seek a drug despite negative consequences is one of the clinical hallmarks of addiction — and through a later phase in which mice were re-exposed to cues previously associated with that consequence, a proxy for the cue-triggered cravings that drive relapse in humans.
+
+## Encouraging results, followed by a complication
+
+At the lowest effective dose, 10 milligrams per kilogram, CBD reduced the acquisition of cocaine self-administration: treated female mice self-administered fewer infusions, pressed the active lever less often, and took in less cocaine overall than untreated animals. That result lines up with a body of earlier, mostly male-only research suggesting CBD can blunt the initial reinforcing effects of cocaine.
+
+The picture changed at the higher, 20-milligram dose. During the punishment phase, mice that had received this dose of CBD unexpectedly increased their cocaine consumption rather than decreasing it — the opposite of what the lower dose had produced during acquisition. Yet when those same mice were later re-exposed to the cues associated with that punishment, the 20-milligram dose reduced their drug-seeking behavior. In other words, the same dose of the same compound pushed behavior in opposite directions depending on which phase of the addiction cycle was being tested.
+
+Critically, when the researchers ran the punishment-phase experiment in male mice, they found no equivalent effect — males' behavior was not significantly altered by CBD at that stage. That divergence is the paper's central claim: CBD's behavioral effects on cocaine use are not just dose-dependent, they are sex-dependent, and a result obtained in male animals cannot be assumed to hold in females.
+
+On the molecular side, the team reported changes in gene expression across brain regions belonging to the mesocorticolimbic circuit — the prefrontal cortex, ventral striatum, and hippocampus — the same reward-and-habit network known to be reshaped by chronic cocaine use. The clearest single change they highlighted was an increase in Htr1a, the gene encoding the serotonin 1A receptor, in the prefrontal cortex of animals given the 20-milligram dose — a receptor already linked in other research to anxiety and impulse regulation, which may help explain why this dose behaved so differently depending on context.
+
+## What this study does not show
+
+It is worth being explicit about the limits of this evidence, because a finding like this can easily be flattened into an overstated headline. This is preclinical research conducted exclusively in mice; nothing here has been tested in humans, and no clinical trial evaluating CBD for cocaine use disorder in people has resulted directly from this paper. Self-administration in mice is a well-validated model, but it remains an approximation of a behavior — human addiction — shaped by social, economic, and psychological forces that a cage cannot reproduce.
+
+The authors themselves flag a specific limitation: their design did not monitor the estrous cycle in female mice, meaning natural hormonal fluctuations could have influenced some of the results attributed to sex differences, without the study being able to fully disentangle the two. It is also worth underscoring that the study's most attention-grabbing result — CBD increasing cocaine consumption at a higher dose during one phase of the experiment — is precisely the kind of complicating finding that a purely promotional account of cannabis-derived medicine would be tempted to leave out. Real pharmacology, especially in addiction, is rarely a straight line from "compound" to "cure."
+
+## Why it matters for Latin America
+
+None of this happened in Latin America, but the question it is trying to answer could hardly be more relevant to the region. According to the United Nations Office on Drugs and Crime, the number of cocaine users worldwide grew from an estimated 17 million in 2013 to roughly 25 million in 2023 — the fastest-growing illicit drug market globally — and Latin America remains both its principal source and an increasingly significant consumer market. Countries such as Ecuador have become key logistics hubs for cocaine bound for Europe, while cities across Argentina, Brazil, and Uruguay report growing domestic use of cocaine derivatives such as crack and pasta base, concentrated disproportionately among low-income populations with the least access to specialized treatment.
+
+That treatment gap is not incidental to the science: it is the reason a study like this one matters beyond the laboratory. No pharmacological treatment for cocaine use disorder is approved anywhere in the world, in Latin America or elsewhere, leaving behavioral therapy — often unavailable or under-resourced in public health systems across the region — as the only intervention with solid evidence. A future medication derived from a plant compound that, unlike THC, is non-intoxicating and already legally available in several Latin American countries under existing medical cannabis frameworks would be significant less for its novelty than for its accessibility. That future, on the evidence available today, remains conditional — dependent on replication, on human trials, and on the kind of careful, sex-specific science this study represents, rather than on the shortcut version of its findings.
+
+## Sources
+
+- Llerena, V., Tic, I., Llach-Folcrà, M., Valverde, O., Medrano, M. "Sex and dose-dependent effects of cannabidiol on cocaine consumption in mice." *Translational Psychiatry* 16, 80 (2026). DOI: [10.1038/s41398-026-03880-3](https://doi.org/10.1038/s41398-026-03880-3)
+- PubMed. [Entry for PMID 41651805.](https://pubmed.ncbi.nlm.nih.gov/41651805/)
+- Universitat Pompeu Fabra, Facultad de Medicina y Ciencias de la Vida. ["Una sustancia derivada del cannabis puede atenuar los efectos adictivos de la cocaína."](https://www.upf.edu/web/biomed/inici/ca/-/asset_publisher/Us0jfwFAevmx/content/id/216537895/maximized)
+- UNODC. ["Informe Mundial sobre las Drogas 2025: La inestabilidad mundial agrava el impacto social, económico y de seguridad del fenómeno mundial de las drogas."](https://www.unodc.org/unodc/es/press/releases/2025/June/unodc-world-drug-report-2025_-global-instability-compounding-social--economic-and-security-costs-of-the-world-drug-problem.html)
