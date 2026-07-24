@@ -5,7 +5,7 @@ date: 2026-04-28
 author: "Victoria Araya"
 excerpt: "Un estudio publicado en el British Journal of Pharmacology identificó por primera vez dos mecanismos precisos por los cuales el cannabidiol y el cannabigerol reducen la acumulación de grasa hepática. La investigación abre una vía terapéutica para una enfermedad que afecta a uno de cada tres adultos en el mundo y no tiene tratamiento farmacológico aprobado."
 image: "https://upload.wikimedia.org/wikipedia/commons/1/19/Liver_steatosis_fatty_change.jpg"
-photo_credit: "Laboratory of Experimental Pathology, NIEHS/NIH — Dominio Público"
+photo_credit: "Laboratory of Experimental Pathology, NIEHS/NIH — Dominio Público · Wikimedia Commons"
 tag: "Investigación"
 title_en: "CBD and CBG Against Fatty Liver: How Two Cannabinoids Repair the Liver at the Cellular Level"
 excerpt_en: "A study published in the British Journal of Pharmacology identified for the first time two precise mechanisms by which cannabidiol and cannabigerol reduce hepatic fat accumulation. The research opens a therapeutic pathway for a disease affecting one in three adults worldwide, with no approved pharmacological treatment."

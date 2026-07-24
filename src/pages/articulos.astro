@@ -13,7 +13,7 @@ const sectionLabels: Record<string, { es: string; en: string }> = {
 };
 
 const formatDate = (d: Date) =>
-  d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+  d.toLocaleDateString('es-AR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
 ---
 <Layout title="Artículos" description="Todos los artículos de Revista Hierba.">
   <div class="page-header">

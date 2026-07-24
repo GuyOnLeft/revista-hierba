@@ -5,7 +5,7 @@ date: 2026-04-28
 author: "Pablo L. Gutkin"
 excerpt: "Planta maestra en los andes desde hace casi 5 mil años, el cebil revela una historia que incomoda a los poderosos y a las categorías científicas modernas que todo lo atrapan."
 image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Anadenanthera_colubrina-flowers_and_leaves.JPG"
-photo_credit: "Zimbres — CC BY-SA 3.0"
+photo_credit: "Zimbres — CC BY-SA 3.0 · Wikimedia Commons"
 tag: "Pueblos Originarios"
 title_en: "Hallucinogen? The Ethics of Cebil and the Spirit of Indigenous Community"
 excerpt_en: "A plant teacher in the Andes for nearly five thousand years, cebil reveals a history that unsettles the powerful — and the modern scientific categories that seek to contain everything."

@@ -5,7 +5,7 @@ date: 2026-04-29
 author: "Iván Montiel"
 excerpt: "Una historia de diez mil años de convivencia, saberes y resistencias. La cannabis no fue simplemente usada; fue también maestra, guía, acompañante."
 image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Cannabis_sativa_1542.jpg"
-photo_credit: "Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público"
+photo_credit: "Heinrich Füllmaurer, De Historia Stirpivm (1542) — Dominio Público · Wikimedia Commons"
 tag: "Historia"
 title_en: "Cannabis: The Plant That Found Us First"
 excerpt_en: "A ten-thousand-year history of coexistence, knowledge, and resistance. Cannabis was not simply used — it was also teacher, guide, companion."

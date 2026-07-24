@@ -27,7 +27,7 @@ const articles = all
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatDate = (d: Date) =>
-  d.toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+  d.toLocaleDateString('es-AR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
 ---
 <Layout title={sectionName}>
   <div class="page-header">
