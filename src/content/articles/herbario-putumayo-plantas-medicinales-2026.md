@@ -1,0 +1,52 @@
+---
+title: "El herbario que corre contra el tiempo para salvar las plantas medicinales del Putumayo"
+section: plantas
+date: 2026-07-26
+author: "Victoria Araya"
+excerpt: "En Mocoa, un herbario construido junto a once pueblos indígenas catalogó más de 1.500 especies de plantas que las comunidades del Putumayo usan como medicina, alimento y objeto ceremonial, entre ellas un árbol sagrado del que sobreviven apenas ocho ejemplares. Cuatro años después de su creación, el proyecto todavía no tiene sede propia: documentar el saber ancestral es solo la mitad de la batalla para mantenerlo vivo."
+image: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Theobroma_cacao_Fruit_Linne.jpg"
+photo_credit: "Foto: sarahemcc / Wikimedia Commons (CC BY 2.0)"
+tag: "Etnobotánica"
+title_en: "The Herbarium Racing to Save Putumayo's Medicinal Plant Knowledge"
+excerpt_en: "In Mocoa, a herbarium built with eleven indigenous peoples has catalogued more than 1,500 plant species that Putumayo communities use for medicine, ceremony and food, including a ceremonially vital tree down to its last eight known specimens. Four years after its founding, the project still has no permanent home, a reminder that documenting traditional knowledge is only half the fight to keep it alive."
+tag_en: "Ethnobotany"
+needsImageReview: true
+---
+
+En Mocoa, la pequeña capital andino-amazónica del departamento colombiano de Putumayo, un cuarto lleno de hojas prensadas y semillas secas hace algo que la mayoría de las instituciones públicas de la región nunca logró: catalogar, pliego por pliego, qué plantas siguen usando once pueblos indígenas para la fiebre, el duelo, los partos difíciles y las infecciones, y hacerlo emparejando cada una con el nombre en latín que tribunales, empresas mineras y autoridades ambientales colombianas están obligados a reconocer.
+
+El Herbario Etnobotánico del Piedemonte Andino-Amazónico "Jajen Saima'a", que funciona en la Institución Universitaria del Putumayo en Mocoa, reúne más de 22.000 muestras que representan cerca de 1.500 especies vegetales, según reportó Mongabay Latam. Se creó formalmente en 2022, con el respaldo de Corpoamazonía y de Conservación Internacional Colombia, pero su infraestructura real es más antigua y más humana: funciona gracias a la participación de monitores de los pueblos kamëntšá, inga, siona, cofán, coreguaje, murui, kichwa, nasa, pasto, embera y awá, junto a comunidades campesinas y afrodescendientes que aportan ejemplares, nombres y relatos que la taxonomía latina, por sí sola, no puede contener.
+
+Esto no es un ejercicio de museo. Putumayo es uno de los departamentos más biodiversos y más disputados de Colombia: alberga unas 5.826 especies vegetales, 316 de ellas endémicas, y también títulos mineros activos, presión territorial ligada a la coca y décadas de conflicto armado que dispersaron a las mismas comunidades cuyo saber botánico el herbario intenta preservar. La empresa minera Libero Cobre posee cuatro títulos que cubren cerca de 7.800 hectáreas en la zona, con un estimado de dos millones de toneladas de cobre bajo tierra que incluye parte del resguardo indígena de Yunguillo. Las comunidades ya citan la documentación del herbario —nombres científicos, datos de distribución, usos registrados— como evidencia al oponerse a esos proyectos, usando en su contra el mismo lenguaje técnico del que dependen las empresas extractivas.
+
+## Un catálogo contra el olvido
+
+El método del herbario se parece menos a una expedición científica que a una colaboración lenta y negociada. Solo en el resguardo inga de Yunguillo participaron dieciséis monitores comunitarios en los relevamientos de plantas ligados al proyecto. Una iniciativa paralela, Árbol Semilleros, identificó 71 especies de árboles y documentó métodos de propagación para cada una, un intento de asegurar que si un árbol desaparece del bosque, no desaparezcan con él su semilla y el saber para cultivarlo. Un programa de 2023 llamado Nacederos produjo cartillas educativas que identifican las plantas que las comunidades consideran guardianas de las fuentes de agua, uniendo explícitamente la etnobotánica con la hidrología. El herbario publicó además un material bilingüe sobre 25 plantas de importancia cultural, un intento de que el registro sea útil para las comunidades que lo generaron, y no solo para investigadores externos.
+
+Nada de esto es conservación abstracta. Jorge Contreras, el biólogo que coordina el herbario, e investigadores como Nicolás Castaño, del instituto amazónico SINCHI, trabajan junto a personas como Ángela Jhoana Jacanamejoy, bióloga y artista kamëntšá, y Luis Felipe Mora, ingeniero ambiental cofán, traduciendo la observación de campo en algo que un pliego de herbario, y eventualmente un expediente judicial, puedan sostener.
+
+## Tres plantas, tres advertencias
+
+Tres especies documentadas por el proyecto ilustran lo que está en juego, y por qué ninguna institución puede reemplazar a un bosque vivo.
+
+El granadillo, un árbol de madera dura usado tanto en construcción tradicional como, en algunas comunidades, con fines medicinales, es hoy tan escaso que la monitora inga Juliana Torres Jiménez le dijo a Mongabay Latam que duda de que siga existiendo localmente dentro de diez años: "en 10 años ya no vamos a tener árboles como el granadillo, quedan ya muy poquitos".
+
+El caimo de monte, o cascabel, tiene una escasez distinta. Su semilla tiene un peso ceremonial y artesanal para varios pueblos del Putumayo, pero los investigadores que monitorean las 26.480 hectáreas del resguardo de Yunguillo encontraron apenas ocho ejemplares en todo el territorio: una población tan reducida que su desaparición local es una posibilidad concreta dentro de una generación, no una hipótesis lejana.
+
+El cacao nativo es el caso más claro de una planta tratada como medicina y no solo como símbolo. Miembros de la comunidad lo describen como bueno para el sistema cardiovascular, para el estrés, como alimento y como muy nutritivo, y los abuelos recuerdan que antes se preparaba para las mujeres durante y después del embarazo. Parte de ese testimonio tiene respaldo parcial en la literatura científica más amplia: el contenido de flavanoles del cacao fue estudiado por sus efectos cardiovasculares en investigaciones clínicas fuera de Colombia, y reguladores europeos de seguridad alimentaria reconocieron una alegación cardiovascular ligada específicamente a los flavanoles del cacao. La afirmación sobre el embarazo es más difícil de sostener y, si acaso, apunta en sentido contrario: la mayoría de las guías clínicas actuales recomienda moderar el consumo de cafeína y teobromina durante el embarazo, no aumentarlo. El rol del herbario no es arbitrar qué parte de ese testimonio resiste un ensayo clínico; es asegurarse de que el testimonio mismo, contradicciones incluidas, no desaparezca antes de que alguien tenga la oportunidad de estudiarlo.
+
+## La ciencia como aliada, no como reemplazo
+
+Sería fácil contar esto como una historia de redención: el saber ancestral por fin validado por la botánica moderna. Ese marco halaga a todos los involucrados, pero pasa por alto lo que las propias dificultades del herbario revelan. Un relevamiento etnobotánico independiente realizado en Colón, un municipio del Putumayo, entrevistó a 100 residentes en 2022 y documentó 38 especies medicinales en 18 familias botánicas, pero las especies más citadas fueron manzanilla, cedrón, orégano, menta y limoncillo: todas plantas de huerta introducidas, no especies amazónicas nativas. La medicina tradicional en el Putumayo actual no es una herencia intacta y prístina; es una práctica híbrida y adaptativa, construida con lo que estuvo disponible a lo largo de generaciones de desplazamiento, migración e intercambio. Esa mezcla merece documentarse precisamente porque es real, no a pesar de serlo.
+
+Ese riesgo no es hipotético en la región. América Latina ha visto repetidas veces cómo saberes tradicionales ya documentados migran hacia patentes y productos farmacéuticos externos, con poco o ningún beneficio para las comunidades que los generaron. Quienes coordinan el herbario describen su documentación como fundamentalmente defensiva: una manera de que las comunidades mismas retengan la evidencia, en lugar de esperar a que una institución externa la retenga por ellas. Si esa intención sobrevive al contacto con el interés comercial —cuando los flavanoles del cacao, o alguna especie del Putumayo aún no estudiada, atraigan atención de afuera— es una pregunta que el proyecto todavía no tuvo que responder.
+
+La precariedad también es real. Según lo último reportado, el herbario sigue sin un edificio propio y permanente —su colección está repartida entre la universidad y las instalaciones de Corpoamazonía—, no tiene un cargo de curador dedicado, y su coordinador trabaja sin un contrato laboral estable, cuatro años después de la creación formal del proyecto. El vicerrector de la universidad, Miguel Ángel Canchala, dijo que una sede definitiva debería estar lista en dos o tres meses, pero ese tipo de promesas tiende a estirarse en instituciones sin financiamiento asegurado.
+
+Esa fragilidad es el final honesto de esta historia. Un herbario capaz de nombrar los ocho ejemplares que sobreviven de un árbol ceremonialmente vital, y que las comunidades indígenas ya usan para disputar títulos mineros ante la justicia, trata el saber botánico como evidencia y no como folclore, que es exactamente lo que debería buscar una publicación construida alrededor de los derechos de pacientes y comunidades. Pero la evidencia guardada en un cuarto sin paredes propias sigue siendo vulnerable a las mismas fuerzas —presión minera, ciclos de financiamiento, desidia institucional— que están adelgazando los bosques que intenta describir.
+
+## Fuentes
+
+- Mongabay Latam — "Colombia: un herbario en el Putumayo une ciencia y saber ancestral para defender el territorio" (mayo de 2026): https://es.mongabay.com/2026/05/colombia-herbario-putumayo-une-ciencia-saber-ancestral-defender-territorio/
+- El Espectador / Mongabay Latam (réplica de la misma nota): https://blogs.elespectador.com/medio-ambiente/mongabay-latam/colombia-un-herbario-en-el-putumayo-une-ciencia-y-saber-ancestral-para-defender-el-territorio/
+- "Ethnobotanical Insights: Qualitative Analysis of Medicinal Plants in Colón, Putumayo, Colombia" — PMC, National Library of Medicine: https://pmc.ncbi.nlm.nih.gov/articles/PMC10574470/
