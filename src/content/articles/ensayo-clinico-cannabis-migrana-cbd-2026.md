@@ -1,0 +1,53 @@
+---
+title: "El primer ensayo clínico riguroso de cannabis para la migraña muestra que el CBD solo no funciona"
+section: ciencia
+date: 2026-07-27
+author: "Victoria Araya"
+excerpt: "Un ensayo aleatorizado con 92 pacientes en Estados Unidos halló que vaporizar THC junto con CBD alivia la migraña aguda, mientras el CBD solo no superó al placebo: un dato clave para una región con enorme brecha de atención especializada."
+image: "https://upload.wikimedia.org/wikipedia/commons/0/03/Vaporizer%2C_New_York%2C_United_States%2C_1880-1893_Wellcome_L0058539.jpg"
+photo_credit: "Foto: Unknown / Wikimedia Commons (CC BY 4.0)"
+tag: "Investigación"
+title_en: "The First Rigorous Trial of Cannabis for Migraine Shows CBD Alone Doesn't Work"
+excerpt_en: "A randomized trial of 92 patients found that vaporized THC combined with CBD relieved acute migraine attacks, while CBD alone performed no better than placebo — a finding with real stakes for a region facing a severe specialist-care gap."
+tag_en: "Research"
+---
+
+Durante décadas, las personas con migraña se automedicaron en silencio con cannabis, con la esperanza de que alguna variedad o aceite aliviara el dolor, las náuseas y la sensibilidad a la luz de una crisis. Hasta este año, ningún ensayo clínico aleatorizado había puesto a prueba si esa intuición tenía sustento en la evidencia. Un estudio publicado en *Headache: The Journal of Head and Face Pain*, liderado por investigadores de la Universidad de California en San Diego, llena ese vacío — y su hallazgo central contradice un supuesto muy extendido. Una combinación precisa de THC y CBD, vaporizada durante una crisis aguda, superó al placebo en varias medidas de alivio del dolor. El CBD solo —el cannabinoide que más se vende en toda América Latina como producto de bienestar legal y no intoxicante— no lo hizo.
+
+Para una región donde la migraña es inusualmente frecuente y la atención especializada escasea, esa distinción importa. También es un buen ejemplo de cómo esta sección intenta leer la investigación sobre cannabis: no repitiendo lo que promete un titular, sino preguntando qué midió realmente un estudio, en quiénes, y con qué grado de certeza.
+
+## Un ensayo diseñado para probar lo que los pacientes ya hacen
+
+El equipo, liderado por Nathaniel Schuster, evaluó a 678 adultos con migraña y finalmente incluyó a 92 que cumplían criterios estrictos —entre 21 y 65 años, con 2 a 23 días de migraña al mes—. En un diseño aleatorizado, doble ciego, cruzado y controlado con placebo, cada participante trató hasta cuatro crisis de migraña distintas, cada una con una preparación diferente de flor de cannabis vaporizada, suministrada por el Instituto Nacional sobre el Abuso de Drogas de Estados Unidos (NIDA): flor con 6% de THC predominante, flor con 11% de CBD predominante, una combinación de 6% THC + 11% CBD, y un placebo casi inerte (menos de 0,025% de THC y 0,14% de CBD). El orden de los tratamientos fue aleatorio, y entre cada crisis tratada mediaba al menos una semana para evitar efectos de arrastre. Participantes, coordinadores, investigadores y estadísticos permanecieron cegados; solo los farmacéuticos del estudio sabían qué flor era cuál.
+
+En total se trataron 247 crisis de migraña con un protocolo estandarizado de vaporización (cuatro inhalaciones a 180°C). El resultado principal fue el alivio del dolor a las dos horas —el paso de un dolor moderado o severo a uno leve o nulo—, el mismo criterio que se usa desde hace tiempo para evaluar los triptanes, los fármacos estándar para crisis agudas de migraña. Los resultados secundarios midieron la ausencia total de dolor y el alivio del "síntoma más molesto" (náuseas, sensibilidad a la luz o al sonido) a las 2, 24 y 48 horas.
+
+## El dato que importa: el CBD solo no funcionó
+
+A las dos horas, la flor combinada de THC+CBD produjo alivio del dolor en el 67% de las crisis tratadas, frente a 47% con placebo (razón de momios 2,85; p=0,016). También produjo ausencia total de dolor en el 35% de las crisis frente a 16% con placebo (OR 3,30; p=0,017), y alivio del síntoma más molesto en 60% frente a 34% (OR 3,32; p=0,005). Esos beneficios se sostuvieron: a las 24 horas, la ausencia sostenida de dolor fue de 28% frente a 11% con placebo; a las 48 horas, el alivio sostenido de síntomas fue de 40% frente a 18%.
+
+La flor con THC predominante, usada sola, también superó al placebo en el alivio básico del dolor (69% frente a 47%, OR 3,14; p=0,008), pero no en las medidas más exigentes de ausencia de dolor o de síntomas. La flor con CBD predominante, probada sola, no superó al placebo en ningún resultado, en ningún momento de la medición. La interpretación de los autores es que el CBD parece hacer que el THC sea más tolerable —probablemente amortiguando sus efectos psicoactivos mediante una interacción conocida en los receptores cannabinoides— sin sumar, en este contexto, un poder analgésico propio.
+
+Los hallazgos de seguridad fueron tranquilizadores, aunque no triviales. No se registraron eventos adversos serios. Pero la intoxicación fue real y dependiente de la dosis: en una escala de 0 a 10, los participantes calificaron el "efecto psicoactivo" subjetivo de la condición con THC predominante en 3,5, frente a 2,4 en la combinación, 1,5 en el CBD solo y 0,6 en el placebo. Cerca de un tercio de los participantes reportó algún evento adverso tras la flor con THC predominante —sedación, mareos, irritación de garganta, aumento del apetito— frente a alrededor de 5% tras el placebo. Cuando los investigadores ajustaron estadísticamente por la percepción de "estar drogado", el efecto del tratamiento se mantuvo, lo que sugiere que el alivio del dolor no fue simplemente un artefacto de expectativa ligado a la intoxicación.
+
+## Lo que significa —y lo que no— para los pacientes latinoamericanos
+
+La migraña no es un malestar marginal en la región. Un metaanálisis de 2023 publicado en *Cephalalgia*, liderado por el investigador peruano Kevin Pacheco-Barrios y colegas, reunió datos de más de 53.000 personas en América Latina y el Caribe y encontró una prevalencia de migraña cercana al 15% —cifra que coincide con el lugar que ocupa la migraña entre las 20 condiciones más discapacitantes del mundo, según la carga global de enfermedad.
+
+El acceso a la atención no fue a la par. Una revisión narrativa publicada en junio de 2026 en *Cephalalgia Reports* por la Asociación Latinoamericana de Cefalea (ASOLAC), que abarca Argentina, Brasil, Chile, Colombia, México y Perú, describe lo que sus autores llaman una paradoja: incluso donde la cobertura de salud alcanza nominalmente entre 91% y 99% de la población, las brechas de tratamiento son severas. La proporción de neurólogos por habitante llega a ser de apenas 1 por cada 47.000 a 58.000 personas, concentrados en las ciudades, lo que deja a los pacientes rurales esperando años por una consulta especializada. Los fármacos preventivos más nuevos, como los anticuerpos monoclonales anti-CGRP, siguen confinados en gran medida a la medicina privada. En Brasil, según esa revisión, solo el 2,6% de los pacientes elegibles para tratamiento preventivo efectivamente lo recibe.
+
+En ese vacío se expandieron los productos de cannabis —en especial aceites e aislados de CBD comercializados como artículos de bienestar legales antes que como medicamentos con receta—, muchas veces vendidos con promesas vagas de alivio del dolor de cabeza y el estrés, y poca orientación sobre dosis o expectativas. El ensayo de San Diego no valida ese mercado. Si acaso, lo complica: sugiere que los productos de CBD solo —los más disponibles y legales en toda la región— son, para una crisis aguda de migraña, farmacológicamente indistinguibles del placebo, al menos en la proporción probada. El beneficio que sí existe, con la combinación de THC y CBD, viene acompañado de una intoxicación real y dependiente de la dosis, algo relevante para quien necesita manejar, trabajar o cuidar niños durante una crisis.
+
+## Los límites de esta evidencia
+
+Se trata de un solo ensayo, realizado en Estados Unidos, con flor de cannabis de grado farmacéutico cultivada por el NIDA en potencias fijas (6% THC, 11% CBD) que no necesariamente coinciden con lo que se vende en dispensarios o farmacias de Buenos Aires, Bogotá o Ciudad de México. Los 92 participantes no eran personas sin experiencia previa con cannabis, y un protocolo exigente con una alta tasa de exclusión en el tamizaje (678 evaluados para llegar a 92 incluidos) puede limitar qué tan bien se generalizan los resultados. El ensayo probó una sola dosis aguda por crisis, no un uso preventivo diario, y no siguió a los participantes el tiempo suficiente para evaluar riesgos asociados al uso repetido, como la cefalea por abuso de medicación o el síndrome de hiperémesis cannabinoide. Los propios autores piden ensayos multicéntricos y datos de seguridad a más largo plazo antes de sacar conclusiones clínicas firmes. El estudio fue financiado por la Migraine Research Foundation y fondos académicos y gubernamentales de Estados Unidos, sin financiamiento de la industria del cannabis declarado —un punto que vale la pena señalar, dado cuánta investigación sobre cannabis a nivel global está financiada por empresas con interés directo en el resultado.
+
+Lo que este ensayo ofrece, con cautela, es un modelo: evidencia rigurosa y controlada con placebo sobre qué combinaciones de cannabinoides ayudan —y cuáles no— en una condición específica y común. Una evidencia que pacientes, médicos y reguladores de la región pueden usar para hacer preguntas más precisas que "¿el cannabis sirve para la migraña?", empezando en cambio por "¿qué cannabis, en qué proporción, y comparado con qué?".
+
+## Fuentes
+
+- Schuster, N.M. et al. ["Vaporized cannabis versus placebo for acute migraine: A randomized, double-blind, placebo-controlled crossover trial."](https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.70025) *Headache: The Journal of Head and Face Pain*, 2026.
+- Texto completo vía PubMed Central: [PMC12872409](https://pmc.ncbi.nlm.nih.gov/articles/PMC12872409/)
+- Pacheco-Barrios, K. et al. ["Primary headache disorders in Latin America and the Caribbean: A meta-analysis of population-based studies."](https://journals.sagepub.com/doi/full/10.1177/03331024221128265) *Cephalalgia*, 2023.
+- Velez-Jimenez, M.K. et al. ["Migraine care in Latin America: Insights from the Latin American Headache Association (ASOLAC)."](https://journals.sagepub.com/doi/10.1177/25158163261456215) *Cephalalgia Reports*, 2026.
+- Organización Mundial de la Salud. ["Cefaleas — nota descriptiva."](https://www.who.int/es/news-room/fact-sheets/detail/headache-disorders)
