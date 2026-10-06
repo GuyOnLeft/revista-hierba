@@ -39,7 +39,7 @@ const formatDate = (d: Date) =>
     {articles.map(article => (
       <article class="listing-card">
         <div class="card-img">
-          <img src={article.data.image} alt={article.data.title} loading="lazy" />
+          <img src={article.data.image} alt={article.data.title} loading="lazy" style={article.data.image_position ? `object-position: ${article.data.image_position}` : undefined} />
         </div>
         <div class="card-body">
           <span class="tag">{article.data.tag}</span>

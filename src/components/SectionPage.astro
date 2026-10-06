@@ -8,6 +8,7 @@ interface Article {
   excerpt_en?: string;
   byline: string;
   img: string;
+  img_position?: string;
   slug: string;
 }
 interface Props {
@@ -34,7 +35,7 @@ import Layout from './Layout.astro';
       <div class="article-grid">
         <a class="article-featured" href={`/articulo/${featured.slug}`}>
           <div class="img-wrapper">
-            <img src={featured.img} alt={featured.title} />
+            <img src={featured.img} alt={featured.title} style={featured.img_position ? `object-position: ${featured.img_position}` : undefined} />
           </div>
           <span class="tag es-only">{featured.tag}</span>
           {featured.tag_en && <span class="tag en-only">{featured.tag_en}</span>}
@@ -52,7 +53,7 @@ import Layout from './Layout.astro';
           {rest.map(article => (
             <a class="article-small" href={`/articulo/${article.slug}`}>
               <div class="img-wrapper">
-                <img src={article.img} alt={article.title} />
+                <img src={article.img} alt={article.title} style={article.img_position ? `object-position: ${article.img_position}` : undefined} />
               </div>
               <span class="tag es-only">{article.tag}</span>
               {article.tag_en && <span class="tag en-only">{article.tag_en}</span>}

@@ -10,6 +10,7 @@ const articles = defineCollection({
     excerpt: z.string(),
     image: z.string(),
     photo_credit: z.string().optional(),
+    image_position: z.string().optional(),
     tag: z.string(),
     title_en: z.string().optional(),
     excerpt_en: z.string().optional(),

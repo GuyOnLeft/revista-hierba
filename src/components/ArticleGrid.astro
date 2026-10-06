@@ -10,7 +10,7 @@ const secondary = rest.slice(0, 2);
 <div class="article-grid">
   <a class="article-featured" href={`/articulo/${featured.slug}`}>
     <div class="img-wrapper">
-      <img src={featured.data.image} alt={featured.data.title} />
+      <img src={featured.data.image} alt={featured.data.title} style={featured.data.image_position ? `object-position: ${featured.data.image_position}` : undefined} />
     </div>
     <span class="tag es-only">{featured.data.tag}</span>
     {featured.data.tag_en && <span class="tag en-only">{featured.data.tag_en}</span>}
@@ -31,7 +31,7 @@ const secondary = rest.slice(0, 2);
     {secondary.map(a => (
       <a class="article-small" href={`/articulo/${a.slug}`}>
         <div class="img-wrapper">
-          <img src={a.data.image} alt={a.data.title} />
+          <img src={a.data.image} alt={a.data.title} style={a.data.image_position ? `object-position: ${a.data.image_position}` : undefined} />
         </div>
         <span class="tag es-only">{a.data.tag}</span>
         {a.data.tag_en && <span class="tag en-only">{a.data.tag_en}</span>}
