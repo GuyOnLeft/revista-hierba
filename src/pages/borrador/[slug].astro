@@ -1,0 +1,230 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+
+// Unpublished drafts, for review before publishing (10/6). Not linked anywhere, not in the sitemap, noindex.
+// The daily drafts job (on Jeremy's Mac) adds src/content/drafts/<n>-<token>.md, sends the editor this page's
+// link, and moves the files into articles/ when the editor approves.
+export async function getStaticPaths() {
+  const drafts = await getCollection('drafts');
+  return drafts.map(a => ({ params: { slug: a.slug }, props: { article: a } }));
+}
+
+const { article } = Astro.props;
+const { Content: ContentES } = await article.render();
+
+const allEN = await getCollection('drafts-en');
+const articleEN = allEN.find(a => a.slug === article.slug);
+const ContentEN = articleEN ? (await articleEN.render()).Content : null;
+
+const { title, author, date, section, tag, image, excerpt, photo_credit, title_en, excerpt_en, tag_en } = article.data;
+const esDate = new Date(date).toLocaleDateString('es-AR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
+const enDate = new Date(date).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' });
+const sectionLabels: Record<string, {es: string, en: string}> = {
+  cannabis:  { es: 'Cannabis',         en: 'Cannabis' },
+  plantas:   { es: 'Plantas',          en: 'Plants' },
+  ciencia:   { es: 'Ciencia',          en: 'Science' },
+  derechos:  { es: 'Derechos Humanos', en: 'Human Rights' },
+};
+const secLabel = sectionLabels[section] ?? { es: section, en: section };
+const number = article.slug.split('-')[0];
+const say = (text: string) => `https://wa.me/?text=${encodeURIComponent(text)}`;
+---
+<Layout title={`Borrador #${number}: ${title}`} description={excerpt} noindex>
+  <div class="draft-banner">
+    <span class="es-only">Borrador #{number} · sin publicar · vista previa para revisión</span>
+    <span class="en-only">Draft #{number} · not published · review preview</span>
+  </div>
+  <div class="article-page">
+    <div class="article-meta-top">
+      <a class="back-link" href={`/secciones/${section}`}>
+        <span class="es-only">← {secLabel.es}</span>
+        <span class="en-only">← {secLabel.en}</span>
+      </a>
+      <span class="tag-label es-only">{tag}</span>
+      {tag_en && <span class="tag-label en-only">{tag_en}</span>}
+    </div>
+    <h1 class="article-headline">
+      <span class="es-only">{title}</span>
+      {title_en && <span class="en-only">{title_en}</span>}
+    </h1>
+    <p class="article-excerpt-lead">
+      <span class="es-only">{excerpt}</span>
+      {excerpt_en && <span class="en-only">{excerpt_en}</span>}
+    </p>
+    <div class="article-byline">
+      <span class="es-only">Por {author} · {esDate}</span>
+      <span class="en-only">By {author === 'La Redacción' ? 'The Editorial Team' : author} · {enDate}</span>
+    </div>
+    {image && (
+      <figure class="article-hero-figure">
+        <img class="article-hero-img" src={image} alt={title} />
+        {photo_credit && <figcaption class="photo-credit">{photo_credit}</figcaption>}
+      </figure>
+    )}
+    {ContentEN ? (
+      <>
+        <div class="article-body es-only"><ContentES /></div>
+        <div class="article-body en-only"><ContentEN /></div>
+      </>
+    ) : (
+      <>
+        <p class="lang-note en-only">This article is available in Spanish only.</p>
+        <div class="article-body"><ContentES /></div>
+      </>
+    )}
+    <div class="draft-review">
+      <p class="draft-review-label">
+        <span class="es-only">Se abre WhatsApp con el mensaje listo: elegí el chat con Jeremy y envialo.</span>
+        <span class="en-only">WhatsApp opens with the message ready: pick the chat with Jeremy and send it.</span>
+      </p>
+      <a class="draft-btn draft-approve" href={say(`publicar ${number}`)}>
+        <span class="es-only">Aprobar y publicar</span><span class="en-only">Approve and publish</span>
+      </a>
+      <a class="draft-btn" href={say(`cambios ${number}: `)}>
+        <span class="es-only">Pedir cambios</span><span class="en-only">Ask for changes</span>
+      </a>
+      <a class="draft-btn" href={say(`descartar ${number}`)}>
+        <span class="es-only">Descartar</span><span class="en-only">Discard</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+
+<style>
+  .draft-banner {
+    background: #c8a03c;
+    color: #111;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 16px;
+  }
+  .draft-review {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--black);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .draft-review-label {
+    flex-basis: 100%;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--gray-mid);
+    margin: 0;
+  }
+  .draft-btn {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 12px 18px;
+  }
+  .draft-approve { background: var(--black); color: var(--white); }
+  .article-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .article-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .back-link {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    text-decoration: none;
+  }
+  .back-link:hover { color: var(--black); }
+  .tag-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+    padding: 2px 8px;
+  }
+  .article-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: bold;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .article-excerpt-lead {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    border-left: 3px solid var(--black);
+    padding-left: 16px;
+    margin-bottom: 16px;
+  }
+  .article-byline {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+  .article-hero-figure {
+    margin: 0 0 36px;
+  }
+  .article-hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    background: #f4f4f0;
+    border: 1px solid var(--gray-light);
+    display: block;
+  }
+  .photo-credit {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #aaa;
+    padding: 5px 0 0;
+    text-align: right;
+  }
+  .article-body {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.8;
+    color: #222;
+  }
+  .article-body :global(h2) {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 36px 0 12px;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 24px;
+  }
+  .article-body :global(p) { margin-bottom: 20px; }
+  .article-body :global(em) { font-style: italic; }
+  .article-body :global(strong) { font-weight: bold; }
+  .article-body :global(ul) { padding-left: 20px; margin-bottom: 20px; }
+  .article-body :global(li) { margin-bottom: 8px; }
+  .lang-note {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 24px;
+  }
+</style>

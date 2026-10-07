@@ -2,10 +2,12 @@
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 const {
   title = '',
   description = 'Periodismo independiente sobre cannabis, plantas medicinales, ciencia y derechos humanos.',
+  noindex = false,
 } = Astro.props;
 const pageTitle = title ? `${title} — Revista Hierba` : 'Revista Hierba';
 import Nav from './Nav.astro';
@@ -21,6 +23,7 @@ import '../styles/global.css';
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <title>{pageTitle}</title>
     <script defer src="https://umami-production-026b.up.railway.app/script.js" data-website-id="cb317954-e44a-43e1-9447-0a679ffe3e17"></script>
     <script is:inline>
